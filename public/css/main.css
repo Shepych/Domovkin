@@ -85,7 +85,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 5vh;
-    padding-bottom: 6vh;
+    padding-bottom: 5vh;
 }
 
 .project__item {
@@ -94,6 +94,7 @@ header {
     background-color: #232425;
     border: 0.1vh solid #404549;
     color: #919192;
+    text-decoration: none;
 }
 
 .project__item__info {
@@ -183,15 +184,16 @@ header {
 
 .question__row {
     font-family: Roboto;
-    font-size: 5vh;
+    font-size: 4vh;
     padding-top: 3vh;
     padding-bottom: 3vh;
     color: white;
-    width: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    /*border-bottom: 0.1vh solid #404549;*/
+    border-bottom: 0.1vh solid #404549;
+    max-width: 1300px;
+    width: 100%;
 }
 
 .services {
@@ -240,9 +242,20 @@ header {
     border: 0.3vh solid #e45847;
     color: white;
     height: 70px;
-    font-size: 2.5vh;
+    font-size: 2vh;
     padding-left: 3vh;
     padding-right: 3vh;
+}
+
+.camera__screens {
+    gap: 4vh;
+    padding-left: 4vh;
+    padding-right: 4vh;
+}
+
+.camera__screens img {
+    width: 100%;
+    display: block;
 }
 
 /*@media screen and (max-width: 1000px) {*/

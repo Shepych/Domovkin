@@ -8,8 +8,8 @@
     </section>
 
     <section class="projects__list">
-        @for($i = 0; $i < 12; $i++)
-            <div class="project__item">
+        @for($i = 0; $i < 15; $i++)
+            <a href="{{ route('project.detail', $i) }}" class="project__item">
                 <img src="{{ "/img/homes/{$i}.jpeg" }}" style="width: 100%;border-bottom: 0.1vh solid #404549">
                 <div class="project__price flex">5.000.000 р
                     <span style="color: white;font-size: 2vh;opacity: 0" class="flex">
@@ -26,12 +26,12 @@
                 </div>
 
 {{--                <button class="button" style="height: 50px;margin-left: 24px;font-size: 2vh">Подробнее</button>--}}
-            </div>
+            </a>
         @endfor
     </section>
 
     <div class="show__more">
-        <button class="button">Посмотреть все объекты</button>
+        <button class="button" style="width: 100%;max-width: 300px;">Показать ещё</button>
     </div>
 
     <section class="flex">
@@ -50,6 +50,19 @@
         <section>
             <lottie-player src="/animations/home.json" background="Transparent" speed="0.5" style="width: 60vh;" direction="1" mode="normal" loop autoplay></lottie-player>
         </section>
+    </section>
+
+    <section class="grid" style="width: 1000px">
+        <p style="font-size: 2.5vh">
+            На всех наших объектах устанавливается видеонаблюдение которое выводится
+            заказчикам на сайт в личный кабинет. Таким образом наши клиенты могут лично
+            наблюдать и контролировать процесс строительства своего объекта
+        </p>
+    </section>
+
+    <section class="flex camera__screens">
+        <img src="/img/camera/screen1.jpg" alt="">
+        <img src="/img/camera/screen2.jpg" alt="">
     </section>
 
     <section class="delimiter">
@@ -84,9 +97,20 @@
             </div>
         </div>
         <div class="questions">
-            @for($i = 0; $i < 5; $i++)
-                <div class="question__row" @if($i == 4) style="border-bottom: none" @endif>Сколько стоит проект дома ?</div>
-            @endfor
+            @foreach($questions as $question)
+                <div class="question__row" @if($loop->last) style="border-bottom: none" @endif>
+                    {{ $question->question }}
+                    <svg style="width: 40px;height: 40px;margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="800px" height="800px" viewBox="0 0 32 32" version="1.1">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                            <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-464.000000, -1087.000000)" fill="#000000">
+                                <path d="M480,1117 C472.268,1117 466,1110.73 466,1103 C466,1095.27 472.268,1089 480,1089 C487.732,1089 494,1095.27 494,1103 C494,1110.73 487.732,1117 480,1117 L480,1117 Z M480,1087 C471.163,1087 464,1094.16 464,1103 C464,1111.84 471.163,1119 480,1119 C488.837,1119 496,1111.84 496,1103 C496,1094.16 488.837,1087 480,1087 L480,1087 Z M486,1102 L481,1102 L481,1097 C481,1096.45 480.553,1096 480,1096 C479.447,1096 479,1096.45 479,1097 L479,1102 L474,1102 C473.447,1102 473,1102.45 473,1103 C473,1103.55 473.447,1104 474,1104 L479,1104 L479,1109 C479,1109.55 479.447,1110 480,1110 C480.553,1110 481,1109.55 481,1109 L481,1104 L486,1104 C486.553,1104 487,1103.55 487,1103 C487,1102.45 486.553,1102 486,1102 L486,1102 Z" id="plus-circle" sketch:type="MSShapeGroup" style="fill: #e45847;">
+
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            @endforeach
         </div>
     </section>
 @endsection
