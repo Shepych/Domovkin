@@ -53,16 +53,17 @@
     </section>
 
     <section class="grid" style="width: 1000px">
-        <p style="font-size: 2.5vh">
+        <p style="font-size: 2.5vh;margin-bottom: 60px;">
             На всех наших объектах устанавливается видеонаблюдение которое выводится
             заказчикам на сайт в личный кабинет. Таким образом наши клиенты могут лично
-            наблюдать и контролировать процесс строительства своего объекта
+            наблюдать и контролировать процесс строительства своего объекта, а так же качество выполнения нашей работы
         </p>
-    </section>
 
-    <section class="flex camera__screens">
-        <img src="/img/camera/screen1.jpg" alt="">
-        <img src="/img/camera/screen2.jpg" alt="">
+
+{{--        <video controls>--}}
+{{--            <source src="rtsp://admin:Huskar800@95.165.27.142:554" type="application/x-mpegURL">--}}
+{{--        </video>--}}
+{{--        <video src="rtsp://admin:Huskar800@95.165.27.142:554"></video>--}}
     </section>
 
     <section class="delimiter">
