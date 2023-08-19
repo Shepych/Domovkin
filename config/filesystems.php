@@ -15,6 +15,7 @@ return [
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
+
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -34,6 +35,11 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
             'throw' => false,
+        ],
+
+        'rtsp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/rtsp'),
         ],
 
         'public' => [
