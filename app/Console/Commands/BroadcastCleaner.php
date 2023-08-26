@@ -28,8 +28,7 @@ class BroadcastCleaner extends Command
      */
     public function handle()
     {
-        echo public_path() . '\hls\*.ts';
-        File::delete(File::glob(public_path() . '\hls\*.ts'));
+        File::delete(File::glob(public_path() . '/hls/*.ts'));
         return Command::SUCCESS;
     }
 }
