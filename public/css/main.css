@@ -83,10 +83,9 @@ header {
 
 .logo {
     color: white;
-    font-family: 'Roboto';
+    font-family: Grotesk;
     font-size: 32px;
     text-decoration: none;
-    /*margin-right: auto;*/
 }
 
 .lozung {
@@ -96,7 +95,7 @@ header {
 
 /*
 
-Проэкты
+Проекты
 
 */
 
@@ -427,6 +426,12 @@ video {
 }
 
 @media screen and (max-width: 800px) {
+    .main__header__row {
+        height: 60px !important;
+    }
+    .logo {
+        font-size: 26px;
+    }
     .project__name {
         justify-content: center;
         flex-direction: column;

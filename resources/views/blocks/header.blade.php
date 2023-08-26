@@ -1,5 +1,5 @@
 <header>
-    <section class="grid flex" style="height: 100px">
+    <section class="grid flex main__header__row" style="height: 100px">
         <a class="logo" href="/">DOMOVKIN<span style="color: #e45847">.RU</span></a>
 {{--        <span class="lozung" style="margin-right: auto">Строительство коттеджей, бань, гаражей и беседок под ключ. Ремонт квартир и домов</span>--}}
         <span style="color: white;" class="phone">8 (812) 900 08 40</span>
