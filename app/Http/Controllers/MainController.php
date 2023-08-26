@@ -14,7 +14,8 @@ class MainController extends Controller
 
     public function index() {
         $questions = Question::all();
-        return view('index', compact('questions'));
+        $projects = Project::all();
+        return view('index', compact('questions', 'projects'));
     }
 
     public function project($id) {

@@ -10,7 +10,7 @@
                         <h1>{{ strtoupper($project->name) }}</h1>
                     </div>
                     <div class="project__page__price">
-                        {{ number_format($project->price, 0, '.', ' ')  }} р
+                        {{ number_format($project->price, 0, '.', '.')  }} р
                     </div>
                 </div>
 

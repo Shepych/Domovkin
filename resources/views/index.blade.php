@@ -8,10 +8,10 @@
     </section>
 
     <section class="projects__list">
-        @for($i = 1; $i < 16; $i++)
-            <a href="{{ route('project.detail', $i) }}" class="project__item">
-                <img src="{{ "/img/homes/{$i}.jpeg" }}" style="width: 100%;border-bottom: 0.1px solid #404549">
-                <div class="project__price flex">5.000.000 р
+        @foreach($projects as $project)
+            <a href="{{ route('project.detail', $project->id) }}" class="project__item">
+                <img src="{{ $project->img }}" style="width: 100%;border-bottom: 0.1px solid #404549">
+                <div class="project__price flex">{{ number_format($project->price , 0, ',', '.') }} р
                     <span style="color: white;font-size: 2px;opacity: 0" class="flex">
                         <span>подробнее</span>
                         <svg width="24" height="16" viewBox="0 0 33 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,7 @@
 
 {{--                <button class="button" style="height: 50px;margin-left: 24px;font-size: 2px">Подробнее</button>--}}
             </a>
-        @endfor
+        @endforeach
     </section>
 
     <div class="show__more">

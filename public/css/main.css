@@ -438,6 +438,10 @@ video {
     .project__name div span {
         font-size: 18px;
     }
+
+    .project__name div h1 {
+        font-size: 40px;
+    }
     .project__subheader {
         font-size: 18px;
     }
