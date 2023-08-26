@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('question');
-            $table->string('content');
+            $table->string('content')->nullable();
             $table->integer('priority')->nullable();
         });
     }
