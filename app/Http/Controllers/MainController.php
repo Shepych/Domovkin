@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\Question;
 use FFMpeg\Format\Video\X264;
 use Illuminate\Http\Request;
@@ -17,17 +18,8 @@ class MainController extends Controller
     }
 
     public function project($id) {
-        return view('project');
-    }
-
-    public function test() {
-        $ffmpeg = FFMpeg::fromDisk('rtsp')
-            ->open($this->rtsp)
-            ->export()
-            ->toDisk('public')
-            ->inFormat(new X264)
-            ->toMedia('output.mp4');
-
-        return response()->file(public_path('output.mp4'));
+        $project = Project::find($id);
+        if(!$project) abort(404);
+        return view('project', compact('project'));
     }
 }
