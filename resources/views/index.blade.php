@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="main__slider">
-        <div class="slide__img">
-            <img src="/img/1.jpeg">
-        </div>
-    </section>
+{{--    <section class="main__slider">--}}
+{{--        <div class="slide__img">--}}
+{{--            <img src="/img/1.jpeg">--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <section class="projects__list">
         @foreach($projects as $project)
@@ -53,7 +53,7 @@
     </section>
 
     <section class="grid" style="text-align: center">
-        <p style="font-size: 26px;margin-bottom: 60px;position: relative;z-index: 100">
+        <p class="index__text" style="font-size: 26px;margin-bottom: 60px;position: relative;z-index: 100">
             На всех наших объектах устанавливается видеонаблюдение которое выводится
             заказчикам на сайт в личный кабинет. Таким образом наши клиенты могут удалённо
             наблюдать и контролировать процесс строительства своего объекта, а так же видеть качество выполнения нашей работы
@@ -62,10 +62,10 @@
 
     <section class="cameras">
         <div>
-            <video controls autoplay id="work__object__one"></video>
+            <video poster="/img/camera/camera_img.jpg" controls autoplay id="work__object__one"></video>
         </div>
         <div>
-            <video controls autoplay id="work__object__two"></video>
+            <video poster="/img/camera/camera_img2.png" controls autoplay id="work__object__two"></video>
         </div>
     </section>
 
