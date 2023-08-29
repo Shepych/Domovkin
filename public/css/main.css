@@ -411,19 +411,23 @@ video {
     max-width: 2600px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 40px;
     padding: 40px;
 }
 
 .article__row {
-    height: 500px;
-    width: 100%;
+    width: calc(50% - 20px);
     border-radius: 10px;
     box-shadow: 0 0 5px black;
     background-color: rgb(0, 0, 0, 0.14);
-    display: flex;
     overflow: hidden;
+    display: flex;
+}
+
+.article__row img {
+    max-width: 100%;
 }
 
 @media screen and (max-width: 1280px) {

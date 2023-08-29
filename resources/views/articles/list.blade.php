@@ -5,7 +5,12 @@
         @foreach($articles as $article)
             <a class="article__row" href="{{ route('articles.detail', $article->slug) }}">
                 <img src="{{ $article->img }}" alt="">
-                {{ $article->title }}
+                <div class="article__description">
+                    <h2>{{ $article->title }}</h2>
+                    <p>
+                        {{ $article->description }}
+                    </p>
+                </div>
             </a>
         @endforeach
     </section>
