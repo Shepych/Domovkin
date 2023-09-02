@@ -1,3 +1,6 @@
+body {
+    /*background-color: #032f5d;*/
+}
 h1, h2, h3, h4, h5 {
     font-family: Grotesk;
 }
@@ -5,6 +8,12 @@ h1, h2, h3, h4, h5 {
 strong {
     color: #e45847;
     font-weight: bold;
+}
+
+.article__page__title {
+    color: #262626;
+    font-size: 60px;
+    font-family: Grotesk;
 }
 
 .article__page img {

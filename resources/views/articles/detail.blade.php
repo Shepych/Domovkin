@@ -6,6 +6,7 @@
             <div>
                 <span>СТАТЬИ <span>&gt; {{ mb_strtoupper($article->title) }}</span></span>
                 <h1 class="article__page__title">{{ $article->title }}</h1>
+                <span>27 мая 2023 года в 20:32</span>
             </div>
         </section>
 

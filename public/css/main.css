@@ -18,7 +18,7 @@ body {
     padding: 0;
     /*font-family: 'PT Sans', sans-serif;*/
     font-family: Euclid;
-    background-color: #232425;
+    /*background-color: #232425;*/
 }
 
 * {
@@ -26,7 +26,7 @@ body {
 }
 
 header section:nth-child(1), header section:nth-child(2) {
-    background-color: #232425;
+    /*background-color: #232425;*/
     border-bottom: 1px solid #404549;
 }
 
@@ -34,6 +34,8 @@ header {
     width: 100%;
     font-size: 22px;
     position: relative;
+    background: linear-gradient(180deg,#022d5a,#0e3d6f);
+    z-index: 10;
 }
 
 .main__menu {
@@ -98,7 +100,6 @@ header {
 }
 
 .lozung {
-    color: #919192;
     margin-left: 20px;
 }
 
@@ -125,7 +126,7 @@ header {
 
 .project__item {
     width: calc(33% - 40px);
-    background-color: #232425;
+    background: linear-gradient(180deg,#022d5a,#0e3d6f);
     border: 1px solid #404549;
     color: #919192;
     text-decoration: none;
@@ -171,7 +172,8 @@ header {
     width: 100%;
     height: 60px;
     font-family: Roboto;
-    color: #e45847;
+    color: #00d1d8;
+    color: #00f7fe;
     justify-content: space-between !important;
     padding-left: 30px;
     padding-right: 30px;
@@ -216,7 +218,7 @@ header {
 
 .delimiter {
     width: 100%;
-    background-color: #232425;
+    background: linear-gradient(180deg,#022d5a,#0e3d6f);
     margin-top: 40px;
 }
 
@@ -257,7 +259,7 @@ header {
 .service__block {
     width: 25%;
     min-height: 600px;
-    background-color: #1b1c1d;
+    background-color: #262626;
     border: 1px solid #404549;
     position: relative;
     overflow: hidden;
@@ -270,7 +272,7 @@ header {
 }
 
 .service__block h2 {
-    color: white;
+    color: black;
     text-align: center;
     margin-top: 40px;
     margin-right: 40px;
@@ -279,7 +281,7 @@ header {
 
 .service__block p {
     padding: 40px;
-    color: #919192;
+    color: white;
     font-size: 18px;
 }
 
@@ -293,8 +295,10 @@ header {
 }
 
 .button {
-    background: #404549;
-    border: 2px solid #e45847;
+    background: #126eff;
+    border-radius: 10px;
+    /*box-shadow: 0 0 10px black;*/
+    border: none;
     color: white;
     height: 50px;
     padding-left: 40px;
@@ -322,8 +326,13 @@ header {
 .home__animation {
     margin-bottom: -140px;
     margin-top: -120px;
+    margin-top: -90px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 864px;
+    max-width: 700px;
     width: 100%;
+    z-index: 0;
 }
 
 .cameras {
@@ -357,7 +366,7 @@ video {
 }
 
 .black__ground {
-    background-color: #232425;
+    /*background-color: #232425;*/
     padding-bottom: 20px;
     /* min-height: 100vh; */
 }
@@ -429,12 +438,6 @@ video {
     max-width: 2600px;
     margin: 0 auto;
     padding: 40px;
-}
-
-.article__page__title {
-    color: white;
-    font-size: 60px;
-    font-family: Grotesk;
 }
 
 .articles__list {
