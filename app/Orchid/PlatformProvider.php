@@ -34,6 +34,9 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Статьи')
                 ->icon('folder')
                 ->route('articles.list'),
+            Menu::make('Объекты')
+                ->icon('folder')
+                ->route('projects.list'),
 //             Menu::make('Статьи')
 //                 ->icon('code')
 //                 ->list([

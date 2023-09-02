@@ -51,6 +51,7 @@ class ArticlesListTable extends Table
                 return Button::make('Удалить')
                     ->confirm('Точно удалить ?')
                     ->method('delete')
+                    ->style('background-color:#e45847;color:white')
                     ->parameters([
                         'id' => $article->id
                     ]);

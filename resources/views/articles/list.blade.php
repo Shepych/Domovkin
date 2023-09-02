@@ -8,7 +8,7 @@
                     {{ $article->title }}
                 </h2>
                 <div class="article__img__wrap">
-                    <img src="{{ $article->img }}" alt="">
+                    <img src="{{ $article->poster() }}" alt="">
                 </div>
                 <div class="article__description">
                     <p>

@@ -1,0 +1,46 @@
+h1, h2, h3, h4, h5 {
+    font-family: Grotesk;
+}
+
+strong {
+    color: #e45847;
+    font-weight: bold;
+}
+
+.article__page img {
+    margin: 0 auto;
+}
+
+.article__content {
+    margin-top: 40px;
+    font-size: 24px;
+    color: white;
+}
+
+.article__content p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article__content img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.article__content ul, .article__content ol {
+    padding: 40px;
+}
+
+.article__header {
+    height: 220px;
+    width: 100%;
+    border-bottom: 1px solid #404549;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+    font-family: Euclid;
+    color: #919192;
+    font-size: 22px;
+}

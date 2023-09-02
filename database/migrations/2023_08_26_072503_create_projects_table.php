@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('price')->nullable();
             $table->text('description')->nullable();
             $table->text('options')->nullable();
+            $table->integer('square')->default(0);
             $table->string('img')->nullable();
 
             $table->timestamps();

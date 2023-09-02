@@ -8,6 +8,7 @@ use Orchid\Attachment\Attachable;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Picture;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Upload;
@@ -74,11 +75,12 @@ class ArticlesList extends Screen
                 Input::make('description')->title('Описание')->placeholder('Введите текст'),
                 SimpleMDE::make('content')
                 ->dir('public'),
-                Upload::make('poster')
+                Picture::make('poster')
                     ->groups('poster')
                     ->maxFiles(1)
                     ->storage('public'),
-            ]))->title('Создать статью')
+            ]))
+                ->title('Создать статью')
                 ->size(Modal::SIZE_LG)
                 ->applyButton('Создать'),
 
@@ -99,8 +101,9 @@ class ArticlesList extends Screen
                     ->groups('poster')
                     ->maxFiles(1)
                     ->storage('public'),
-            ]))->async('asyncGetArticle')
-            ->size(Modal::SIZE_LG),
+            ]))
+                ->async('asyncGetArticle')
+                ->size(Modal::SIZE_LG),
         ];
     }
 
@@ -131,16 +134,15 @@ class ArticlesList extends Screen
         $article->update([
             'title' => $request->article['title'],
             'description' => $request->article['description'],
-            'content' => Str::markdown($request->article['content'])
+            'content' => $request->article['content']
         ]);
         $article->attachment()->syncWithoutDetaching(
             $request->input('article.attachment', [])
         );
-        Toast::info('Сохранено');
+        Toast::success('Сохранено');
     }
 
     public function delete(Request $request) {
-//        dd($request->id);
         Article::find($request->id)->delete();
         Toast::success('Удалено');
     }

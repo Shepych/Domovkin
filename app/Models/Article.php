@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Orchid\Attachment\Attachable;
-use Orchid\Attachment\Models\Attachment;
-use Orchid\Attachment\Models\Attachmentable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
@@ -17,9 +16,13 @@ class Article extends Model
     use Filterable;
     use Attachable;
 
-
     protected $table = 'articles';
     protected $guarded = false;
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+    }
 
     protected $allowedSorts = [
         'title'
@@ -28,7 +31,13 @@ class Article extends Model
         'title'
     ];
 
+    # Ссылка на обложку для статьи
     public function poster() {
-        return $this->hasOne(Attachment::class, 'attachmentable_id', 'id');
+        $poster = DB::table('attachments')
+            ->join('attachmentable', 'attachments.id', '=', 'attachmentable.attachment_id')
+            ->where('group', '=', 'poster')
+            ->where('attachmentable_id', '=', $this->attributes['id'])
+            ->first();
+        return '/storage/' . $poster->path . $poster->name . ".{$poster->extension}";
     }
 }

@@ -428,6 +428,13 @@ video {
 .article__page {
     max-width: 2600px;
     margin: 0 auto;
+    padding: 40px;
+}
+
+.article__page__title {
+    color: white;
+    font-size: 60px;
+    font-family: Grotesk;
 }
 
 .articles__list {
@@ -438,6 +445,7 @@ video {
     flex-wrap: wrap;
     gap: 40px;
     padding: 40px;
+    background-color: white;
 }
 
 .article__row {
@@ -474,8 +482,7 @@ video {
     font-weight: bold;
     font-size: 30px;
     min-height: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding:20px;
     display: flex;
     justify-content: center;
     align-items: center;
