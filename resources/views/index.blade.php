@@ -1,16 +1,16 @@
 @extends('layouts.main')
 
-@section('content')
-{{--    <section class="main__slider">--}}
-{{--        <div class="slide__img">--}}
-{{--            <img src="/img/1.jpeg">--}}
-{{--        </div>--}}
-{{--    </section>--}}
+@section('style')
+<link rel="stylesheet" href="/css/hamburger.css">
+@endsection
 
+@section('content')
     <section class="projects__list">
         @foreach($projects as $project)
             <a href="{{ route('project.detail', $project->id) }}" class="project__item">
-                <img src="{{ $project->img }}" style="width: 100%;border-bottom: 0.1px solid #404549">
+                <div class="project__img__wrapper">
+                    <img src="{{ $project->img }}" style="width: 100%;border-bottom: 0.1px solid #404549">
+                </div>
                 <div class="project__price flex">{{ number_format($project->price , 0, ',', '.') }} р
                     <span style="color: white;font-size: 2px;opacity: 0" class="flex">
                         <span>подробнее</span>

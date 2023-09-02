@@ -18,17 +18,26 @@ body {
     padding: 0;
     /*font-family: 'PT Sans', sans-serif;*/
     font-family: Euclid;
+    background-color: #232425;
 }
 
 * {
     box-sizing: border-box;
 }
 
+header section:nth-child(1), header section:nth-child(2) {
+    background-color: #232425;
+    border-bottom: 1px solid #404549;
+}
+
 header {
     width: 100%;
-    background-color: #232425;
-    border-bottom: 0.1px solid #404549;
     font-size: 22px;
+    position: relative;
+}
+
+.main__menu {
+    color: white;
 }
 
 .phone {
@@ -66,7 +75,7 @@ header {
     display: none;
     height: 90px;
     background-color: #232425;
-    border-bottom: 0.1px solid #404549;;
+    border-bottom: 1px solid #404549;;
 }
 
 .slide__img {
@@ -111,18 +120,31 @@ header {
     padding-right: 20px;
     max-width: 2600px;
     margin: 0 auto;
+    background-color: white;
 }
 
 .project__item {
     width: calc(33% - 40px);
     background-color: #232425;
-    border: 0.1px solid #404549;
+    border: 1px solid #404549;
     color: #919192;
     text-decoration: none;
     font-size: 18px;
     max-width: 580px;
     position: relative;
-    z-index: 100;
+    z-index: 15;
+}
+
+.project__img__wrapper {
+    overflow: hidden;
+}
+
+.project__item img {
+    transition: all 0.2s ease-out;
+}
+
+.project__item:hover img {
+    transform: scale(1.2);
 }
 
 .project__item__info {
@@ -133,7 +155,7 @@ header {
 
 .project__item__info div {
     display: flex;
-    border-bottom: 0.1px dotted #919192;
+    border-bottom: 1px dotted #919192;
     margin-bottom: 10px;
 }
 
@@ -300,7 +322,8 @@ header {
 .home__animation {
     margin-bottom: -140px;
     margin-top: -120px;
-    width: auto;
+    max-width: 864px;
+    width: 100%;
 }
 
 .cameras {
@@ -336,7 +359,7 @@ video {
 .black__ground {
     background-color: #232425;
     padding-bottom: 20px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .project__header {
@@ -506,6 +529,34 @@ video {
     padding-left: 18px;
 }
 
+.main__menu {
+    display: none;
+    position: relative;
+    margin-top: -112px;
+    z-index: 20;
+}
+
+.main__menu__open {
+    display: block;
+    top: 113px;
+}
+
+.main__menu ul {
+    background-color: #e45847;
+    margin: 0;
+    padding: 0;
+    width: 700px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.menu__tongue {
+    background-color: black;
+    width: 240px;
+    margin: 0 auto;
+    height: 25px;
+}
+
 @media screen and (max-width: 1280px) {
     .index__text {
         font-size: 20px !important;
@@ -531,6 +582,18 @@ video {
         margin-top: -55px;
         margin-bottom: -80px;
     }
+}
+
+.main__header__row {
+    position: relative;
+    z-index: 22;
+    width: 100%;
+    border-bottom: 0 !important;
+}
+
+.header__menu {
+        position: relative;
+        z-index: 22;
 }
 
 @media screen and (max-width: 800px) {

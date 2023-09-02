@@ -1,5 +1,10 @@
 @extends('layouts.main')
 
+@section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<link rel="stylesheet" href="/css/slider.css">
+@endsection
+
 @section('content')
     <section class="black__ground">
         <section class="grid">
@@ -19,12 +24,32 @@
                     <span style="text-align: right"><span class="fix__right__margin">МАТЕРИАЛ:</span> <span class="bold" >ГАЗОБЕТОН</span></span>
                 </div>
             </div>
-            <img class="slider__item" src="{{ $project->img }}" alt="">
-            <div class="slider__pagination flex">
-                @for($i = 0; $i < 6; $i++)
-                    <div @if($i == 0) class="slider__pagination__active" @endif></div>
-                @endfor
+
+            {{-- Слайдер --}}
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="{{ $project->img }}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/articles/2.webp">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/articles/3.webp">
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
     </section>
+@endsection
+
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="/js/slider.js"></script>
 @endsection
