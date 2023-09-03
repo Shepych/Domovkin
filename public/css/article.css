@@ -21,9 +21,9 @@ strong {
 }
 
 .article__content {
-    margin-top: 40px;
+    padding: 100px;
     font-size: 24px;
-    color: white;
+    color: #262626;
 }
 
 .article__content p {
@@ -43,7 +43,6 @@ strong {
 .article__header {
     height: 220px;
     width: 100%;
-    border-bottom: 1px solid #404549;
     display: flex;
     justify-content: space-between;
     align-items: center;

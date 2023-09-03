@@ -44,7 +44,7 @@ header {
 
 .phone {
     margin-left: 24px;
-    color: #919192 !important;
+    opacity: 0.46;
 }
 
 .bold {
@@ -54,7 +54,7 @@ header {
 
 .header__menu {
     color: white;
-    border-top: 1px solid #404549;
+    border-top: 1px solid #3c5d82;
     gap: 90px;
     height: 65px;
 }
@@ -151,12 +151,12 @@ header {
 .project__item__info {
     padding: 30px;
     padding-top: 0;
-
+    color: #7a90a9;
 }
 
 .project__item__info div {
     display: flex;
-    border-bottom: 1px dotted #919192;
+    border-bottom: 1px dotted #3c5d82;
     margin-bottom: 10px;
 }
 
@@ -172,7 +172,7 @@ header {
     width: 100%;
     height: 60px;
     font-family: Roboto;
-    color: #00d1d8;
+    color: #58d537;
     color: #00f7fe;
     justify-content: space-between !important;
     padding-left: 30px;
@@ -223,7 +223,7 @@ header {
 }
 
 .questions {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -259,8 +259,8 @@ header {
 .service__block {
     width: 25%;
     min-height: 600px;
-    background-color: #262626;
-    border: 1px solid #404549;
+    /*background-color: #262626;*/
+    /*border: 1px solid #404549;*/
     position: relative;
     overflow: hidden;
 }
@@ -272,7 +272,7 @@ header {
 }
 
 .service__block h2 {
-    color: black;
+    color: #00f7fe;
     text-align: center;
     margin-top: 40px;
     margin-right: 40px;
@@ -326,11 +326,10 @@ header {
 .home__animation {
     margin-bottom: -140px;
     margin-top: -120px;
-    margin-top: -90px;
-    margin-left: auto;
+    margin-top: -160px;
     margin-right: auto;
     max-width: 864px;
-    max-width: 700px;
+    min-width: 640px;
     width: 100%;
     z-index: 0;
 }
@@ -453,18 +452,20 @@ video {
 
 .article__row {
     width: calc(33.33% - 27px);
-    border: 1px solid #404549;
-    background-color: #232425;
+    /*border: 1px solid #404549;*/
+    /*background-color: #232425;*/
+    box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: black;
     text-decoration: none;
     position: relative;
 }
 
 .article__img__wrap {
     overflow: hidden;
+    min-height: 283px;
 }
 
 .article__img__wrap img {
@@ -484,12 +485,14 @@ video {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    min-height: 80px;
-    padding:20px;
+    font-family: Roboto;
+    /*min-height: 80px;*/
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #262626;
 }
 
 .article__date {
@@ -509,7 +512,7 @@ video {
 }
 
 .article__img__wrap {
-    padding: 15px;
+    /*padding: 15px;*/
     background-color: #1b1c1d;
     box-shadow: inset 0 0 10px black;
     display: flex;
@@ -519,11 +522,11 @@ video {
 
 
 .article__description {
-    padding: 40px 40px 0px 40px;
-    height: 140px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .article__description p {
@@ -532,11 +535,13 @@ video {
 }
 
 .article__footer {
+    margin-top:auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    min-height: 60px;
     padding-left: 18px;
+    border-top: 1px solid rgba(0,0,0,.07);
 }
 
 .main__menu {
@@ -676,7 +681,7 @@ video {
 
     .phone {
         display: none;
-        color: gray !important;
+        opacity: 0.46;
     }
 
     header section svg {
