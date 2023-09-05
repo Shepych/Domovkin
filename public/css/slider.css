@@ -1,5 +1,10 @@
 .swiper-slide {
-    padding: 0 60px 0 60px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*padding: 0 60px 0 60px;*/
 }
 
 .swiper-slide > img {
@@ -10,17 +15,22 @@
 .swiper-pagination {
     position: relative;
     margin-top: 40px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper-pagination-bullet {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     background: #404549;
     opacity: 1;
-    border-radius: 0;
+    /*border-radius: 0;*/
 }
 
 .swiper-pagination-bullet-active {
-    border: 2px solid #e45847;
+    background-color: #126eff;
+    /*border: 2px solid #e45847;*/
 }
 

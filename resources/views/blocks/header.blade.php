@@ -18,10 +18,10 @@
     </section>
     <section class="main__menu">
         <ul>
-            <li><a href="{{ route('articles') }}">Статьи</a></li>
-            <li><a href="{{ route('index') }}">Объекты</a></li>
-            <li>Услуги</li>
-            <li>Отзывы</li>
+            <li class="flex"><a href="{{ route('articles') }}">Статьи</a></li>
+            <li class="flex"><a href="{{ route('index') }}">Объекты</a></li>
+            <li class="flex">Услуги</li>
+            <li class="flex">Отзывы</li>
         </ul>
     </section>
 </header>
