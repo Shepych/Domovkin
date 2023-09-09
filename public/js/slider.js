@@ -25,15 +25,15 @@
 
 let swiper = new Swiper(".swiper2", {
     loop: true,
-    spaceBetween: 10,
-    slidesPerView: 4,
+    spaceBetween: 20,
+    slidesPerView: 5,
     freeMode: true,
     watchSlidesProgress: true,
     pagination: false
 });
 let swiper2 = new Swiper(".swiper", {
     loop: true,
-    spaceBetween: 10,
+    spaceBetween: 0,
     thumbs: {
         swiper: swiper,
     },
