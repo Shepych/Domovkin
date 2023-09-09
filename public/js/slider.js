@@ -25,7 +25,7 @@
 
 let swiper = new Swiper(".swiper2", {
     loop: true,
-    spaceBetween: 20,
+    spaceBetween: 40,
     slidesPerView: 5,
     freeMode: true,
     watchSlidesProgress: true,

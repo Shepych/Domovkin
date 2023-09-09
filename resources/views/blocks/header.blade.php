@@ -17,9 +17,9 @@
         <span class="lozung">Строительство коттеджей, бань, гаражей и беседок под ключ. Ремонт квартир и домов</span>
     </section>
     <section class="main__menu">
-        <ul>
-            <li class="flex"><a href="{{ route('articles') }}">Статьи</a></li>
-            <li class="flex"><a href="{{ route('index') }}">Объекты</a></li>
+        <ul class="flex">
+            <li class="flex main__menu__active"><a class="flex" href="{{ route('articles') }}"><span>Статьи</span></a></li>
+            <li class="flex"><a class="flex" href="{{ route('index') }}"><span>Объекты</span></a></li>
             <li class="flex">Услуги</li>
             <li class="flex">Отзывы</li>
         </ul>

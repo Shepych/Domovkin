@@ -11,8 +11,8 @@
             <section class="grid flex" style="margin-top: 40px;align-items: stretch;padding-right: 0;padding-left: 0;">
                 <div class="project__left__column">
                     <div class="swiper">
-                        <div class="swiper-wrapper" >
-                            <div class="swiper-slide" >
+                        <div class="swiper-wrapper" style="align-items: stretch;">
+                            <div class="swiper-slide">
                                 <img src="{{ $project->img }}">
                             </div>
                             <div class="swiper-slide">
@@ -48,9 +48,9 @@
                 </div>
             </section>
 
-            <section style="padding: 0;padding-top:20px">
+            <section style="padding: 0;padding-top:40px">
                 <div class="swiper2">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper gallery">
                         <div class="swiper-slide">
                             <img src="{{ $project->img }}">
                         </div>
@@ -70,14 +70,13 @@
                 </div>
             </section>
 {{--        </div>--}}
-
     </section>
 
     @php
     $txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,';
     @endphp
-    <div class="grid">
-        <h2 style="text-align: center;font-family: Grotesk; margin: 40px 40px 40px 40px;font-size: 32px">Описание</h2>
+    <div class="grid" style="margin-top: 40px">
+{{--        <h2 style="text-align: center;font-family: Grotesk; margin: 40px 40px 40px 40px;font-size: 32px">Описание</h2>--}}
         <p style="font-size: 24px;font-family: Euclid;margin-bottom: 40px">{{ $txt }}</p>
         <p style="font-size: 24px;font-family: Euclid;margin-bottom: 40px">{{ $txt }}</p>
         <p style="font-size: 24px;font-family: Euclid;margin-bottom: 40px">{{ $txt }}</p>
@@ -89,4 +88,12 @@
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="/js/slider.js"></script>
+<script>
+    $(".gallery .swiper-slide").hover(function() {
+        $(".gallery .swiper-slide").css('opacity', '0.5')
+        $(this).css('opacity', '1')
+    }, function(){
+        $(".gallery .swiper-slide").css('opacity', '1')
+    });
+</script>
 @endsection
