@@ -165,7 +165,7 @@ header {
     height: 60px;
     font-family: Roboto;
     color: #58d537;
-    color: #00f7fe;
+    color: white;
     justify-content: space-between !important;
     padding-left: 30px;
     padding-right: 30px;
@@ -241,16 +241,14 @@ header {
 
 .services {
     gap: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 40px;
+    padding: 40px;
     max-width: 2200px;
     margin: 0 auto;
     align-items: inherit;
 }
 .service__block {
     width: 25%;
-    min-height: 600px;
+    /*min-height: 600px;*/
     /*background-color: #262626;*/
     /*border: 1px solid #404549;*/
     position: relative;
@@ -403,13 +401,8 @@ video {
 
 .project__page__price {
     font-family: Grotesk;
-    color: #10db2d;
     color: #262626;
-    font-size: 40px !important;
-    background-color: #e6ffd2;
-    height: 140px;
-    margin-top: auto;
-    box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);
+    font-size: 42px !important;
 }
 
 .project__characteristics {
@@ -654,7 +647,7 @@ video {
 }
 
 .project__left__column {
-    width: calc(100% - 440px);
+    width: calc(100% - 350px);
 }
 
 .swiper {
@@ -667,6 +660,7 @@ video {
 
 .gallery .swiper-slide img {
     transition: 0.2s;
+    /*max-width: 270px;*/
 }
 
 .gallery .swiper-slide img:hover {
@@ -674,10 +668,14 @@ video {
     cursor: pointer;
 }
 
+.project__gray__span {
+    opacity: 0.46;
+    margin-right: 13px;
+}
 
 
 .project__right__column {
-    min-width: 440px;
+    min-width: 350px;
     display: flex;
     flex-direction: column;
 }
@@ -714,6 +712,7 @@ video {
 }
 
 .main__header__row {
+    height: 130px !important;
     position: relative;
     z-index: 22;
     width: 100%;
