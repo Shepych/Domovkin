@@ -51,6 +51,11 @@ header {
     height: 80px;
 }
 
+.footer__main__page {
+    height: 210px;
+    color: rgb(122, 144, 169);
+}
+
 .flex {
     display: flex;
     justify-content: center;
@@ -89,10 +94,6 @@ header {
     font-family: Grotesk;
     font-size: 32px;
     text-decoration: none;
-}
-
-.lozung {
-    margin-left: 20px;
 }
 
 /*
@@ -647,7 +648,12 @@ video {
 }
 
 .project__left__column {
-    width: calc(100% - 350px);
+    width: calc(100% - 390px);
+    position: relative;
+}
+
+.project__left__column .swiper, img {
+    height: 100%;
 }
 
 .swiper {
@@ -675,13 +681,23 @@ video {
 
 
 .project__right__column {
-    min-width: 350px;
+    min-width: 390px;
     display: flex;
     flex-direction: column;
 }
 
+.project__footer {
+    /*padding: 40px;*/
+    margin-bottom: 60px;
+    gap: 140px;
+}
+.project__footer img {
+    display: block;
+    width: 30%;
+}
+
 .swiper {
-    max-height: 900px !important;
+    /*max-height: 900px !important;*/
 }
 
 @media screen and (max-width: 1280px) {

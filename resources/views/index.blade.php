@@ -121,6 +121,8 @@
                 </div>
             @endforeach
         </div>
+
+        @include('blocks.footer_main_page')
     </section>
 @endsection
 

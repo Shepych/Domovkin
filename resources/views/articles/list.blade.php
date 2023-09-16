@@ -22,4 +22,6 @@
             </a>
         @endforeach
     </section>
+
+    @include('blocks.footer')
 @endsection
