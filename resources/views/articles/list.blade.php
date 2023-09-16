@@ -8,7 +8,7 @@
                     {{ mb_strtoupper($article->title) }}
                 </h2>
                 <div class="article__img__wrap">
-                    <img src="{{ $article->poster() }}" alt="">
+                    <img src="{{ $article->poster() }}" style="width: 100%" alt="">
                 </div>
                 <div class="article__description">
                     <p>
