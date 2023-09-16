@@ -4,6 +4,6 @@
         <div class="flex" style="max-width: 600px;flex-direction: column;text-align: center;font-size: 18px">
             <p>Все материалы, опубликованные на сайте в любом виде, являются объектами авторского и имущественного права. Любое их использование должно быть согласовано с автором. Материалы сайта не являются публичной офертой.</p>
         </div>
-        <span> <img src="/img/socials/telegram.svg" width="60px"></span>
+        <span> <img src="/img/socials/telegram.svg" width="60px" height="60px"></span>
     </div>
 </div>

@@ -13,9 +13,67 @@
     src: url('/fonts/Euclid/EuclidCircularA-Light.ttf');
 }
 
+.swal2-input::placeholder {
+    color: #969696 !important;
+}
+
+.swal2-popup {
+    padding-bottom: 5px;
+}
+.button__sweet:hover {
+    background-color: #126eff !important;
+    color: white !important;
+    transform: scale(110%);
+}
+.button {
+    transition: 0.3s !important;
+}
+.button:hover {
+    color: #126eff;
+    background-color: white;
+    cursor: pointer;
+}
+
+.user__icon svg path {
+    -webkit-transition: fill 0.2s ease !important;
+}
+
+.user__icon:hover svg path {
+    -webkit-transition: fill 0.2s ease !important;
+    fill: white !important
+}
+
+.swal2-popup .swal2-input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: black !important;
+}
+
+.swal2-popup .swal2-textarea:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: black !important;
+}
+
+.swal2-input:focus::placeholder {
+    color: #cecece !important;
+}
+
+.swal2-textarea:focus::placeholder {
+    color: #cecece !important;
+}
+
+.swal2-textarea::placeholder {
+    color: #969696 !important;
+}
+
+html {
+    overflow-y: scroll !important
+}
+
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
     /*font-family: 'PT Sans', sans-serif;*/
     font-family: Euclid;
 }
@@ -94,6 +152,14 @@ header {
     font-family: Grotesk;
     font-size: 32px;
     text-decoration: none;
+}
+
+.logo__ru {
+    transition: 0.2s;
+}
+
+.logo:hover .logo__ru {
+    color: white !important;
 }
 
 /*
@@ -291,6 +357,13 @@ header {
 
 .gray__button:hover {
     transform: scale(130%);
+}
+
+.load * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
 }
 
 .button {
@@ -595,7 +668,7 @@ video {
 
 .main__menu ul li {
     height: 80px;
-    width: 25%;
+    width: 50%;
     cursor: pointer;
     border-right: 1px solid #3c5d82;
     /*font-family: Roboto;*/
