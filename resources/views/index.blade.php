@@ -47,32 +47,25 @@
 
         <div class="grid" style="display: flex;height: 640px;overflow: hidden;justify-content: center;align-items: center">
             <section class="home__animation">
-                <lottie-player src="/animations/blue_house.json" background="Transparent" speed="0.5"  direction="1" mode="normal" loop autoplay></lottie-player>
+                <img src="/img/camera/camera.png" class="camera" alt="Камера видеонаблюдения">
+                {{-- <lottie-player src="/animations/blue_house.json" background="Transparent" speed="0.5"  direction="1" mode="normal" loop autoplay></lottie-player> --}}
             </section>
             <p class="index__text" style="font-size: 26px;margin-left:80px;margin-bottom: 60px;position: relative;z-index: 100">
                 На всех наших объектах устанавливается видеонаблюдение которое выводится
-                заказчикам на сайт в личный кабинет. Таким образом наши клиенты могут удалённо
+                заказчикам в личный кабинет. Таким образом наши клиенты могут удалённо
                 наблюдать и контролировать процесс строительства своего объекта, а так же видеть качество выполнения нашей работы.
             </p>
         </div>
     </section>
 
-{{--    <section class="grid" style="text-align: center">--}}
-{{--        <p class="index__text" style="font-size: 26px;margin-bottom: 60px;position: relative;z-index: 100">--}}
-{{--            На всех наших объектах устанавливается видеонаблюдение которое выводится--}}
-{{--            заказчикам на сайт в личный кабинет. Таким образом наши клиенты могут удалённо--}}
-{{--            наблюдать и контролировать процесс строительства своего объекта, а так же видеть качество выполнения нашей работы--}}
-{{--        </p>--}}
-{{--    </section>--}}
-
-    <section class="cameras">
+    {{-- <section class="cameras">
         <div>
-            <video poster="/img/camera/camera_img.jpg" controls autoplay id="work__object__one"></video>
+            <video poster="/img/camera/build2.jpg" controls autoplay id="work__object__one"></video>
         </div>
         <div>
-            <video poster="/img/camera/camera_img2.png" controls autoplay id="work__object__two"></video>
+            <video poster="/img/camera/build1.webp" controls autoplay id="work__object__two"></video>
         </div>
-    </section>
+    </section> --}}
 
     <section class="delimiter">
         <div class="services flex">

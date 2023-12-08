@@ -175,10 +175,6 @@ return [
     |
     */
 
-    'icons'         => [
-        'orc' => \Orchid\IconPack\Path::getFolder(),
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Notifications

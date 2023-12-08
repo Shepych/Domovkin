@@ -12,6 +12,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@editorjs/editorjs": "^2.28.2",
         "streamedian": "github:Streamedian/html5_rtsp_player"
     }
 }

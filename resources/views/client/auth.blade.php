@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -125,11 +125,15 @@
     </style>
 </head>
 <body>
-    <form class="" action="">
+    <form action="{{ route('client.authorize') }}" method="POST">
+        @csrf
         <a class="logo" href="{{ route('index') }}">DOMOVKIN<span style="color: #126eff">.RU</span></a>
-        <input type="text" placeholder="Логин">
-        <input type="password" placeholder="••••••">
+        <input type="text" name="name" placeholder="Логин">
+        <input type="password" name="password" placeholder="••••••">
         <input class="submit__button" type="submit" value="Войти">
+        @error('login')
+            {{ $message }}
+        @enderror
     </form>
 </body>
 </html>
