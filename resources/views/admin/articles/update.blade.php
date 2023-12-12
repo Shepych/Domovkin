@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Создать</h1>
+    <h1>Редактирование статьи</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -20,14 +20,17 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('admin.articles.method.create') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('admin.articles.method.update', ['id' => $article->id]) }}" enctype="multipart/form-data">
         @csrf
-        <input type="text" name="title" placeholder="Заголовок" value="{{ old('title') }}"><br>
-        <input type="file" name="img">
-        <textarea name="description" style="display: block" placeholder="Описание">{{ old('description') }}</textarea><br>
-        <textarea name="seo_description" style="display: block" placeholder="SEO">{{ old('seo_description') }}</textarea><br>
-        <textarea id="tinymce" name="body">{{ old('body') }}</textarea>
-        <button>Создать</button>
+        <input type="text" name="title" placeholder="Заголовок" value="{{ old('title') ? old('title') : $article->title }}"><br>
+        <div style="display:flex;flex-direction:column;margin-top:30px;margin-bottom:30px">
+            <input type="file" name="img">
+            <img src="{{ $article->poster() }}" width="200px">
+        </div>
+        <textarea name="description" style="display: block" placeholder="Описание">{{ old('description') ? old('description') : $article->description }}</textarea><br>
+        <textarea name="seo_description" style="display: block" placeholder="SEO">{{ old('seo_description') ? old('seo_description') : $article->seo }}</textarea><br>
+        <textarea id="tinymce" name="body">{{ old('body') ? old('body') : $article->content }}</textarea>
+        <button>Сохранить</button>
     </form>
 
     <script src="https://cdn.tiny.cloud/1/3wrve23yhs9g7bb641i6jcht2m1pqvqci3aasw81z84r2ooo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
@@ -38,7 +41,7 @@
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
             image_title: true,
             automatic_uploads: true,
-            images_upload_url: '/admin/upload',
+            images_upload_url: '/admin/upload/{{ request()->id }}',
             file_picker_types: 'image',
         })
     </script>

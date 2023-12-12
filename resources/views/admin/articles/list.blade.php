@@ -8,8 +8,13 @@
 
 @foreach($articles as $article)
     <div>
-        Статья
-        <button>Изменить</button>
-        <button>Удалить</button>
+        Статья 
+        {{-- <img src="{{ $article->poster() }}" alt=""> --}}
+        <a style="display: inline-block;" href="{{ route('admin.articles.page.update', ['id' => $article->id]) }}">
+            <button>Изменить</button>
+        </a>
+        <a style="display: inline-block;" onclick="return confirm('Are you sure?')" href="{{ route('admin.articles.method.delete', ['id' => $article->id]) }}">
+            <button>Удалить</button>
+        </a>
     </div>
 @endforeach

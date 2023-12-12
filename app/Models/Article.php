@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Article extends Model
 {
@@ -17,10 +16,7 @@ class Article extends Model
         parent::__construct($attributes);
     }
 
-    protected $allowedSorts = [
-        'title'
-    ];
-    protected $allowedFilters = [
-        'title'
-    ];
+    public function poster() {
+        return "/storage/articles/$this->folder/$this->id/$this->img";
+    }
 }

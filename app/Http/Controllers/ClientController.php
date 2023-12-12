@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 
 class ClientController extends Controller
@@ -26,24 +28,28 @@ class ClientController extends Controller
 
     public function auth(Request $request) { # Авторизация
         $credentials = $request->validate([
-            'name' => ['required'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, true)) {
             $request->session()->regenerate();
 
             return redirect()->route('client.profile');
         }
 
         return back()->withErrors([
-            'login' => 'Неверный E-Mail',
+            'login' => 'Неверные данные',
         ]);
     }
 
     public function profile() { # Кабинет пользователя
         $user = Auth::user();
-
         return view('client.profile', compact('user'));
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('client.profile');
     }
 }

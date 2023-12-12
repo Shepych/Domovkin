@@ -128,7 +128,7 @@
     <form action="{{ route('client.authorize') }}" method="POST">
         @csrf
         <a class="logo" href="{{ route('index') }}">DOMOVKIN<span style="color: #126eff">.RU</span></a>
-        <input type="text" name="name" placeholder="Логин">
+        <input type="text" name="email" placeholder="E-Mail">
         <input type="password" name="password" placeholder="••••••">
         <input class="submit__button" type="submit" value="Войти">
         @error('login')
