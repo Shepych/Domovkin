@@ -22,9 +22,9 @@
                     </span>
                 </div>
                 <div class="project__item__info">
-                    <div>Площадь: <span style="color: white;">300 М2</span></div>
-                    <div>Материал: <span style="color: white">Газобетон</span></div>
-                    <div>Срок строительства: <span style="color: white">5 месяцев</span></div>
+                    <div>Площадь: <span style="color: white;">{{ $project->square }} М2</span></div>
+                    <div>Материал: <span style="color: white">{{ $project->material() }}</span></div>
+                    <div>Срок строительства: <span style="color: white">{{ $project->term }} месяцев</span></div>
                 </div>
 
 {{--                <button class="button" style="height: 50px;margin-left: 24px;font-size: 2px">Подробнее</button>--}}

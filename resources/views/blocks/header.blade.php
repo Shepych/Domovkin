@@ -16,7 +16,7 @@
     </section>
 
     <section class="flex header__menu">
-        <span class="lozung">Строительство коттеджей, бань, гаражей и беседок под ключ. Ремонт квартир и домов</span>
+        <span class="lozung">Строительство коттеджей, бань, гаражей и беседок под ключ. Ремонт квартир и домов. Реставрация архитектуры.</span>
     </section>
     <section class="main__menu">
         <ul class="flex">

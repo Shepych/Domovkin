@@ -25,6 +25,8 @@ Route::post('/application', [ClientController::class, 'application'])->name('cli
 
 Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
     Route::prefix('admin')->group(function() {
+        # СТАТЬИ
+
         Route::get('/articles', [AdminController::class, 'articles'])->name('articles.page');
         Route::get('/articles/create', [AdminController::class, 'createArticle'])->name('articles.page.create');
         Route::post('/articles/create', [AdminController::class, 'createArticle'])->name('articles.method.create');
@@ -33,6 +35,16 @@ Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
         Route::post('/articles/update/{id}', [AdminController::class, 'updateArticle'])->name('articles.method.update');
 
         Route::get('/articles/delete/{id}', [AdminController::class, 'deleteArticle'])->name('articles.method.delete');
+
+        # ПРОЕКТЫ
+        Route::get('/projects', [AdminController::class, 'projects'])->name('projects.page');
+        Route::get('/projects/create', [AdminController::class, 'createProject'])->name('projects.page.create');
+        Route::post('/projects/create', [AdminController::class, 'createProject'])->name('projects.method.create');
+
+        Route::get('/projects/update/{id}', [AdminController::class, 'updateProject'])->name('projects.page.update');
+        Route::post('/projects/update/{id}', [AdminController::class, 'updateProject'])->name('projects.method.update');
+
+        Route::get('/projects/delete/{id}', [AdminController::class, 'deleteProject'])->name('projects.method.delete');
 
         Route::post('/upload', [AdminController::class, 'upload']);
         Route::post('/upload/{id}', [AdminController::class, 'uploadEdit']);

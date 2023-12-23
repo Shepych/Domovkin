@@ -4,7 +4,7 @@
 
 @role('admin')
     <ul>
-        <li><a>Проекты</a></li>
+        <li><a href="{{ route('admin.projects.page') }}">Проекты</a></li>
         <li><a href="{{ route('admin.articles.page') }}">Статьи</a></li>
     </ul>
 @endrole

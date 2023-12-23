@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Project;
+use App\Models\Photos;
+use App\Models\Material;
+use App\Models\Roof;
 use App\Models\Attachment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -13,6 +17,7 @@ class AdminController extends Controller
 {
     public $maxFolders = 3;
     public $dir = 'articles/';
+    public $projectsDir = 'projects/';
 
     public function articles() {
         $articles = Article::all();
@@ -163,5 +168,136 @@ class AdminController extends Controller
         ]);
 
         return response()->json(['location' => "/storage" . $dir . $fileName]);
+    }
+
+    public function projects() {
+        $projects = Project::all();
+        return view('admin.projects.list', compact('projects'));
+    }
+
+    public function createProject(Request $request) {
+        $materials = Material::all();
+        $roofs = Roof::all();
+
+        if($request->post()) {
+            $request->validate([ # Валидация данных
+                'price' => 'required|integer',
+                'roof' => 'required|integer',
+                'material' => 'required|integer',
+                'floors' => 'required',
+                'square' => 'required',
+                'power' => 'required',
+                'description' => 'required',
+            ], [
+                'price.required' => 'Ценник отсутсвует',
+                'price.integer' => 'Ценник должен быть целым числом',
+                'material.required' => 'Материал не указан',
+                'material.integer' => 'Материал должен быть целым числом',
+                'roof.required' => 'Тип крыши не указан',
+                'roof.integer' => 'Тип крыши должен быть целым числом',
+                'floors.required' => 'Этажность не указана',
+                'square.required' => 'Квадратура дома не указана',
+                'power.required' => 'Потребляемая мощность не указана',
+                'description.required' => 'Описание отсутсвует',
+            ]);
+
+            $project = Project::create([
+                'price' => $request->price,
+                'term' => $request->term,
+                'material' => $request->material,
+                'roof' => $request->roof,
+                'floors' => $request->floors,
+                'square' => $request->square,
+                'power' => $request->power,
+                'description' => $request->description,
+            ]);
+
+            if($request->file('poster')) { # Меняем обложку
+                $path = "$this->projectsDir" . "$project->id";
+                $project->img = '/storage/' . $request->file('poster')->store($path);
+            }
+
+            if($request->file('photos')) { # Сохраняем картинки
+                $path = "$this->projectsDir" . "$project->id";
+                $photos = [];
+                foreach($request->file('photos') as $key => $photo) {
+                    $photos[$key]['project_id'] = $project->id;
+                    $photos[$key]['src'] = '/storage/' . $photo->store($path);
+                }
+                Photos::where('project_id', $project->id)->delete();
+                Photos::insert($photos);
+            }
+
+            $project->update();
+
+            return redirect()->back();
+        } else {
+            return view('admin.projects.create', compact('materials', 'roofs'));
+        }
+    }
+
+    public function updateProject(Request $request, $id) {
+        $project = Project::find($id);
+        $materials = Material::all();
+        $roofs = Roof::all();
+
+        if($request->post()) {
+            $request->validate([ # Валидация данных
+                'price' => 'required|integer',
+                'roof' => 'required|integer',
+                'material' => 'required|integer',
+                'floors' => 'required',
+                'square' => 'required',
+                'power' => 'required',
+                'description' => 'required',
+            ], [
+                'price.required' => 'Ценник отсутсвует',
+                'price.integer' => 'Ценник должен быть целым числом',
+                'material.required' => 'Материал не указан',
+                'material.integer' => 'Материал должен быть целым числом',
+                'roof.required' => 'Тип крыши не указан',
+                'roof.integer' => 'Тип крыши должен быть целым числом',
+                'floors.required' => 'Этажность не указана',
+                'square.required' => 'Квадратура дома не указана',
+                'power.required' => 'Потребляемая мощность не указана',
+                'description.required' => 'Описание отсутсвует',
+            ]);
+
+            $project->price = $request->price;
+            $project->term = $request->term;
+            $project->material = $request->material;
+            $project->roof = $request->roof;
+            $project->floors = $request->floors;
+            $project->square = $request->square;
+            $project->power = $request->power;
+            $project->description = $request->description;
+
+            if($request->file('poster')) { # Меняем обложку
+                $path = "$this->projectsDir" . "$project->id";
+                $project->img = '/storage/' . $request->file('poster')->store($path);
+            }
+
+            if($request->file('photos')) { # Сохраняем картинки
+                $path = "$this->projectsDir" . "$project->id";
+                $photos = [];
+                foreach($request->file('photos') as $key => $photo) {
+                    $photos[$key]['project_id'] = $project->id;
+                    $photos[$key]['src'] = '/storage/' . $photo->store($path);
+                }
+                Photos::where('project_id', $project->id)->delete();
+                Photos::insert($photos);
+            }
+
+            $project->update();
+
+            return redirect()->back();
+        } else {
+            return view('admin.projects.update', compact('project', 'materials', 'roofs'));
+        }
+    }
+
+    public function deleteProject(Request $request, $id) {
+        Project::find($id)->delete();
+        return redirect(route('admin.projects.page'));
     }
 }

@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-
             $table->string('name')->nullable();
-            $table->integer('price')->nullable();
+            $table->bigInteger('price')->nullable();
             $table->text('description')->nullable();
             $table->text('options')->nullable();
-            $table->integer('square')->default(0);
+            $table->bigInteger('square')->default(0);
             $table->string('img')->nullable();
-
+            $table->bigInteger('floors')->nullable();
+            $table->bigInteger('power')->nullable();
+            $table->integer('term')->nullable();
             $table->timestamps();
         });
     }

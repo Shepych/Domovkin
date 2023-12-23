@@ -15,10 +15,12 @@
                             <div class="swiper-slide">
                                 <img src="{{ $project->img }}">
                             </div>
+                            @foreach($project->photos() as $photo)
                             <div class="swiper-slide">
-                                <img src="/img/articles/2.webp">
+                                <img src="{{ $photo->src }}">
                             </div>
-                            <div class="swiper-slide">
+                            @endforeach
+                            {{-- <div class="swiper-slide">
                                 <img src="/img/articles/3.webp">
                             </div>
                             <div class="swiper-slide">
@@ -26,7 +28,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <img src="/img/articles/4.webp">
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -36,14 +38,14 @@
                             <div>
                                 <span class="project__page__price" style="opacity: 0.86;">{{ number_format($project->price, 0, '.', '.')  }} р</span>
                             </div>
-                            <div><span class="project__gray__span">Материал:</span> Газобетон</div>
-                            <div><span class="project__gray__span">Площадь:</span> <span style="flex-direction: row;margin-left: 10px">300 м<sup>&sup2;</sup></span></div>
-                            <div><span class="project__gray__span">Этажность:</span> 2</div>
+                            <div><span class="project__gray__span">Материал:</span> {{ $project->material() }}</div>
+                            <div><span class="project__gray__span">Площадь:</span> <span style="flex-direction: row;margin-left: 10px">{{ $project->square }} м<sup>&sup2;</sup></span></div>
+                            <div><span class="project__gray__span">Этажность:</span> {{ $project->floors }}</div>
 {{--                            <div><span class="project__gray__span">Этажность:</span> 2</div>--}}
 {{--                            <div><span class="project__gray__span">Этажность:</span> 2</div>--}}
 {{--                            <div><span class="project__gray__span">Этажность:</span> 2</div>--}}
-                            <div><span class="project__gray__span">Потребление:</span> 15 кВт</div>
-                            <div style="border-bottom: 0"><span class="project__gray__span">Форма кровли:</span> Плоская</div>
+                            <div><span class="project__gray__span">Потребление:</span> {{ $project->power }} кВт</div>
+                            <div style="border-bottom: 0"><span class="project__gray__span">Форма кровли:</span> {{ $project->roof() }}</div>
 
                         </div>
                     </div>
@@ -56,18 +58,11 @@
                         <div class="swiper-slide">
                             <img src="{{ $project->img }}">
                         </div>
+                        @foreach($project->photos() as $photo)
                         <div class="swiper-slide">
-                            <img src="/img/articles/2.webp">
+                            <img src="{{ $photo->src }}">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="/img/articles/3.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/articles/4.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/articles/4.webp">
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -79,13 +74,11 @@
     @endphp
     <div class="" style="max-width:2200px;margin:0 auto;margin-top: 35px;padding-left: 40px;padding-right: 40px;">
 {{--        <h2 style="text-align: center;font-family: Grotesk; margin: 40px 40px 40px 40px;font-size: 32px">Описание</h2>--}}
-        <p style="font-size: 24px;font-family: Euclid;margin-bottom: 40px">{{ $txt }}</p>
-        <p style="font-size: 24px;font-family: Euclid;margin-bottom: 40px">{{ $txt }}</p>
-        <p style="font-size: 24px;font-family: Euclid;margin-bottom: 40px">{{ $txt }}</p>
+        {!! $project->description !!}
 {{--        <button class="button gray__button" style="width: 350px;height: 70px;margin: 0 auto;margin-bottom: 20px;margin-top: 90px; background: #404549;font-size: 24px">Скачать план</button>--}}
-        <div class="flex project__footer">
+        {{-- <div class="flex project__footer">
             <img src="/img/homes/Слой 1.png">
-        </div>
+        </div> --}}
     </div>
 
     @include('blocks.footer')
