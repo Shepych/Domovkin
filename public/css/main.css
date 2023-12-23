@@ -201,6 +201,7 @@ header {
 
 .project__item img {
     transition: all 0.2s ease-out;
+    display: block;
 }
 
 .project__item:hover img {
@@ -679,7 +680,7 @@ video {
 
 .main__menu__active {
     background-color: #011d42;
-    border-bottom: 5px solid rgb(0,0,0,0) !important;
+    /* border-bottom: 5px solid rgb(0,0,0,0) !important; */
 }
 
 .main__menu__active a {
@@ -776,6 +777,12 @@ video {
     /*max-height: 900px !important;*/
 }
 
+.lozung {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
 @media screen and (max-width: 1280px) {
     .index__text {
         font-size: 20px !important;
@@ -816,7 +823,45 @@ video {
     z-index: 22;
 }
 
+@media screen and (max-width: 900px) {
+    .footer__main__page {
+        height: auto;
+        padding-top: 35px;
+    }
+
+    .footer__main__page span:nth-child(1) {
+        display: none;
+    }
+
+    .footer__main__page span img {
+        margin-bottom: 10px;
+    }
+
+    .footer__main__page .flex {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 800px) {
+    .main__menu ul li a img {
+        width: 35px !important;
+    }
+
+    .main__menu__open {
+        height: 61px;
+    }
+
+    .main__menu ul li {
+        height: 61px;
+    }
+    
+    .phone {
+        margin-left: 0;
+    }
+
+    .user__icon {
+        display: none;
+    }
     .main__header__row {
         height: 60px !important;
     }
@@ -909,5 +954,17 @@ video {
 
     .question__row {
         font-size: 22px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .phone {
+        display: none !important;
+    }
+    
+    .main__header__row {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
 }

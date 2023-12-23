@@ -45,7 +45,7 @@
 {{--            </div>--}}
 {{--        </section>--}}
 
-        <div class="grid" style="display: flex;height: 640px;overflow: hidden;justify-content: center;align-items: center">
+        <div class="grid home__animation__wrapper" style="display: flex;height: 640px;overflow: hidden;justify-content: center;align-items: center">
             <section class="home__animation">
                 <img src="/img/camera/camera.png" class="camera" alt="Камера видеонаблюдения">
                 {{-- <lottie-player src="/animations/blue_house.json" background="Transparent" speed="0.5"  direction="1" mode="normal" loop autoplay></lottie-player> --}}
