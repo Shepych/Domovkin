@@ -24,12 +24,29 @@
 
 
 let swiper = new Swiper(".swiper2", {
-    loop: true,
+    // loop: true,
     spaceBetween: 40,
-    slidesPerView: 5,
+    slidesPerView: 1,
     freeMode: true,
-    watchSlidesProgress: true,
-    pagination: false
+    pagination: false,
+    autoResize: false,
+    breakpoints: {
+        // when window width is >= 320px
+        100: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 40
+        }
+      }
 });
 let swiper2 = new Swiper(".swiper", {
     loop: true,
@@ -37,5 +54,5 @@ let swiper2 = new Swiper(".swiper", {
     thumbs: {
         swiper: swiper,
     },
-    pagination: false
+    pagination: false,
 });

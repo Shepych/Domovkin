@@ -894,8 +894,15 @@ video {
 }
 
 @media screen and (max-width: 800px) {
+    .article__header {
+        padding: 30px !important;
+    }
     .article__sub {
         display: block !important;
+        font-size: 18px !important;
+    }
+    .article__sub img {
+        width: 18px !important;
     }
     .main__menu ul li a span {
         padding: 0;
