@@ -783,6 +783,19 @@ video {
     text-align: center;
 }
 
+@media screen and (max-width: 1500px) {
+    .main__slider__wrapper {
+        height: auto !important;
+    }
+    .project__right__column {
+        display: none;
+    }
+
+    .project__left__column {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     .article__row {
         width: calc(50% - 20px);
