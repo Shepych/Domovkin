@@ -257,22 +257,13 @@
     .camera {
       max-width: 350px;
     }
+
     .index__text {
       margin: 40px !important;
     }
-    .home__animation__wrapper {
-      height: auto !important;
-      display: block !important;
-    }
-    .home__animation {
-      min-width: 100% !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0;
-      margin-bottom: 0;
-      min-width: 0;
-    }
+
+    
+
     #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
       /* margin-top: 20px; */
       height: 30px;
