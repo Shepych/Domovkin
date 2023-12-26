@@ -61,8 +61,8 @@
             });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+    {{-- <script>
         let csrf = '@csrf';
         function application() { // Заявка
             Swal.fire({
@@ -83,7 +83,7 @@
                 $('#swal-input-phone').inputmask("+7 (999) 999-99-99");
             });
         }
-    </script>
+    </script> --}}
     @yield('js')
 </body>
 </html>
