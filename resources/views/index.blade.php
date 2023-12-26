@@ -50,7 +50,7 @@
                 <img src="/img/camera/camera.png" class="camera" alt="Камера видеонаблюдения">
                 {{-- <lottie-player src="/animations/blue_house.json" background="Transparent" speed="0.5"  direction="1" mode="normal" loop autoplay></lottie-player> --}}
             </section>
-            <p class="index__text" style="font-size: 26px;margin-left:80px;margin-bottom: 60px;position: relative;z-index: 100">
+            <p class="index__text" style="font-size: 26px;margin-left:80px;margin-right:80px;margin-bottom: 60px;position: relative;z-index: 100">
                 На всех наших объектах устанавливается видеонаблюдение которое выводится
                 заказчикам в личный кабинет. Таким образом наши клиенты могут удалённо
                 наблюдать и контролировать процесс строительства своего объекта, а так же видеть качество выполнения нашей работы.
