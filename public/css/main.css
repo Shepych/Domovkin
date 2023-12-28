@@ -783,7 +783,7 @@ video {
     text-align: center;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1400px) {
     .main__slider__wrapper {
         height: auto !important;
     }

@@ -43,7 +43,7 @@ let swiper = new Swiper(".swiper2", {
         },
         // when window width is >= 640px
         640: {
-          slidesPerView: 4,
+          slidesPerView: 5,
           spaceBetween: 40
         }
       }
