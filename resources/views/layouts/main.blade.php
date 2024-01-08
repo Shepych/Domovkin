@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/hamburger.css">
+    <link rel="icon" type="image/x-icon" href="/img/domicon.png">
     <title>Строительство домов</title>
     @yield('css')
 </head>

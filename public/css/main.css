@@ -373,8 +373,8 @@ header {
     border: none;
     color: white;
     height: 50px;
-    padding-left: 40px;
-    padding-right: 40px;
+    max-width: 230px;
+    width: 100%;
     font-size: 20px;
     position: relative;
     z-index: 100;
@@ -653,7 +653,6 @@ video {
 
 .main__menu {
     color: white;
-    border-bottom: 1px solid #3c5d82;
     border-top: 1px solid #3c5d82;
     height: 0;
     transition: 0.2s;
@@ -662,6 +661,7 @@ video {
 
 .main__menu__open {
     height: 81px;
+    border-bottom: 1px solid #3c5d82 !important;
 }
 
 .main__menu ul {
@@ -786,13 +786,27 @@ video {
 @media screen and (max-width: 1400px) {
     .main__slider__wrapper {
         height: auto !important;
+        display: block;
     }
+    
     .project__right__column {
-        display: none;
+        min-width: 0;
     }
 
     .project__left__column {
         width: 100%;
+    }
+
+    .project__characteristics .flex div {
+        height: 50px;
+    }
+    
+    .project__characteristics div {
+        font-size: 18px;
+    }
+
+    .project__page__price {
+        font-size: 28px !important;
     }
 }
 
@@ -907,6 +921,10 @@ video {
 }
 
 @media screen and (max-width: 800px) {
+    .home__animation__wrapper {
+        padding-top: 20px;
+    }
+
     .article__header {
         padding: 30px !important;
     }

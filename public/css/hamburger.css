@@ -254,6 +254,15 @@
   }
 
   @media screen and (max-width: 800px) {
+
+    .main__menu ul li:hover a span {
+      border-bottom: 5px solid transparent;
+    }
+
+    #nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+      border-radius: 0;
+    }
+
     .camera {
       max-width: 350px;
     }
