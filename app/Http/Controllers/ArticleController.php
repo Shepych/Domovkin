@@ -25,6 +25,6 @@ class ArticleController extends Controller
             $article->update();
         }
 
-        return response()->view('articles.detail', compact('article'))->withCookie(cookie($coockieName, true, $minutes));
+        return response()->view('articles.detail', compact('article'))->withCookie(cookie($cookieName, true, $minutes));
     }
 }
