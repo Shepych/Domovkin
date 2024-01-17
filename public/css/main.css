@@ -195,6 +195,17 @@ header {
     z-index: 15;
 }
 
+.project__additional__info {
+    background-color: #3c5d82;
+    color: white;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px black;
+}
+
 .project__img__wrapper {
     overflow: hidden;
 }
@@ -843,11 +854,18 @@ video {
 }
 
 .main__header__row {
-    height: 130px !important;
+    display: flex;
+    /* height: 130px !important; */
+    height: 160px !important;
     position: relative;
     z-index: 22;
     width: 100%;
     border-bottom: 0 !important;
+    justify-content: space-between;
+}
+
+.request__call {
+    margin-left: auto !important;
 }
 
 .header__menu {

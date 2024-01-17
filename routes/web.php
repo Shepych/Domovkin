@@ -8,9 +8,12 @@ use App\Http\Controllers\ClientController;
 
 
 Route::get('/', [MainController::class, 'index'])->name('index');
-Route::get('/project/{id}', [MainController::class, 'project'])->name('project.detail');
+Route::get('/projects/{id}', [MainController::class, 'project'])->name('project.detail');
+Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 Route::get('/articles', [ArticleController::class, 'list'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'detail'])->name('articles.detail');
+Route::get('/services', [MainController::class, 'services'])->name('services');
+Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
 
 Route::get('/login', [ClientController::class, 'login'])->name('login');
 Route::post('/auth', [ClientController::class, 'auth'])->name('client.authorize');
@@ -26,7 +29,6 @@ Route::post('/application', [ClientController::class, 'application'])->name('cli
 Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
     Route::prefix('admin')->group(function() {
         # СТАТЬИ
-
         Route::get('/articles', [AdminController::class, 'articles'])->name('articles.page');
         Route::get('/articles/create', [AdminController::class, 'createArticle'])->name('articles.page.create');
         Route::post('/articles/create', [AdminController::class, 'createArticle'])->name('articles.method.create');
