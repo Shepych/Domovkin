@@ -93,9 +93,27 @@ header {
     background: linear-gradient(180deg,#022d5a,#0e3d6f);
 }
 
+.gray__char {
+    color: #778fa8;
+    font-weight: bold;
+}
+
+.gray__char__deffis {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
 .phone {
     margin-left: 24px;
-    opacity: 0.46;
+    color: white;
+    /* margin-left: auto !important; */
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.request__call {
+    margin-left: auto !important;
 }
 
 .bold {
@@ -199,11 +217,11 @@ header {
     background-color: #3c5d82;
     color: white;
     padding: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 0 2px black;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .project__img__wrapper {
@@ -789,9 +807,13 @@ video {
 }
 
 .lozung {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    text-align-last: justify;
+    max-width: 666px;
+    font-size: 22px;
+    color: #7992ad !important;
 }
 
 @media screen and (max-width: 1400px) {
@@ -862,10 +884,6 @@ video {
     width: 100%;
     border-bottom: 0 !important;
     justify-content: space-between;
-}
-
-.request__call {
-    margin-left: auto !important;
 }
 
 .header__menu {
