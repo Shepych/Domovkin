@@ -28,8 +28,10 @@
                     <div>Срок строительства: <span style="color: white">{{ $project->term }} месяцев</span></div>
                 </div>
 
-                <div class="project__additional__info">
-                    123123
+                
+
+                <div class="project__additional__info flex">
+                    <img src="/img/power.svg" width="34px" alt=""> <span style="font-size: 18px">{{ $project->power }} кВт</span>
                 </div>
             </a>
         @endforeach

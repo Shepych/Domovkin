@@ -105,7 +105,8 @@ header {
 
 .phone {
     margin-left: 24px;
-    color: white;
+    /* color: white; */
+    color: #7992ad !important;
     /* margin-left: auto !important; */
     display: flex !important;
     justify-content: center;
@@ -168,7 +169,7 @@ header {
 .logo {
     color: white;
     font-family: Grotesk;
-    font-size: 32px;
+    font-size: 40px;
     text-decoration: none;
 }
 
@@ -214,14 +215,15 @@ header {
 }
 
 .project__additional__info {
-    background-color: #3c5d82;
+    /* background-color: #3c5d82; */
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 2px black;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 2px black; */
     margin-right: 30px;
     margin-left: 30px;
+    margin-top: 10px;
 }
 
 .project__img__wrapper {
@@ -229,7 +231,7 @@ header {
 }
 
 .project__item img {
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
     display: block;
 }
 
@@ -267,6 +269,7 @@ header {
     padding-left: 30px;
     padding-right: 30px;
     font-size: 25px;
+    margin-top: 10px;
 }
 
 .show__more {
@@ -813,7 +816,7 @@ video {
     text-align-last: justify;
     max-width: 666px;
     font-size: 22px;
-    color: #7992ad !important;
+    
 }
 
 @media screen and (max-width: 1400px) {
