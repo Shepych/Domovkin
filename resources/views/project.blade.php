@@ -8,7 +8,7 @@
 @section('content')
     <section style="max-width: 2200px;margin: 0 auto">
 {{--        <div style="background-color: white !important;box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);overflow: hidden">--}}
-            <section class="flex main__slider__wrapper" style="align-items: stretch;padding-right: 0;padding-left: 0;height: calc(100vh - 241px);max-height: 1000px;">
+            <section class="flex main__slider__wrapper" style="align-items: stretch;padding-right: 0;padding-left: 0;height: calc(100vh - 251px);max-height: 1000px;">
                 <div class="project__left__column">
                     <div class="swiper">
                         <div class="swiper-wrapper" style="align-items: stretch;">

@@ -5,7 +5,7 @@ use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ClientController;
-
+use App\Http\Controllers\TelegramController;
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/projects/{id}', [MainController::class, 'project'])->name('project.detail');
@@ -52,3 +52,5 @@ Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
         Route::post('/upload/{id}', [AdminController::class, 'uploadEdit']);
     });
 });
+
+Route::get('/bot', [TelegramController::class, 'bot'])->name('bot');
