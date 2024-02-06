@@ -80,7 +80,7 @@ class TelegramController extends Controller
             // $sendMessageQuery = http_build_query($sendMessage);
             // $response = file_get_contents("https://api.telegram.org/bot{$this->token}/sendMessage?$sendMessageQuery");
             
-            $resNew = json_decode($response);
+            // $resNew = json_decode($response);
             $result = json_decode($response, true);
 
             // DB::table('telegram_users')->updateOrInsert([
@@ -94,8 +94,8 @@ class TelegramController extends Controller
             // ]);
 
             DB::table('telegram_applications')->insert([
-                'user_id' =>  $resNew->result->chat->id,
-                'description' => $response
+                'user_id' =>  111,
+                'description' => $result['result']['chat']['id']
             ]);
         }
 
