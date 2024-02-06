@@ -33,8 +33,6 @@ class TelegramController extends Controller
         // Получение текста сообщения
         $message = isset($update['message']['text']) ? $update['message']['text'] : '';
         
-        
-        
         if ($message == '/start') {
             $chatId = $update['message']['chat']['id'];
             $keyboard = [
@@ -91,6 +89,36 @@ class TelegramController extends Controller
                 'last_callback' => 'start',
             ]);
             
+        } else {
+            $chatId = $update['message']['chat']['id'];
+            // Обрабатывать заявку
+            $userInfo = DB::table('telegram_users')->where('user_id', $chatId)->first();
+            $newCallback = '';
+            switch ($userInfo->last_callback) {
+                case 'start':
+                    $newCallback = 'step_1';
+                    break;
+
+                case 'step_1': # Введите имя
+                    $newCallback = 'step_2';
+                    break;
+
+                case 'step_2': # Введите телефон
+                    $newCallback = 'step_3';
+                    break;
+
+                case 'step_3': # Введите ваше сообщение
+                    $this->sendMessage($chatId, 'Заявка оформлена успешно');
+                    $newCallback = 'start';
+                    break;
+                default:
+                    $newCallback = $userInfo->last_callback;
+                    break;
+            }
+
+            DB::table('telegram_users')->where('user_id', $chatId)->update([
+                'last_callback' => $newCallback,
+            ]);
         }
 
         if (isset($update['callback_query'])) {
@@ -123,7 +151,7 @@ class TelegramController extends Controller
                 'last_callback' => $callbackData,
             ]);
         }
-        
+
         return true;
     }
     
