@@ -94,8 +94,8 @@ class TelegramController extends Controller
             // ]);
 
             DB::table('telegram_applications')->insert([
-                'user_id' =>  isset($result['result']['chat']['id']) ? 1111 : 2222,
-                'description' => $result['result']['chat']['id']
+                'user_id' =>  $result['result']['chat']['id'],
+                'description' => $response
             ]);
         }
 
