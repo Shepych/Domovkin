@@ -82,7 +82,7 @@ class TelegramController extends Controller
             
             
             $result = json_decode($response, true);
-            
+
             // DB::table('telegram_users')->updateOrInsert([
             //     'user_id' =>  $result['result']['chat']['id']
             // ],
@@ -94,7 +94,8 @@ class TelegramController extends Controller
             // ]);
 
             DB::table('telegram_applications')->insert([
-                'user_id' =>  $result['result']['chat']['id'],
+                'user_id' =>  123123123,
+                'description' => $response
             ]);
         }
 
