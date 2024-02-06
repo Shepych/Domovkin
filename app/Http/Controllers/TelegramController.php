@@ -128,16 +128,19 @@ class TelegramController extends Controller
             $userInfo = DB::table('telegram_users')->where('user_id', $chatId)->first();
             $newCallback = '';
             switch ($userInfo->last_callback) {
-                case 'start':
+                case 'application':
                     $newCallback = 'step_1';
+                    $this->sendMessage($chatId, 'Введите имя');
                     break;
 
                 case 'step_1': # Введите имя
                     $newCallback = 'step_2';
+                    $this->sendMessage($chatId, 'Введите телефон');
                     break;
 
                 case 'step_2': # Введите телефон
                     $newCallback = 'step_3';
+                    $this->sendMessage($chatId, 'Введите сообщение');
                     break;
 
                 case 'step_3': # Введите ваше сообщение
