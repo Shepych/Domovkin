@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp;
+use Illuminate\Support\Facades\DB;
 
 class TelegramController extends Controller
 {
@@ -14,10 +15,171 @@ class TelegramController extends Controller
     }
 
     public function bot() {
-        $client = new GuzzleHttp\Client();
-        $result = json_decode($client->get("https://api.telegram.org/bot{$this->token}/getMe")->getBody()->getContents());
-        # Когда message /start - отдаём меню
-        dd($result);
-        return 123123;
+        # Хук
+        // $webhookUrl = 'https://domovkin.ru/bot';
+        // $apiUrl = "https://api.telegram.org/bot{$this->token}/";
+        // $setWebhookUrl = $apiUrl . 'setWebhook?url=' . urlencode($webhookUrl);
+        // $response = file_get_contents($setWebhookUrl);
+        // $response = json_decode($response, true);
+
+        // if ($response['ok']) {
+        //     echo 'Вебхук успешно установлен!';
+        // } else {
+        //     echo 'Ошибка при установке вебхука: ' . $response['description'];
+        // }
+        $update = file_get_contents("php://input");
+        $update = json_decode($update, true);
+        
+        // Получение текста сообщения
+        $message = isset($update['message']['text']) ? $update['message']['text'] : '';
+        
+        
+        
+        if ($message == '/start') {
+            $chatId = $update['message']['chat']['id'];
+            $keyboard = [
+                // 'keyboard' => [
+                //     [['text' => 'Кнопка 1'], ['text' => 'Кнопка 2']],
+                //     [['text' => 'Кнопка 3'], ['text' => 'Кнопка 4']],
+                // ],
+                'inline_keyboard' => [
+                    [
+                        ['text' => 'Проекты', 'callback_data' => 'projects'],
+                        ['text' => 'Услуги', 'callback_data' => 'services'],
+                    ],
+                    [
+                        ['text' => 'Оформить заявку', 'callback_data' => 'application'],
+                        ['text' => 'О нас', 'callback_data' => 'about'],
+                    ]
+                ]
+            ];
+        
+            $imageUrl = 'https://domovkin.ru/storage/projects/2/otPs3JOB9dm2NX4UUlITrQg37dEydQTAI9KPydvW.png';
+            $encodedKeyboard = json_encode($keyboard);
+        
+            $sendMessage = [
+                'chat_id' => $chatId,
+                'caption' => 'Наша компания занимается строительством домов и ремонтом квартир, а так же реставрацией архитектуры по Москве и Московской области',
+                'reply_markup' => $encodedKeyboard,
+                'photo' => $imageUrl,
+                'parse_mode' => 'HTML'
+            ];
+        
+        
+            // Отправляем запрос
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot{$this->token}/sendPhoto");
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $sendMessage);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            curl_close($ch);
+            
+            
+            // $sendMessageQuery = http_build_query($sendMessage);
+            // $response = file_get_contents("https://api.telegram.org/bot{$this->token}/sendMessage?$sendMessageQuery");
+            
+            
+            $result = json_decode($response, true);
+            DB::table('telegram_users')->updateOrInsert([
+                'user_id' =>  $result['result']['chat']['id']
+            ],
+            [
+                'user_id' =>  $result['result']['chat']['id'],
+                'message_id' => $result['result']['message_id'],
+                'text' => $response,
+                'last_callback' => 'start',
+            ]);
+            
+        }
+
+        if (isset($update['callback_query'])) {
+            $chatId = $update['callback_query']['message']['chat']['id'];
+            $callbackData = $update['callback_query']['data'];
+        
+            // Обработка действий в зависимости от callback_data
+            switch ($callbackData) {
+                case 'projects':
+                    // Обновить сообщение
+                    // $this->editMessage($chatId);
+                    $this->sendMessage($chatId, 'Проекты');
+                    break;
+                case 'services':
+                    // Отправить смс
+                    $this->sendMessage($chatId, 'Услуги');
+                    break;
+                case 'about':
+                    // Отправить смс
+                    $this->sendMessage($chatId, 'О нас');
+                    break;
+                case 'application':
+                    // Отправить смс
+                    // $this->deleteMessages($chatId);
+                    $this->sendMessage($chatId, 'Заявка');
+                    break;
+            }
+
+            DB::table('telegram_users')->where('user_id', $chatId)->update([
+                'last_callback' => $callbackData,
+            ]);
+        }
+        
+        return true;
+    }
+    
+    public function sendMessage($chatId, $text) {
+        $apiUrl = "https://api.telegram.org/bot{$this->token}/";
+    
+        $message = [
+            'chat_id' => $chatId,
+            'text' => $text,
+        ];
+    
+        $sendMessageUrl = $apiUrl . 'sendMessage?' . http_build_query($message);
+        file_get_contents($sendMessageUrl);
+    }
+    
+    public function deleteMessages($chatId) {
+        $apiUrl = "https://api.telegram.org/bot{$this->token}/";
+        
+        $messages = json_decode(file_get_contents($apiUrl . "getChatHistory?chat_id={$chatId}"));
+
+        if ($messages->ok) {
+            foreach ($messages->result as $message) {
+                // Получаем ID каждого сообщения и удаляем его
+                $messageId = $message->message_id;
+                file_get_contents($apiUrl . "deleteMessage?chat_id={$chatId}&message_id={$messageId}");
+                // Можно добавить задержку между удалениями, чтобы не нагружать сервер
+                // sleep(1);
+            }
+        }
+    }
+    
+    public function editMessage($chatId) {
+        $row = DB::table('webhook')->where('user_id', $chatId)->first();
+        $apiUrl = "https://api.telegram.org/bot{$this->token}/";
+    
+        $keyboard = [
+                'inline_keyboard' => [
+                    [
+                        ['text' => 'Black Button 3', 'callback_data' => 'black_button_1'],
+                    ],
+                    [
+                        ['text' => 'Black Button 4', 'callback_data' => 'black_button_2'],
+                    ],
+                ],
+            ];
+        
+            $encodedKeyboard = json_encode($keyboard);
+        
+            $sendMessage = [
+                'message_id' => $row->message_id,
+                'chat_id' => $chatId,
+                'text' => '321',
+                'reply_markup' => $encodedKeyboard,
+            ];
+        
+            $sendMessageQuery = http_build_query($sendMessage);
+            $response = file_get_contents("https://api.telegram.org/bot{$this->token}/editMessageText?$sendMessageQuery");
     }
 }
