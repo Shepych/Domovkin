@@ -46,13 +46,16 @@ class TelegramController extends Controller
                         ['text' => '🔵 Услуги', 'callback_data' => 'services'],
                     ],
                     [
-                        ['text' => '🔵 Оформить заявку', 'callback_data' => 'application'],
-                        ['text' => '🔵 О нас', 'callback_data' => 'about'],
+                        ['text' => '🔵 О компании', 'callback_data' => 'about'],
+                        ['text' => '🔵 Сайт', 'url' => 'https://domovkin.ru'],
+                    ],
+                    [
+                        ['text' => '🔵 Оформить заявку', 'callback_data' => 'application']
                     ]
                 ]
             ];
         
-            $imageUrl = 'https://domovkin.ru/storage/projects/2/otPs3JOB9dm2NX4UUlITrQg37dEydQTAI9KPydvW.png';
+            $imageUrl = 'https://domovkin.ru/img/domovkin.png';
             $encodedKeyboard = json_encode($keyboard);
         
             $sendMessage = [
@@ -98,6 +101,7 @@ class TelegramController extends Controller
             // Обработка действий в зависимости от callback_data
             switch ($callbackData) {
                 case 'projects':
+                    $imageUrl = 'https://domovkin.ru/storage/projects/2/otPs3JOB9dm2NX4UUlITrQg37dEydQTAI9KPydvW.png';
                     // Обновить сообщение
                     // $this->editMessage($chatId);
                     $this->sendMessage($chatId, 'Проекты');
