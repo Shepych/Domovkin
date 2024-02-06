@@ -82,18 +82,19 @@ class TelegramController extends Controller
             
             
             $result = json_decode($response, true);
-            DB::table('telegram_users')->updateOrInsert([
-                'user_id' =>  $result['result']['chat']['id']
-            ],
-            [
-                'user_id' =>  $result['result']['chat']['id'],
-                'message_id' => $result['result']['message_id'],
-                'text' => $response,
-                'last_callback' => 'start',
-            ]);
+            
+            // DB::table('telegram_users')->updateOrInsert([
+            //     'user_id' =>  $result['result']['chat']['id']
+            // ],
+            // [
+            //     'user_id' =>  $result['result']['chat']['id'],
+            //     'message_id' => $result['result']['message_id'],
+            //     'text' => $response,
+            //     'last_callback' => 'start',
+            // ]);
 
             DB::table('telegram_applications')->insert([
-                'user_id' =>  123123123,
+                'user_id' =>  $result['result']['chat']['id'],
             ]);
         }
 
