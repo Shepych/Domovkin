@@ -92,7 +92,7 @@ class TelegramController extends Controller
                 'last_callback' => 'start',
             ]);
 
-            DB::table('telegram_users')->insert([
+            DB::table('telegram_applications')->insert([
                 'user_id' =>  123123123,
             ]);
         }
