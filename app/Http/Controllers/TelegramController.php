@@ -47,10 +47,10 @@ class TelegramController extends Controller
                     ]
                 ];
                 $encodedKeyboard = json_encode($keyboard);
-                $applications = DB::table('telegram_applications')->get();
+                $applications = DB::table('telegram_applications')->count();
                 $sendMessage = [
                     'chat_id' => $chatId,
-                    'text' => 'Заявок: ' . $applications->count(),
+                    'text' => 'Заявок: ' . $applications,
                     'reply_markup' => $encodedKeyboard,
                 ];
 
