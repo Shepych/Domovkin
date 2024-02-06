@@ -83,84 +83,84 @@ class TelegramController extends Controller
             // $resNew = json_decode($response);
             $result = json_decode($response, true);
 
-            // DB::table('telegram_users')->updateOrInsert([
-            //     'user_id' =>  $result['result']['chat']['id']
-            // ],
-            // [
-            //     'user_id' =>  $result['result']['chat']['id'],
-            //     'message_id' => $result['result']['message_id'],
-            //     'text' => $response,
-            //     'last_callback' => 'start',
-            // ]);
+            DB::table('telegram_users')->updateOrInsert([
+                'user_id' =>  $result['result']['chat']['id']
+            ],
+            [
+                'user_id' =>  $result['result']['chat']['id'],
+                'message_id' => $result['result']['message_id'],
+                'text' => $response,
+                'last_callback' => 'start',
+            ]);
 
-            DB::table('telegram_applications')->insert([
-                'user_id' =>  1111,
-                'description' => $result['result']['chat']['id']
+            // DB::table('telegram_applications')->insert([
+            //     'user_id' =>  $result['result']['chat']['id'],
+            //     'description' => $response
+            // ]);
+        }
+
+        if (isset($update['callback_query'])) {
+            $chatId = $update['callback_query']['message']['chat']['id'];
+            $callbackData = $update['callback_query']['data'];
+        
+            // Обработка действий в зависимости от callback_data
+            switch ($callbackData) {
+                case 'projects':
+                    $imageUrl = 'https://domovkin.ru/storage/projects/2/otPs3JOB9dm2NX4UUlITrQg37dEydQTAI9KPydvW.png';
+                    // Обновить сообщение
+                    // $this->editMessage($chatId);
+                    $this->sendMessage($chatId, 'Проекты');
+                    break;
+                case 'services':
+                    // Отправить смс
+                    $this->sendMessage($chatId, 'Услуги');
+                    break;
+                case 'about':
+                    // Отправить смс
+                    $this->sendMessage($chatId, 'О нас');
+                    break;
+                case 'application':
+                    $callbackData = 'step_1';
+                    // Отправить смс
+                    // $this->deleteMessages($chatId);
+                    $this->sendMessage($chatId, 'Введите имя');
+                    break;
+            }
+
+            DB::table('telegram_users')->where('user_id', $chatId)->update([
+                'last_callback' => $callbackData,
             ]);
         }
 
-        // if (isset($update['callback_query'])) {
-        //     $chatId = $update['callback_query']['message']['chat']['id'];
-        //     $callbackData = $update['callback_query']['data'];
-        
-        //     // Обработка действий в зависимости от callback_data
-        //     switch ($callbackData) {
-        //         case 'projects':
-        //             $imageUrl = 'https://domovkin.ru/storage/projects/2/otPs3JOB9dm2NX4UUlITrQg37dEydQTAI9KPydvW.png';
-        //             // Обновить сообщение
-        //             // $this->editMessage($chatId);
-        //             $this->sendMessage($chatId, 'Проекты');
-        //             break;
-        //         case 'services':
-        //             // Отправить смс
-        //             $this->sendMessage($chatId, 'Услуги');
-        //             break;
-        //         case 'about':
-        //             // Отправить смс
-        //             $this->sendMessage($chatId, 'О нас');
-        //             break;
-        //         case 'application':
-        //             $callbackData = 'step_1';
-        //             // Отправить смс
-        //             // $this->deleteMessages($chatId);
-        //             $this->sendMessage($chatId, 'Введите имя');
-        //             break;
-        //     }
+        if(!isset($update['callback_query']) && $message != '/start') {
+            $chatId = $update['message']['chat']['id'];
+            // Обрабатывать заявку
+            $userInfo = DB::table('telegram_users')->where('user_id', $chatId)->first();
+            $newCallback = '';
+            switch ($userInfo->last_callback) {
+                case 'step_1':
+                    $newCallback = 'step_2';
+                    $this->sendMessage($chatId, 'Введите телефон');
+                    break;
 
-        //     DB::table('telegram_users')->where('user_id', $chatId)->update([
-        //         'last_callback' => $callbackData,
-        //     ]);
-        // }
+                case 'step_2': # Введите имя
+                    $newCallback = 'step_3';
+                    $this->sendMessage($chatId, 'Введите сообщение');
+                    break;
 
-        // if(!isset($update['callback_query']) && $message != '/start') {
-        //     $chatId = $update['message']['chat']['id'];
-        //     // Обрабатывать заявку
-        //     $userInfo = DB::table('telegram_users')->where('user_id', $chatId)->first();
-        //     $newCallback = '';
-        //     switch ($userInfo->last_callback) {
-        //         case 'step_1':
-        //             $newCallback = 'step_2';
-        //             $this->sendMessage($chatId, 'Введите телефон');
-        //             break;
+                case 'step_3': # Введите ваше сообщение
+                    $this->sendMessage($chatId, '✅ Заявка отправлена ✅');
+                    $newCallback = 'start';
+                    break;
+                default:
+                    $newCallback = $userInfo->last_callback;
+                    break;
+            }
 
-        //         case 'step_2': # Введите имя
-        //             $newCallback = 'step_3';
-        //             $this->sendMessage($chatId, 'Введите сообщение');
-        //             break;
-
-        //         case 'step_3': # Введите ваше сообщение
-        //             $this->sendMessage($chatId, '✅ Заявка отправлена ✅');
-        //             $newCallback = 'start';
-        //             break;
-        //         default:
-        //             $newCallback = $userInfo->last_callback;
-        //             break;
-        //     }
-
-        //     DB::table('telegram_users')->where('user_id', $chatId)->update([
-        //         'last_callback' => $newCallback,
-        //     ]);
-        // }
+            DB::table('telegram_users')->where('user_id', $chatId)->update([
+                'last_callback' => $newCallback,
+            ]);
+        }
 
         // return true;
 

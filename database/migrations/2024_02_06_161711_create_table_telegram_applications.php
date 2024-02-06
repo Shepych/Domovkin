@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('telegram_applications', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('user_id');
+            $table->text('user_id');
             $table->text('name')->nullable();
             $table->text('phone')->nullable();
             $table->text('description')->nullable();
