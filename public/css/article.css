@@ -11,7 +11,7 @@ strong {
 
 .article__page__title {
     color: #262626;
-    font-size: 60px;
+    font-size: 56px;
     font-family: Grotesk;
     text-align: center;
     /*margin-bottom: 40px;*/
@@ -25,7 +25,7 @@ strong {
 .article__content {
     /*padding: 40px;*/
     padding-top: 40px;
-    font-size: 24px;
+    font-size: 22px;
     color: #262626;
 }
 
@@ -44,6 +44,7 @@ strong {
 }
 
 .article__header {
+    border-radius: 20px;
     /*max-width: 950px;*/
     width: 100%;
     padding: 40px;
