@@ -54,7 +54,7 @@ class TelegramController extends Controller
                     'reply_markup' => $encodedKeyboard,
                 ];
 
-                $url = "https://api.telegram.org/bot{$this->token}/sendMessage?" . http_build_query($message);
+                $url = "https://api.telegram.org/bot{$this->token}/sendMessage?" . http_build_query($sendMessage);
                 file_get_contents($url);
             } else { # Если обычный пользователь
                 $keyboard = [
