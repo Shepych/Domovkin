@@ -110,7 +110,8 @@ class TelegramController extends Controller
                     // Отправить смс
                     $this->sendMessage($chatId, 'О нас');
                     break;
-                case 'step_1':
+                case 'application':
+                    $callbackData = 'step_1';
                     // Отправить смс
                     // $this->deleteMessages($chatId);
                     $this->sendMessage($chatId, 'Введите имя');
