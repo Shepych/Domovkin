@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class TelegramController extends Controller
 {
     private $token;
+    private $administratorsChats = [676882709];
 
     public function __construct() {
         $this->token = env('BOOK_BOT_TOKEN');
@@ -34,64 +35,77 @@ class TelegramController extends Controller
         $message = isset($update['message']['text']) ? $update['message']['text'] : '';
         
         if ($message == '/start') {
+            
             $chatId = $update['message']['chat']['id'];
-            $keyboard = [
-                // 'keyboard' => [
-                //     [['text' => 'Кнопка 1'], ['text' => 'Кнопка 2']],
-                //     [['text' => 'Кнопка 3'], ['text' => 'Кнопка 4']],
-                // ],
-                'inline_keyboard' => [
-                    [
-                        ['text' => '🔵 Проекты', 'callback_data' => 'projects'],
-                        ['text' => '🔵 Услуги', 'callback_data' => 'services'],
-                    ],
-                    [
-                        ['text' => '🔵 О компании', 'callback_data' => 'about'],
-                        ['text' => '🔵 Сайт', 'url' => 'https://domovkin.ru'],
-                    ],
-                    [
-                        ['text' => '🔵 Оформить заявку', 'callback_data' => 'application']
-                    ]
-                ]
-            ];
-        
-            $imageUrl = 'https://domovkin.ru/img/domovkin.png';
-            $encodedKeyboard = json_encode($keyboard);
-        
-            $sendMessage = [
-                'chat_id' => $chatId,
-                'caption' => 'Наша компания занимается строительством домов и ремонтом квартир, а так же реставрацией архитектуры по Москве и Московской области',
-                'reply_markup' => $encodedKeyboard,
-                'photo' => $imageUrl,
-                'parse_mode' => 'HTML'
-            ];
-        
-        
-            // Отправляем запрос
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot{$this->token}/sendPhoto");
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $sendMessage);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            curl_close($ch);
-            
-            
-            // $sendMessageQuery = http_build_query($sendMessage);
-            // $response = file_get_contents("https://api.telegram.org/bot{$this->token}/sendMessage?$sendMessageQuery");
-            
-            // $resNew = json_decode($response);
-            $result = json_decode($response, true);
 
-            DB::table('telegram_users')->updateOrInsert([
-                'user_id' =>  $result['result']['chat']['id']
-            ],
-            [
-                'user_id' =>  $result['result']['chat']['id'],
-                'message_id' => $result['result']['message_id'],
-                'text' => $response,
-                'last_callback' => 'start',
-            ]);
+            if(in_array($chatId, $this->administratorsChats)) { # Если админ
+                $keyboard = [
+                    'inline_keyboard' => [
+                        [
+                            ['text' => '🔵 Список заявок', 'callback_data' => 'projects'],
+                        ]
+                    ]
+                ];
+                $encodedKeyboard = json_encode($keyboard);
+                $applications = DB::table('telegram_applications')->get();
+                $sendMessage = [
+                    'chat_id' => $chatId,
+                    'text' => 'Заявок: ' . $applications->count(),
+                    'reply_markup' => $encodedKeyboard,
+                ];
+
+                $url = "https://api.telegram.org/bot{$this->token}/sendMessage?" . http_build_query($message);
+                file_get_contents($url);
+            } else { # Если обычный пользователь
+                $keyboard = [
+                    'inline_keyboard' => [
+                        [
+                            ['text' => '🔵 Проекты', 'callback_data' => 'projects'],
+                            ['text' => '🔵 Услуги', 'callback_data' => 'services'],
+                        ],
+                        [
+                            ['text' => '🔵 О компании', 'callback_data' => 'about'],
+                            ['text' => '🔵 Сайт', 'url' => 'https://domovkin.ru'],
+                        ],
+                        [
+                            ['text' => '🔵 Оформить заявку', 'callback_data' => 'application']
+                        ]
+                    ]
+                ];
+            
+                $imageUrl = 'https://domovkin.ru/img/domovkin.png';
+                $encodedKeyboard = json_encode($keyboard);
+            
+                $sendMessage = [
+                    'chat_id' => $chatId,
+                    'caption' => 'Наша компания занимается строительством домов и ремонтом квартир, а так же реставрацией архитектуры по Москве и Московской области',
+                    'reply_markup' => $encodedKeyboard,
+                    'photo' => $imageUrl,
+                    'parse_mode' => 'HTML'
+                ];
+
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot{$this->token}/sendPhoto");
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $sendMessage);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($ch);
+                curl_close($ch);
+                
+                $result = json_decode($response, true);
+    
+                DB::table('telegram_users')->updateOrInsert([
+                    'user_id' =>  $result['result']['chat']['id']
+                ],
+                [
+                    'user_id' =>  $result['result']['chat']['id'],
+                    'message_id' => $result['result']['message_id'],
+                    'text' => $response,
+                    'last_callback' => 'start',
+                ]);
+            }
+
+            
 
             // DB::table('telegram_applications')->insert([
             //     'user_id' =>  $result['result']['chat']['id'],
