@@ -82,19 +82,21 @@ class TelegramController extends Controller
             
             
             $result = json_decode($response, true);
-            DB::table('telegram_users')->updateOrInsert([
-                'user_id' =>  $result['result']['chat']['id']
-            ],
-            [
-                'user_id' =>  $result['result']['chat']['id'],
-                'message_id' => $result['result']['message_id'],
-                'text' => $response,
-                'last_callback' => 'start',
-            ]);
+            // DB::table('telegram_users')->updateOrInsert([
+            //     'user_id' =>  $result['result']['chat']['id']
+            // ],
+            // [
+            //     'user_id' =>  $result['result']['chat']['id'],
+            //     'message_id' => $result['result']['message_id'],
+            //     'text' => $response,
+            //     'last_callback' => 'start',
+            // ]);
 
             DB::table('telegram_applications')->insert([
                 'user_id' =>  123123123,
             ]);
+            
+            die;
         }
 
         if (isset($update['callback_query'])) {
@@ -128,6 +130,7 @@ class TelegramController extends Controller
             DB::table('telegram_users')->where('user_id', $chatId)->update([
                 'last_callback' => $callbackData,
             ]);
+            return true;
         }
 
         if(!isset($update['callback_query']) && $message != '/start') {
@@ -158,6 +161,7 @@ class TelegramController extends Controller
             DB::table('telegram_users')->where('user_id', $chatId)->update([
                 'last_callback' => $newCallback,
             ]);
+            return true;
         }
 
         return true;
