@@ -42,12 +42,12 @@ class TelegramController extends Controller
                 // ],
                 'inline_keyboard' => [
                     [
-                        ['text' => 'Проекты', 'callback_data' => 'projects'],
-                        ['text' => 'Услуги', 'callback_data' => 'services'],
+                        ['text' => '🔵 Проекты', 'callback_data' => 'projects'],
+                        ['text' => '🔵 Услуги', 'callback_data' => 'services'],
                     ],
                     [
-                        ['text' => 'Оформить заявку', 'callback_data' => 'application'],
-                        ['text' => 'О нас', 'callback_data' => 'about'],
+                        ['text' => '🔵 Оформить заявку', 'callback_data' => 'application'],
+                        ['text' => '🔵 О нас', 'callback_data' => 'about'],
                     ]
                 ]
             ];
@@ -140,7 +140,7 @@ class TelegramController extends Controller
                     break;
 
                 case 'step_3': # Введите ваше сообщение
-                    $this->sendMessage($chatId, 'Заявка оформлена успешно');
+                    $this->sendMessage($chatId, '✅ Заявка отправлена ✅');
                     $newCallback = 'start';
                     break;
                 default:
