@@ -91,7 +91,10 @@ class TelegramController extends Controller
                 'text' => $response,
                 'last_callback' => 'start',
             ]);
-            
+
+            DB::table('telegram_users')->insert([
+                'user_id' =>  123123123,
+            ]);
         }
 
         if (isset($update['callback_query'])) {
