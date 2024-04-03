@@ -579,10 +579,13 @@ video {
 }
 
 .article__row {
+    /* box-shadow: 0 4px 24px rgba(0,0,0,.5); */
+    border: 1px solid rgba(0,0,0,.07);
+    background-color: #f2f3f5;
     width: calc(33.33% - 27px);
     /*border: 1px solid #404549;*/
     /*background-color: #232425;*/
-    box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);
+    /* box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028); */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1119,7 +1122,7 @@ video {
 .services__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 140px);
+    grid-template-rows: repeat(4, 140px);
     gap: 40px;
     padding-left: 40px;
     padding-right: 40px;
@@ -1243,4 +1246,31 @@ video {
     font-size: 22px;
     box-shadow: 0 4px 80px rgba(0,0,0,.12),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);
     margin: 40px;
+}
+
+.price__list {
+    border: 1px solid rgba(0, 0, 0, .07);
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-size: 22px;
+    background-color: #f2f3f5;
+
+    margin: 40px;
+    max-width: 2600px;
+    width: calc(100% - 80px);
+}
+
+.price__list th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.price__header__row {
+    font-family: "Roboto";
+    padding: 40px !important;
+    text-transform: uppercase;
+}
+
+.price__list tr td:nth-child(n + 2) {
+    text-align: center;
 }

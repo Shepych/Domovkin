@@ -52,6 +52,10 @@
     <div>
         Блок вопрос ответ (https://www.s-h.ru/)
     </div>
+
+    <div>
+        Блок отзывов (fast-motion) временно будет отсутствовать
+    </div>
         {{-- <div class="grid home__animation__wrapper" style="display: flex;height: 640px;overflow: hidden;justify-content: center;align-items: center">
             <section class="home__animation">
                 <img src="/img/camera/camera.png" class="camera" alt="Камера видеонаблюдения">
