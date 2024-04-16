@@ -371,6 +371,33 @@ header {
     font-size: 18px;
 }
 
+.basic__services {
+    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 120px;
+}
+
+.basic__services div {
+    font-size: 26px;
+    /* font-weight: bold; */
+    /* font-family: Roboto; */
+    width:calc(33.33% - 27px);
+    text-align: center;
+    position: relative;
+}
+
+.basic__services div::before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color:#126eff;
+    top:calc(50% - 5px);
+    margin-left: -30px;
+    border-radius: 100%;
+}
+
 .lottie {
     display: flex;
     justify-content: center;
@@ -509,7 +536,7 @@ video {
 .project__page__price {
     font-family: Grotesk;
     color: #262626;
-    font-size: 42px !important;
+    font-size: 48px !important;
 }
 
 .project__characteristics {
@@ -814,7 +841,7 @@ video {
     margin-right: auto;
     text-align: justify;
     text-align-last: justify;
-    max-width: 666px;
+    /* max-width: 666px; */
     font-size: 22px;
     
 }

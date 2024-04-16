@@ -1,6 +1,6 @@
 <header>
     <section class="grid flex main__header__row" style="height: 170px !important;justify-content:center;flex-direction:column">
-        <div class="flex" style="width:100%;">
+        <div class="flex" style="width:100%;gap:30px">
             <img src="/img/brick.svg" width="50px" height="90px" style="margin-right: 24px">
             <a class="logo"  href="/">DOMOVKIN<span class="logo__ru" style="color: #126eff">.RU</span></a>
             <span style="color: white;display: block;width: 176px;text-align: center" class="phone">8 (812) 900 08 40</span>
@@ -11,7 +11,7 @@
                 </svg>
             </a>
         </div>
-        <span class="lozung" style="color:white;margin-top:22px">Строительство домов в Москве и Московской области</span>
+        <span class="lozung" style="color:white;margin-top:22px">Строительство домов, ремонт квартир в Москве и Московской области</span>
     </section>
     
     <!-- <div id="nav-icon1" class="menu__burger">

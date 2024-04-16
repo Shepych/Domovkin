@@ -35,17 +35,30 @@
                 <div class="project__right__column" style="align-items: stretch;">
                     <div class="project__characteristics">
                         <div class="flex" style="flex-direction: column">
-                            <div>
-                                <span class="project__page__price" style="opacity: 0.86;">{{ number_format($project->price, 0, '.', '.')  }} р</span>
+                            <div style="max-height:50%;background: #f2f3f5;">
+                                <span class="project__page__price" style="opacity: 0.86;">{{ number_format($project->price, 0, '.', '.')  }}</span>
                             </div>
-                            <div><span class="project__gray__span">Материал:</span> {{ $project->material() }}</div>
-                            <div><span class="project__gray__span">Площадь:</span> <span style="flex-direction: row;margin-left: 10px">{{ $project->square }} м<sup>&sup2;</sup></span></div>
-                            <div><span class="project__gray__span">Этажность:</span> {{ $project->floors }}</div>
-{{--                            <div><span class="project__gray__span">Этажность:</span> 2</div>--}}
-{{--                            <div><span class="project__gray__span">Этажность:</span> 2</div>--}}
-{{--                            <div><span class="project__gray__span">Этажность:</span> 2</div>--}}
-                            <div><span class="project__gray__span">Потребление:</span> {{ $project->power }} кВт</div>
-                            <div style="border-bottom: 0"><span class="project__gray__span">Форма кровли:</span> {{ $project->roof() }}</div>
+                            <div class="flex" style="flex-direction: column;justify-content:space-evenly">
+                                <span>
+                                    <span class="project__gray__span">Материал:</span> {{ $project->material() }}
+                                </span>
+                                <span>
+                                    <span class="project__gray__span">Площадь:</span> <span style="flex-direction: row;margin-left: 10px">{{ $project->square }} м<sup>&sup2;</sup></span>
+
+                                </span>
+                                <span>
+                                    <span class="project__gray__span">Этажность:</span> {{ $project->floors }}
+
+                                </span>
+                                <span>
+                                    <span class="project__gray__span">Потребление:</span> {{ $project->power }} кВт
+
+                                </span>
+                                <span>
+                                    <span class="project__gray__span">Форма кровли:</span> {{ $project->roof() }}
+
+                                </span>
+                            </div>
 
                         </div>
                     </div>

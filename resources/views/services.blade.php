@@ -2,11 +2,19 @@
 
 @section('content')
 <h1 class="our__service-header">Наши услуги</h1>
-{{-- <p style="text-align: center;font-size:22px">
-    Для нас строительство - это творчество, и мы хотим творить безупречные шедевры для наших клиентов!
-    Несмотря на то что мы молодая компания, у всех наших <br> специалистов имеется богатый опыт работы в сфере строительства и ремонта. <br> Для нас строительство - это творчество, и мы хотим творить безупречные шедевры для вас!
-</p> --}}
-    <section class="services__list" style="margin-bottom: 40px">
+    <section class="basic__services">
+        <div>Строительство коттеджей</div>
+        <div>Ремонт квартир и домов</div>
+        <div>Строительство гаражей</div>
+        <div>Строительство бань</div>
+        <div>Реставрация архитектуры</div>
+        <div>Строительство беседок</div>
+        <div>Облагораживание участка</div>
+        <div>Выкапывание пруда</div>
+        <div>Строительство бункеров</div>
+    </section>
+    <img src="./img/services/договор.png" style="margin: 0 auto; width:90%;display:block" alt="">
+    {{-- <section class="services__list" style="margin-bottom: 40px">
         <div class="service__page-block service__big-block">
             <div class="fire-section">
                 <img class="fire-icon" src="/img/flames.png">
@@ -25,7 +33,7 @@
         <div class="service__page-block">Облагораживание участка</div>
         <div class="service__page-block">Выкапывание пруда</div>
         <div class="service__page-block">Строительство бункеров</div>
-    </section>
+    </section> --}}
 
     {{-- <div class="our__service-text-wrapper our__service-text" style="padding-top:0;padding-bottom:0"> --}}
 
@@ -46,9 +54,9 @@
 </p> --}}
     </div>
 
-    <p style="text-align: center;font-size:22px;margin-bottom:40px">
+    {{-- <p style="text-align: center;font-size:22px;margin-bottom:40px">
         Ещё мы подготовили специальные антикризисные предложения для вас: <br> Строительство бюджетных домов, подвальных помещений, бункеров а так же секретных <br>убежищ на территории вашего участка по самым доступным ценам в условиях текущего кризиса и санкций. <br> Звоните, пишите или оставляйте заявку, не стесняйтесь - выполним любую вашу прихоть <br> и подскажем как правильнее её реализовать.
-    </p>
+    </p> --}}
 
     <h3 class="our__service-header">Прайс лист</h3>
 
@@ -124,6 +132,9 @@
             <td></td>
         </tr> --}}
     </table>
+
+    <img src="./img/services/payment.png" style="margin: 0 auto; width:90%;display:block" alt="">
+
 
     {{-- <img class="our__service-builder-img" src="./img/stroitel_anonymus.png" alt=""> --}}
     {{-- <div class="our__service-text-wrapper our__service-text">
