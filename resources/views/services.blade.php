@@ -2,7 +2,27 @@
 
 @section('content')
 <h1 class="our__service-header">Наши услуги</h1>
-    <section class="basic__services">
+<section class="services__list" style="margin-bottom: 40px">
+    <div class="service__page-block service__big-block">
+        {{-- <div class="fire-section">
+            <img class="fire-icon" src="/img/flames.png">
+        </div> --}}
+        <span>Строительство коттеджей</span>
+        <p>Предоставляем полный спектр услуг, начиная от концепции и проектирования, заканчивая завершением строительства. Наш опытный коллектив профессионалов обеспечивает высокий стандарт качества в каждом этапе работы</p>
+    </div>
+    <div class="service__page-block service__medium-block">
+        <span>Ремонт квартир и домов</span>
+        <p>Мы специализируемся на услугах по ремонту квартир и домов, предоставляя комплексные решения. Применяются самые современные технологии и материалы </p>
+    </div>
+    <div class="service__page-block service__small-block"><span>Строительство гаражей</span></div>
+    <div class="service__page-block"><span>Строительство бань</span></div>
+    <div class="service__page-block"><span>Реставрация архитектуры</span></div>
+    <div class="service__page-block"><span>Строительство беседок</span></div>
+    <div class="service__page-block"><span>Облагораживание участка</span></div>
+    <div class="service__page-block"><span>Выкапывание пруда</span></div>
+    <div class="service__page-block"><span>Строительство бункеров</span></div>
+</section>
+    {{-- <section class="basic__services">
         <div>Строительство коттеджей</div>
         <div>Ремонт квартир и домов</div>
         <div>Строительство гаражей</div>
@@ -12,28 +32,9 @@
         <div>Облагораживание участка</div>
         <div>Выкапывание пруда</div>
         <div>Строительство бункеров</div>
-    </section>
-    <img src="./img/services/договор.png" style="margin: 0 auto; width:90%;display:block" alt="">
-    {{-- <section class="services__list" style="margin-bottom: 40px">
-        <div class="service__page-block service__big-block">
-            <div class="fire-section">
-                <img class="fire-icon" src="/img/flames.png">
-            </div>
-            <span>Строительство коттеджей</span>
-            <p>Предоставляем полный спектр услуг, начиная от концепции и проектирования, заканчивая завершением строительства. Наш опытный коллектив профессионалов обеспечивает высокий стандарт качества в каждом этапе работы</p>
-        </div>
-        <div class="service__page-block service__medium-block">
-            <span>Ремонт квартир и домов</span>
-            <p>Мы специализируемся на услугах по ремонту квартир и домов, предоставляя комплексные решения. Применяются самые современные технологии и материалы </p>
-        </div>
-        <div class="service__page-block service__small-block">Строительство гаражей</div>
-        <div class="service__page-block">Строительство бань</div>
-        <div class="service__page-block">Реставрация архитектуры</div>
-        <div class="service__page-block">Строительство беседок</div>
-        <div class="service__page-block">Облагораживание участка</div>
-        <div class="service__page-block">Выкапывание пруда</div>
-        <div class="service__page-block">Строительство бункеров</div>
     </section> --}}
+    <img src="./img/services/договор.png" style="margin: 0 auto; width:90%;display:block" alt="">
+    
 
     {{-- <div class="our__service-text-wrapper our__service-text" style="padding-top:0;padding-bottom:0"> --}}
 
@@ -133,7 +134,7 @@
         </tr> --}}
     </table>
 
-    <img src="./img/services/payment.png" style="margin: 0 auto; width:90%;display:block" alt="">
+    {{-- <img src="./img/services/payment.png" style="margin: 0 auto; width:90%;display:block" alt=""> --}}
 
 
     {{-- <img class="our__service-builder-img" src="./img/stroitel_anonymus.png" alt=""> --}}
