@@ -8,7 +8,7 @@
             <img class="fire-icon" src="/img/flames.png">
         </div> --}}
         <span>Строительство коттеджей</span>
-        <p>Предоставляем полный спектр услуг, начиная от концепции и проектирования, заканчивая завершением строительства. Наш опытный коллектив профессионалов обеспечивает высокий стандарт качества в каждом этапе работы</p>
+        <p>Предоставляем полный спектр услуг, начиная от концепции и проектирования, заканчивая завершением строительства. Наш опытный коллектив профессионалов обеспечивает высокий стандарт качества на каждом этапе работы</p>
     </div>
     <div class="service__page-block service__medium-block">
         <span>Ремонт квартир и домов</span>
@@ -22,6 +22,44 @@
     <div class="service__page-block"><span>Выкапывание пруда</span></div>
     <div class="service__page-block"><span>Строительство бункеров</span></div>
 </section>
+
+
+<section class="contract">
+    
+    <div class="flex contract__main-text-img">
+        <div class="contract__main-text">
+            <h2 class="our__service-header services__header">Договор, с которым вы будете спокойны</h2>
+    
+            <ul class="contract__list-main">
+                <li>
+                    Сроки  на ремонт вашей квартиры жестко прописаны в договоре в п. 5. За каждый день просрочки мы возвращаем ваши деньги!
+                <li>
+                    Стоимость  ремонта жестко зафиксирована в договоре в п 6. Она неизменна от начала и до конца ремонта.
+                </li>
+                <li>
+                    Гарантии  на ремонт указаны в договоре п. 7. Бесплатно исправим, отремонтируем, заменим!</li>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="contract__image-wrapper">
+            <img class="contract__image" src="/img/services/dogovor.png" alt="Договор">
+            <div class="circle pulse blue"></div>
+        </div>
+    </div>
+
+    <div class="guarantees">
+        <h3 class="our__service-header" style="font-size: 28px">4 железобетонные гарантии по договору:</h3>
+
+        <ul class="contract__list-secondary">
+            <li>Расширенная гарантия до 36 месяцев</li>
+            <li>На электромонтажные работы – 3 года</li>
+            <li>На сантехнические работы – 2 года</li>
+            <li>На общестроительные работы – 1 год</li>
+        </ul>
+    </div>
+</section>
+
     {{-- <section class="basic__services">
         <div>Строительство коттеджей</div>
         <div>Ремонт квартир и домов</div>
@@ -33,7 +71,7 @@
         <div>Выкапывание пруда</div>
         <div>Строительство бункеров</div>
     </section> --}}
-    <img src="./img/services/договор.png" style="margin: 0 auto; width:90%;display:block" alt="">
+    {{-- <img src="./img/services/договор.png" style="margin: 0 auto; width:90%;display:block" alt=""> --}}
     
 
     {{-- <div class="our__service-text-wrapper our__service-text" style="padding-top:0;padding-bottom:0"> --}}
@@ -59,43 +97,43 @@
         Ещё мы подготовили специальные антикризисные предложения для вас: <br> Строительство бюджетных домов, подвальных помещений, бункеров а так же секретных <br>убежищ на территории вашего участка по самым доступным ценам в условиях текущего кризиса и санкций. <br> Звоните, пишите или оставляйте заявку, не стесняйтесь - выполним любую вашу прихоть <br> и подскажем как правильнее её реализовать.
     </p> --}}
 
-    <h3 class="our__service-header">Прайс лист</h3>
+    {{-- <h3 class="our__service-header">Прайс лист</h3> --}}
 
     <table class="price__list">
-        <tr>
-            <td>Наименование работ</td>
-            <td>Единица изм.</td>
-            <td>Цена (руб.)</td>
-        </tr>
+        {{-- <tr>
+            <td style="background-color:white;border:none">Наименование работ</td>
+            <td style="background-color:white;border:none">Единица изм.</td>
+            <td style="background-color:white;border:none">Цена (руб.)</td>
+        </tr> --}}
         <th colspan="3" class="price__header__row">Подготовительные работы</th>
         <tr>
             <td>Выезд специалиста на объект, консультирование, замер, составление укрупненной сметы (до 50 км)</td>
-            <td>усл</td>
-            <td>3000</td>
+            {{-- <td>усл</td> --}}
+            <td>3000 р.</td>
         </tr>
         <tr>
             <td>Выезд специалиста на объект, консультирование, замер, составление укрупненной сметы (до 100 км)</td>
-            <td>усл</td>
-            <td>5000</td>
+            {{-- <td>усл</td> --}}
+            <td>5000 р.</td>
         </tr>
         <tr>
             <td>Монтаж дорожных плит</td>
-            <td>шт.</td>
-            <td>730</td>
+            <td>шт</td>
+            <td>730 р.</td>
         </tr>
         <tr>
             <td>Демонтаж дорожных плит</td>
-            <td>шт.</td>
+            <td>шт</td>
             <td>318</td>
         </tr>
         <tr>
             <td>Расценка на не квалифицированные работы (строительно-отделочные работы и т.п.)</td>
-            <td>чел.час</td>
+            <td>час</td>
             <td>635</td>
         </tr>
         <tr>
             <td>Расценка на не квалифицированные работы (демонтажные работы, уборка мусора, вырубка деревьев и кустарников и т.п.)</td>
-            <td>чел.час</td>
+            <td>час</td>
             <td>484</td>
         </tr>
         <th colspan="3" class="price__header__row">Разбивочные и геодезические работы</th>
@@ -127,12 +165,101 @@
             <td>1550</td>
         </tr>
 
+        <th colspan="3" class="price__header__row">Водосточная система, софиты и прочие</th>
+
+        <tr>
+            <td>Установка водосточной системы (с установкой и демонтажем лесов)</td>
+            <td>п/м</td>
+            <td>528</td>
+        </tr>
+
+        <tr>
+            <td>Установка крюков для водосточной системы с формированием уклона (с установкой и демонтажем лесов)</td>
+            <td>шт</td>
+            <td>67</td>
+        </tr>
+
+        <tr>
+            <td>Подшивка карнизов софитом с устройством выравнивающего каркаса</td>
+            <td>м²</td>
+            <td>1045</td>
+        </tr>
+
+        <tr>
+            <td>Подшивка карнизов имитацией бруса, ваганкой с устройством выравнивающего каркаса</td>
+            <td>м²</td>
+            <td>1045</td>
+        </tr>
+
+        <tr>
+            <td>Установка вентиляционных решеток в карнизах</td>
+            <td>шт</td>
+            <td>67</td>
+        </tr>
+
+        <tr>
+            <td>Установка колпаков на вытяжные трубы</td>
+            <td>шт</td>
+            <td>1314</td>
+        </tr>
+
+        <tr>
+            <td>Установка мансардных окон с устройством примыкания к кровли</td>
+            <td>шт</td>
+            <td>5337</td>
+        </tr>
+
+        <tr>
+            <td>Установка отливов (окна)</td>
+            <td>п/м</td>
+            <td>256</td>
+        </tr>
+
+        <tr>
+            <td>Установка отливов на цоколь </td>
+            <td>п/м</td>
+            <td>157</td>
+        </tr>
+
+        <tr>
+            <td>Обшивка вытяжных труб профнастилом с устройством каркаса и установкой обрамлений</td>
+            <td>м²</td>
+            <td>955</td>
+        </tr>
+
+        <tr>
+            <td>Изготовление примыканий, ендов, планок и пр. вручную (из гладкого листа)</td>
+            <td>п/м</td>
+            <td>303</td>
+        </tr>
+
         {{-- <tr>
             <td></td>
             <td></td>
             <td></td>
         </tr> --}}
     </table>
+
+    <h3 class="our__service-header" style="margin-top: 80px">Способы оплаты</h3>
+
+    <section class="payment__methods">
+        <div class="payment__methods-item">
+            <img src="/img/services/check_payment.svg">
+            <span>Переводом на расчетный счет</span>
+        </div>
+        
+        <div class="payment__methods-item">
+            <img src="/img/services/phone_payment.svg">
+            <span>
+                Оплата банковской картой
+            </span>
+        </div>
+
+        <div class="payment__methods-item">
+            <img src="/img/services/coins.svg">
+            <span>Наличный расчет</span>
+        </div>
+    </section>
 
     {{-- <img src="./img/services/payment.png" style="margin: 0 auto; width:90%;display:block" alt=""> --}}
 
