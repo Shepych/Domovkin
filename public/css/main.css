@@ -1207,7 +1207,7 @@ video {
 }
 
 .service__page-block p {
-    font-size: 16px;
+    font-size: 18px;
     color: gray;
     text-align: center;
 }
@@ -1460,7 +1460,7 @@ video {
     flex-direction: column;
     gap: 30px;
     margin-top: 40px;
-    margin-left: 40px;
+    list-style-type: none;
 }
 
 .contract__list-secondary {
