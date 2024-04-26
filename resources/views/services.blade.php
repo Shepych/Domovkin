@@ -1,41 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-<section class="contract" style="margin-top: 40px">
-    
-    <div class="flex contract__main-text-img">
-        <div class="contract__main-text">
-            <h2 class="our__service-header services__header" style="margin-top: 25px">Договор, с которым вы будете спокойны</h2>
-    
-            <ul class="contract__list-main">
-                <li>
-                    Сроки жестко прописаны в договоре в п. 5. За каждый день просрочки мы возвращаем ваши деньги!
-                <li>
-                    Стоимость  ремонта жестко зафиксирована в договоре в п 6. Она неизменна от начала и до конца ремонта.
-                </li>
-                <li>
-                    Гарантии указаны в договоре п. 7. Бесплатно исправим, отремонтируем, заменим!</li>
-                </li>
-            </ul>
-        </div>
-    
-        <div class="contract__image-wrapper">
-            <img class="contract__image" src="/img/services/dogovor.png" alt="Договор">
-            {{-- <div class="circle pulse blue"></div> --}}
-        </div>
-    </div>
-
-    <div class="guarantees">
-        <h3 class="our__service-header" style="font-size: 28px">4 железобетонные гарантии по договору:</h3>
-
-        <ul class="contract__list-secondary">
-            <li><span style="color:#126eff">✔</span> Расширенная гарантия до 36 месяцев</li>
-            <li><span style="color:#126eff">✔</span> На электромонтажные работы – 3 года</li>
-            <li><span style="color:#126eff">✔</span> На сантехнические работы – 2 года</li>
-            <li><span style="color:#126eff">✔</span> На общестроительные работы – 1 год</li>
-        </ul>
-    </div>
-</section>
 <h1 class="our__service-header">Наши услуги</h1>
 <section class="services__list" style="margin-bottom: 40px">
     <div class="service__page-block service__big-block">

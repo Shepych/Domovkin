@@ -45,17 +45,21 @@
 {{--            </div>--}}
 {{--        </section>--}}
 
-    <div>
-        Блок с карточками и текстом (https://www.gwd.ru/)
-    </div>
+    <section class="questions">
+        <h3>Блок вопрос ответ (https://www.s-h.ru/)</h3>
+    </section>
 
-    <div>
-        Блок вопрос ответ (https://www.s-h.ru/)
-    </div>
+    <section class="questions">
+        <h3>Блок с карточками и текстом (https://www.gwd.ru/)</h3>
+    </section>
+
+
+    {{-- 
+    
 
     <div>
         Блок отзывов (fast-motion) временно будет отсутствовать
-    </div>
+    </div> --}}
         {{-- <div class="grid home__animation__wrapper" style="display: flex;height: 640px;overflow: hidden;justify-content: center;align-items: center">
             <section class="home__animation">
                 <img src="/img/camera/camera.png" class="camera" alt="Камера видеонаблюдения">
@@ -68,7 +72,41 @@
             </p>
         </div> --}}
     </section>
-
+    <section class="contract" style="margin-bottom: 80px">
+    
+        <div class="flex contract__main-text-img">
+            <div class="contract__main-text">
+                <h2 class="our__service-header services__header" style="margin-top: 15px">Договор, с которым вы будете спокойны</h2>
+        
+                <ul class="contract__list-main">
+                    <li>
+                        Сроки жестко прописаны в договоре в п. 5. За каждый день просрочки мы возвращаем ваши деньги!
+                    <li>
+                        Стоимость  ремонта жестко зафиксирована в договоре в п 6. Она неизменна от начала и до конца ремонта.
+                    </li>
+                    <li>
+                        Гарантии указаны в договоре п. 7. Бесплатно исправим, отремонтируем, заменим!</li>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="contract__image-wrapper">
+                <img class="contract__image" src="/img/services/dogovor.png" alt="Договор">
+                {{-- <div class="circle pulse blue"></div> --}}
+            </div>
+        </div>
+    
+        <div class="guarantees">
+            <h3 class="our__service-header" style="font-size: 28px">4 железобетонные гарантии по договору:</h3>
+    
+            <ul class="contract__list-secondary">
+                <li><span style="color:#126eff">✔</span> Расширенная гарантия до 36 месяцев</li>
+                <li><span style="color:#126eff">✔</span> На электромонтажные работы – 3 года</li>
+                <li><span style="color:#126eff">✔</span> На сантехнические работы – 2 года</li>
+                <li><span style="color:#126eff">✔</span> На общестроительные работы – 1 год</li>
+            </ul>
+        </div>
+    </section>
     {{-- <section class="cameras">
         <div>
             <video poster="/img/camera/build2.jpg" controls autoplay id="work__object__one"></video>
