@@ -46,16 +46,15 @@
 {{--        </section>--}}
 
     <div>
-        Блок с карточками и текстом (https://www.gwd.ru/)
+        Договор
+        {{-- Блок с карточками и текстом (https://www.gwd.ru/) --}}
     </div>
 
     <div>
         Блок вопрос ответ (https://www.s-h.ru/)
     </div>
 
-    <div>
-        Блок отзывов (fast-motion) временно будет отсутствовать
-    </div>
+
         {{-- <div class="grid home__animation__wrapper" style="display: flex;height: 640px;overflow: hidden;justify-content: center;align-items: center">
             <section class="home__animation">
                 <img src="/img/camera/camera.png" class="camera" alt="Камера видеонаблюдения">
@@ -68,7 +67,46 @@
             </p>
         </div> --}}
     </section>
+    <h3 style="text-align: center">Трех уровневый контроль качества</h3>
 
+    <section class="flex quality__block">
+        <div class="quality__block-item flex">
+            
+            <ul>
+                <b>Прораб на объекте</b>
+                <li>Приезжает на объект 3-4 раза в неделю, контролирует работу мастеров и присылает фотоотчет заказчику в мессенджер</li>
+                <li>Проверяет каждый этап на соответствие требованиям СНИП, использует чек-лист из 140 пунктов для оценки качества работ.</li>
+                <li>Распределяет задачи так, чтобы не было простоев и задержек. Если мастер задерживает работу, сменяет его.</li>
+            </ul>
+            <img src="./img/services/1.jpg">
+        </div>
+
+        <div class="quality__block-item flex">
+            <ul>
+            <b>Начальник участка</b>
+                <li>Проводит внезапные проверки объектов 2 раза в месяц и с независимой комиссией проверяет качество</li>
+                <li>Оценивает соответствие процесса ремонта условиям договора по срокам и стоимости.</li>
+                <li>Тестирует мастеров и прорабов на полигоне при приёме на работу и раз в квартал.</li>
+            </ul>
+            <img src="./img/services/2.jpg">
+
+        </div>
+
+        <div class="quality__block-item flex">
+            <article>
+                
+                <ul>
+                <b>Главный инженер</b>
+                    <li>Наблюдает за работой в реальном времени. Для объектов от 700 тыс. руб. устанавливаем систему видеонаблюдения.</li>
+                    <li>Сложные объекты проверяет лично с прорабом 3-5 раз за время ремонта</li>
+                    <li>Проверяет поставщиков материалов и оборудования. Внедряет новые стандарты качества работ, которые учитывают требования клиентов и передовые технологии.</li>
+                </ul>
+            </article>
+            <img src="./img/services/3.jpg">
+
+        </div> 
+        {{-- Блок отзывов (fast-motion) временно будет отсутствовать --}}
+    </section>
     {{-- <section class="cameras">
         <div>
             <video poster="/img/camera/build2.jpg" controls autoplay id="work__object__one"></video>
