@@ -2,6 +2,7 @@
 
 .swal2-modal {
     display: flex !important;
+    border-radius: 20px;
 }
 
 .swal2-modal h2 {

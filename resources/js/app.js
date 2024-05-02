@@ -1,24 +1,24 @@
 import './bootstrap';
 import Swal from '../../public/js/sweetalert/src/sweetalert2';
 import 'animate.css';
-import { extendWith } from 'lodash';
-// console.log(csrf)
 
 let timers = [];
 
-Swal.fire({
-  html:
-      '<h2 class="swal2-title" id="swal2-title" style="display: block;margin-bottom:20px;margin-top:10px;font-family: Euclid;">Обратный звонок</h2>' +
-      // '<h2 style="font-family: Euclid;margin-bottom:20px;margin-top:10px">Обратный звонок</h2>' +
-      '<form class="flex ajax__form" style="flex-direction:column;padding-bottom:16px" action="' + backCallRoute + '" method="post">' +
-      csrf +    
-      '<input name="name" placeholder="Как к вам обращаться" style="font-family: Euclid;width:calc(100% - 10px);margin-top:10px;margin-bottom:26px;background-color:#F8F8F8" id="swal-input1" type="text" class="animate__animated swal2-input">' +
-          '<input name="phone" placeholder="Телефон" style="font-family: Euclid;width:calc(100% - 10px);margin-top:0;margin-bottom:26px;background-color:#F8F8F8" id="swal-input-phone" class="animate__animated swal2-input">' +
-          '<textarea name="comment" style="font-family: Euclid; width:calc(100% - 10px);resize:none;margin-bottom:25px;margin-top:0;background-color:#F8F8F8" placeholder="Опишите вашу ситуацию, проблему или вопрос" class="swal2-textarea"></textarea>' +
-          '<input type="submit" class="button button__sweet" value="Отправить заявку">' +
-      '</form>',
-  showConfirmButton: false,
-});
+$('#application__call').on('click', function() {
+  Swal.fire({
+    html:
+        '<h2 class="swal2-title" id="swal2-title" style="display: block;margin-bottom:20px;margin-top:10px;font-family: Euclid;">Обратный звонок</h2>' +
+        // '<h2 style="font-family: Euclid;margin-bottom:20px;margin-top:10px">Обратный звонок</h2>' +
+        '<form class="flex ajax__form" style="flex-direction:column;padding-bottom:16px" action="' + backCallRoute + '" method="post">' +
+        csrf +    
+        '<input name="name" placeholder="Как к вам обращаться" style="font-family: Euclid;width:calc(100% - 10px);margin-top:10px;margin-bottom:26px;background-color:#F8F8F8" id="swal-input1" type="text" class="animate__animated swal2-input">' +
+            '<input name="phone" placeholder="Телефон" style="font-family: Euclid;width:calc(100% - 10px);margin-top:0;margin-bottom:26px;background-color:#F8F8F8" id="swal-input-phone" class="animate__animated swal2-input">' +
+            '<textarea name="comment" style="font-family: Euclid; width:calc(100% - 10px);resize:none;margin-bottom:25px;margin-top:0;background-color:#F8F8F8" placeholder="Опишите вашу ситуацию, проблему или вопрос" class="swal2-textarea"></textarea>' +
+            '<input type="submit" class="button button__sweet" value="Отправить заявку">' +
+        '</form>',
+    showConfirmButton: false,
+  });
+})
 
 $('.ajax__wrap').on('submit', '.ajax__form', function (event) {
   clearAllTimers();
