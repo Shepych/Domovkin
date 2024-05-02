@@ -23,7 +23,14 @@ class ClientController extends Controller
     }
 
     public function application(Request $request) { # Обработчик формы заявки
-        return 'Заявка отправлена';
+        # Записать в базу заявку и отправить сообщение в чат бота
+        DB::table('applications')->insert([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'comment' => $request->comment,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     public function auth(Request $request) { # Авторизация

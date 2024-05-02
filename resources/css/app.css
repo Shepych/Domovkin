@@ -1,0 +1,9 @@
+@import url(/node_modules/sweetalert2/dist/sweetalert2.min.css);
+
+.swal2-modal {
+    display: flex !important;
+}
+
+.swal2-modal h2 {
+    text-align: center;
+}

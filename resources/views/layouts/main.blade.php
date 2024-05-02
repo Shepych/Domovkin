@@ -15,52 +15,18 @@
 
     @yield('content')
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
     <script>
         // Главное меню гамбургер
-        $(document).ready(function(){
-            $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
-                $(this).toggleClass('open')
-                $('.main__menu').toggleClass('main__menu__open')
-            });
-            $("body").removeClass("load")
-
-
-
-            // Ajax форма
-            $('.ajax__wrap').on('submit', '.ajax__form', function (event) {
-                event.preventDefault()
-                // Если валидация не проходит - то анимируем, иначе - аякс
-                let name = $("#swal-input1")
-                let phone = $("#swal-input-phone")
-
-                // if(name.val().length < 3) {
-                //     name.css('border', '1px solid red')
-                //     alert(phone.val().length)
-                // } else {
-                    $.ajax({
-                        type: $(this).attr('method'),
-                        url: $(this).attr('action'),
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function (result) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Ожидайте, наш специалист скоро свяжется с вами!',
-                                html: '<div style="margin-bottom:10px"></div>',
-                                showConfirmButton: false
-                            })
-                        }
-                    })
-                // }
-            });
-        });
+        // $(document).ready(function(){
+        //     $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+        //         $(this).toggleClass('open')
+        //         $('.main__menu').toggleClass('main__menu__open')
+        //     });
+        //     $("body").removeClass("load")
+        // });
     </script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     {{-- <script>
@@ -85,6 +51,11 @@
             });
         }
     </script> --}}
+
+    <script>
+        let csrf = '@csrf';
+        let backCallRoute = '{{ route("client.application") }}';
+    </script>
     @yield('js')
 </body>
 </html>

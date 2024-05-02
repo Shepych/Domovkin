@@ -14,7 +14,7 @@ class MainController extends Controller
 
     public function index() {
         $questions = Question::all();
-        $projects = Project::all();
+        $projects = Project::take(12)->get();
         return view('index', compact('questions', 'projects'));
     }
 
