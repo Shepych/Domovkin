@@ -1,9 +1,15 @@
 <header>
     <section class="grid flex main__header__row" style="height: 170px !important;justify-content:center;flex-direction:column">
         <div class="flex" style="width:100%;gap:30px">
-            <img src="/img/brick.svg" width="50px" height="90px" style="margin-right: 24px">
+            <img class="icon__brick" src="/img/brick.svg" width="50px" height="90px" style="margin-right: 24px">
             <a class="logo"  href="/">DOMOVKIN<span class="logo__ru" style="color: #126eff">.RU</span></a>
+           
+            <svg class="phone__icon-wrapper" viewBox="0 0 24 24">
+                <use href="/img/svg/phone.svg#phone">
+            </svg>
+
             <span style="color: white;display: block;width: 176px;text-align: center" class="phone">8 (812) 900 08 40</span>
+            
             <button class="button" id="application__call" style="height: 50px;margin-left: 22px;" onclick="application()">Заказать звонок</button>
             <a class="user__icon" style="margin-left: 24px;margin-top: 6px;" href="https://domovkin.ru/login">
                 <svg width="30" height="40" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,22 +27,22 @@
     </div> -->
 
     <section class="main__menu main__menu__open">
-        <ul class="flex">
+        <ul class="flex main__menu-list">
             <li class="flex {{ request()->is('projects/*') || request()->is('projects') ? 'main__menu__active' : null }}">
                 <a class="flex" href="{{ route('projects') }}">
-                    <img src="/img/socials/house2.svg" style="width: 45px;margin-right: 20px">
+                    <img class="main__menu-item-img" src="/img/socials/house2.svg" style="width: 45px;margin-right: 20px">
                     <span>Проекты</span>
                 </a>
             </li>
             <li class="flex {{ request()->is('articles/*') || request()->is('articles') ? 'main__menu__active' : null }}">
                 <a class="flex" href="{{ route('articles') }}">
-                    <img src="/img/socials/news.svg" style="width: 45px;margin-right: 20px">
+                    <img class="main__menu-item-img" src="/img/socials/news.svg" style="width: 45px;margin-right: 20px">
                     <span>Статьи</span>
                 </a>
             </li>
             <li class="flex {{ request()->is('services') ? 'main__menu__active' : null }}">
                 <a class="flex" href="{{ route('services') }}">
-                    <img src="/img/socials/pig.svg" style="width: 48px;margin-right: 20px">
+                    <img class="main__menu-item-img" src="/img/socials/pig.svg" style="width: 48px;margin-right: 20px">
                     <span>Услуги</span>
                 </a>
             </li>

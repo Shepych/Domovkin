@@ -871,6 +871,14 @@ video {
     }
 }
 
+
+
+@media screen and (max-width: 1480px) {
+    .contract__main-text-img {
+        
+    }
+}
+
 @media screen and (max-width: 1280px) {
     .article__row {
         width: calc(50% - 20px);
@@ -976,7 +984,7 @@ video {
     }
 
     .footer__main__page span img {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
 
     .footer__main__page .flex {
@@ -1061,6 +1069,20 @@ video {
     .service__block {
         width: 100%;
         min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .service__block p {
+        padding-top: 10px;
+        padding-bottom: 0;
+    }
+    .footer-description {
+        display: none;
+    }
+    .footer__main__page {
+        border-top: none !important;
     }
     .project__item {
         width: 100%
@@ -1076,8 +1098,15 @@ video {
         padding-bottom: 20px;
     }
 
-    .lozung {
+    .icon__brick {
         display: none;
+    }
+
+    .lozung {
+        text-align: center;
+        text-align-last: center;
+        color: #7992ad !important;
+        /* display: none; */
     }
 
     header .grid .button {
@@ -1090,7 +1119,7 @@ video {
 
     .phone {
         display: none;
-        opacity: 0.46;
+        color: white !important;
     }
 
     header section svg {
@@ -1121,18 +1150,40 @@ video {
         display: none !important;
     }
     
+    .phone__icon-wrapper {
+        display: block !important;
+        width: 40px;
+    }
+
     .main__header__row {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
     }
+
+    .lozung {
+        font-size: 18px;
+        margin-top: 15px !important;
+    }
+
+    .main__menu-item-img {
+        display: none;
+    }
+
 }
 
 .article__date__adaptive {
     display: none;
 }
 
+.phone__icon-wrapper {
+    display: none;
+}
+
 @media screen and (max-width:360px) {
+    .main__menu ul li span {
+        font-size: 18px;
+    }
     .article__date {
         display: none;
     }
@@ -1231,7 +1282,6 @@ video {
 .our__service-header {
     position: relative;
     text-align: center;
-    margin-top: 40px;
     color: #262626;
     font-size: 40px;
     font-family: Grotesk;
@@ -1465,6 +1515,11 @@ video {
 
 .contract {
     font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
 }
 
 .contract__main-text {
@@ -1473,22 +1528,28 @@ video {
 }
 
 .contract__main-text-img {
-    align-items: flex-start;
+    display: grid;
     max-width:1380px;
-    margin:0 auto;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    /* margin-top: 40px; */
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
+
+
 .contract__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    margin-right: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .contract__image {
     display: block;
-    
+    max-width: 100%;
+    height: auto;
     /* margin-top: 100px; */
 }
 
@@ -1503,6 +1564,7 @@ video {
 .contract__list-secondary {
     display: flex;
     flex-wrap: wrap;
+    column-gap: 20px;
 }
 
 .guarantees {
@@ -1510,9 +1572,8 @@ video {
     display: flex;
     flex-direction: column;
     max-width: 1380px;
-    /* background-color: greenyellow; */
     border: 1px dashed #00f;
-    margin: 0 auto;
+    margin: 40px 40px 0 40px;
 }
 
 .guarantees h3 {
@@ -1522,6 +1583,33 @@ video {
 }
 
 .guarantees ul li {
-    width: 50%;
+    width: calc(50% - 10px);
     list-style-type: none;
+}
+
+
+@media screen and (max-width: 950px) {
+    .contract__main-text-img {
+        grid-template-columns: auto;
+        row-gap: 20px;
+    }
+
+    .contract__list-main {
+        margin-top: 20px;
+    }
+
+    .contract {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contract__list-secondary {
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    .guarantees ul li {
+        width: 100%;
+    }
 }

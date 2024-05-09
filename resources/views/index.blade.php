@@ -96,8 +96,8 @@
         @endforeach
     </div> --}}
 
-    <section class="contract" style="margin-bottom: 80px">
-        <div class="flex contract__main-text-img">
+    <section class="contract">
+        <div class="contract__main-text-img">
             <div class="contract__main-text">
                 <h2 class="our__service-header services__header" style="margin-top: 15px">Договор, с которым вы будете спокойны</h2>
         
