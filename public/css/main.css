@@ -862,14 +862,34 @@ video {
     background: #f2f3f5;
 }
 
+.swiper__mobile {
+    display: none;
+}
+
+.swiper__mobile-hidden {
+    display: block;
+}
+
 @media screen and (max-width: 1400px) {
+    .swiper__mobile-hidden {
+        display: none;
+    }
+
+    .swiper__mobile {
+        display: block;
+    }
     .main__slider__wrapper {
         height: auto !important;
         display: block;
     }
+
+    .main__slider__wrapper {
+        max-height: 100%;
+    }
     
     .project__right__column {
         min-width: 0;
+        margin-bottom: 40px;
     }
 
     .project__left__column {
@@ -888,6 +908,7 @@ video {
         flex-direction: row;
         height: 250px !important;
         border-bottom: 1px solid rgba(0,0,0,.07);
+        border-top: 1px solid rgba(0,0,0,.07);
     }
 
     .project__price-gray-wrapper {
@@ -1212,6 +1233,22 @@ video {
     }
 }
 
+@media screen and (max-width: 860px) {
+    .swiper__mobile {
+        padding: 20px !important;
+    }
+
+    .gallery .swiper-slide img:hover {
+        transform: scale(107%);
+        cursor: pointer;
+    }
+
+    .swiper2 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
 @media screen and (max-width:500px) {
     .phone {
         display: none !important;
@@ -1245,6 +1282,13 @@ video {
 
 .phone__icon-wrapper {
     display: none;
+}
+
+.swiper__mobile {
+    padding: 0;
+    padding-top:40px;
+    padding-bottom:35px;
+    overflow:hidden
 }
 
 @media screen and (max-width: 550px) {

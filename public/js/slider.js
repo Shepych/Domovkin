@@ -34,15 +34,15 @@ let swiper = new Swiper(".swiper2", {
         // when window width is >= 320px
         100: {
           slidesPerView: 2,
-          spaceBetween: 30
+          spaceBetween: 20
         },
         // when window width is >= 480px
         480: {
           slidesPerView: 3,
-          spaceBetween: 40
+          spaceBetween: 20
         },
         // when window width is >= 640px
-        640: {
+        860: {
           slidesPerView: 5,
           spaceBetween: 40
         }

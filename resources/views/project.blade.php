@@ -7,7 +7,6 @@
 
 @section('content')
     <section style="max-width: 2200px;margin: 0 auto">
-{{--        <div style="background-color: white !important;box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);overflow: hidden">--}}
             <section class="flex main__slider__wrapper">
                 <div class="project__left__column">
                     <div class="swiper">
@@ -32,6 +31,23 @@
                         </div>
                     </div>
                 </div>
+
+                <section class="swiper__mobile">
+                    <div class="swiper2" style="padding-left: 40px;padding-right: 40px;">
+                        <div class="swiper-wrapper gallery">
+                            <div class="swiper-slide">
+                                <img src="{{ $project->img }}">
+                            </div>
+                            
+                            @foreach($project->photos() as $photo)
+                            <div class="swiper-slide">
+                                <img src="{{ $photo->src }}">
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+
                 <div class="project__right__column" style="align-items: stretch;">
                     <div class="project__characteristics">
                         <div class="flex project-info__section">
@@ -65,7 +81,7 @@
                 </div>
             </section>
 
-            <section style="padding: 0;padding-top:40px;padding-bottom:35px;overflow:hidden">
+            <section class="swiper__mobile-hidden" style="padding: 0;padding-top:40px;padding-bottom:35px;overflow:hidden">
                 <div class="swiper2" style="padding-left: 40px;padding-right: 40px;">
                     <div class="swiper-wrapper gallery">
                         <div class="swiper-slide">
@@ -79,7 +95,6 @@
                     </div>
                 </div>
             </section>
-{{--        </div>--}}
     </section>
 
     @php
