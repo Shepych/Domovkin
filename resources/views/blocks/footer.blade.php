@@ -7,3 +7,6 @@
         <span> <img src="/img/socials/telegram.svg" width="90px" height="90px"></span>
     </div>
 </div>
+
+{{-- <script src="/js/jquery.js"></script>
+<script src="/js/input-mask.js"></script> --}}

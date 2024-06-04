@@ -8,7 +8,7 @@
 @section('content')
     <section style="max-width: 2200px;margin: 0 auto">
 {{--        <div style="background-color: white !important;box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028);overflow: hidden">--}}
-            <section class="flex main__slider__wrapper" style="align-items: stretch;padding-right: 0;padding-left: 0;height: calc(100vh - 251px);max-height: 1000px;">
+            <section class="flex main__slider__wrapper">
                 <div class="project__left__column">
                     <div class="swiper">
                         <div class="swiper-wrapper" style="align-items: stretch;">
@@ -34,10 +34,11 @@
                 </div>
                 <div class="project__right__column" style="align-items: stretch;">
                     <div class="project__characteristics">
-                        <div class="flex" style="flex-direction: column">
-                            <div style="max-height:50%;background: #f2f3f5;">
+                        <div class="flex project-info__section">
+                            <div class="project__price-gray-wrapper">
                                 <span class="project__page__price" style="opacity: 0.86;">{{ number_format($project->price, 0, '.', '.')  }}</span>
                             </div>
+                            
                             <div class="flex" style="flex-direction: column;justify-content:space-evenly">
                                 <span>
                                     <span class="project__gray__span">Материал:</span> {{ $project->material() }}
@@ -59,7 +60,6 @@
 
                                 </span>
                             </div>
-
                         </div>
                     </div>
                 </div>

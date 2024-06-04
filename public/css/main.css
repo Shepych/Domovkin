@@ -844,6 +844,24 @@ video {
     
 }
 
+.main__slider__wrapper {
+    min-height: 600px;
+    align-items: stretch;
+    padding-right: 0;
+    padding-left: 0;
+    height: calc(100vh - 251px);
+    max-height: 1000px;
+}
+
+.project-info__section {
+    flex-direction: column
+}
+
+.project__price-gray-wrapper {
+    max-height:50%;
+    background: #f2f3f5;
+}
+
 @media screen and (max-width: 1400px) {
     .main__slider__wrapper {
         height: auto !important;
@@ -857,10 +875,6 @@ video {
     .project__left__column {
         width: 100%;
     }
-
-    .project__characteristics .flex div {
-        height: 50px;
-    }
     
     .project__characteristics div {
         font-size: 18px;
@@ -868,6 +882,16 @@ video {
 
     .project__page__price {
         font-size: 28px !important;
+    }
+
+    .project-info__section {
+        flex-direction: row;
+        height: 250px !important;
+        border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+
+    .project__price-gray-wrapper {
+        max-height: 100%
     }
 }
 
@@ -992,7 +1016,50 @@ video {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1300px) {
+    .services__list {
+        grid-template-columns: auto !important;
+        grid-template-rows: auto !important;
+        padding: 30px !important;
+        gap: 30px !important;
+    }
+
+    .service__big-block {
+        grid-row-start: auto !important;
+        grid-row-end: auto !important;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .service__small-block {
+        grid-row-start: auto !important;
+        grid-row-end: auto !important;
+    }
+
+    .services__list {
+        margin-bottom: 0 !important;
+    }
+
+    .price__list {
+        margin-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .phone {
+        margin-left: 5px !important;
+    }
+
+    .user__icon {
+        margin-left: 0 !important;
+    }
+
+    #application__call {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 830px) {
     .home__animation__wrapper {
         padding-top: 20px;
     }
@@ -1178,6 +1245,17 @@ video {
 
 .phone__icon-wrapper {
     display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .project-info__section {
+        flex-direction: column-reverse;
+        height: 350px !important;
+    }
+
+    .project__price-gray-wrapper {
+        height: 120px !important;
+    }
 }
 
 @media screen and (max-width:360px) {
