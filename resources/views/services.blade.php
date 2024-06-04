@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<h1 class="our__service-header" style="margin-top: 40px">Наши услуги</h1>
+<h1 class="our__service-header service__header-page" style="margin-top: 40px">Наши услуги</h1>
 <section class="services__list" style="margin-bottom: 40px">
     <div class="service__page-block service__big-block">
         {{-- <div class="fire-section">

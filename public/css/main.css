@@ -1038,6 +1038,9 @@ video {
 }
 
 @media screen and (max-width: 1300px) {
+    .service__header-page {
+        margin-top: 30px !important;
+    }
     .services__list {
         grid-template-columns: auto !important;
         grid-template-rows: auto !important;
@@ -1166,9 +1169,11 @@ video {
         padding-top: 10px;
         padding-bottom: 0;
     }
+
     .footer-description {
         display: none;
     }
+    
     .footer__main__page {
         border-top: none !important;
     }
@@ -1249,7 +1254,32 @@ video {
     }
 }
 
+.service__page-block span {
+    position: relative;
+}
+
+.service__page-block span::before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color:#126eff;
+    margin-top: 10px;
+    margin-left: -30px;
+    border-radius: 100%;
+}
+
 @media screen and (max-width:500px) {
+    .service__page-block span {
+        text-align: center;
+    }
+    .service__page-block span::before {
+        top: -30px;
+        margin-left: 0;
+        left: calc(50% - 5px);
+        height: 10px;
+    }
+
     .phone {
         display: none !important;
     }
@@ -1338,43 +1368,13 @@ video {
     align-items: center;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, .07);
-    /* background-color: #f2f3f5; */
-    /* background-color: #e6ffff; */
     font-size: 22px;
     gap: 10px;
     position: relative;
-    /* border: 1px solid #00f7fe !important; */
-    /* box-shadow: 0 0 2px black; */
-    /* font-weight: bold; */
-    /* font-family: 'Grotesk'; */
 }
-
-.service__page-block span::before {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color:#126eff;
-    margin-top: 10px;
-    margin-left: -30px;
-    border-radius: 100%;
-}
-
-/* .service__page-block span::after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color:#126eff;
-    margin-top: 10px;
-    margin-left: 20px;
-    border-radius: 100%;
-} */
 
 .service__page-block:hover {
-    /* background-color: #e6ffff; */
     cursor: pointer;
-    /* font-size: 26px; */
 }
 
 .service__page-block p {
