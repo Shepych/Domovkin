@@ -51,7 +51,7 @@
         <button>Сохранить</button>
     </form>
 
-    <script src="https://cdn.tiny.cloud/1/3wrve23yhs9g7bb641i6jcht2m1pqvqci3aasw81z84r2ooo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/9jjohr3u0gwoo21jv3tf4ixtgtu8sx0ukidmyoellnfyr7vk/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '#tinymce',

@@ -16,18 +16,8 @@
     @yield('content')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
-    <script>
-        // Главное меню гамбургер
-        // $(document).ready(function(){
-        //     $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
-        //         $(this).toggleClass('open')
-        //         $('.main__menu').toggleClass('main__menu__open')
-        //     });
-        //     $("body").removeClass("load")
-        // });
-    </script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/input-mask.js"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     {{-- <script>
         let csrf = '@csrf';

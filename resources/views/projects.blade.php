@@ -40,7 +40,7 @@
     </section>
 
     <section class="delimiter">
-        @include('blocks.footer_main_page')
+        @include('blocks.footer')
     </section>
 @endsection
 

@@ -216,14 +216,14 @@
         </div>
         
         <div class="payment__methods-item">
-            <img src="/img/services/phone_payment.svg">
+            <img src="/svg/card.svg">
             <span>
                 Оплата банковской картой
             </span>
         </div>
 
         <div class="payment__methods-item">
-            <img src="/img/services/coins.svg">
+            <img src="/svg/money.svg">
             <span>Наличный расчет</span>
         </div>
     </section>

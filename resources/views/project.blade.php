@@ -19,26 +19,16 @@
                                 <img src="{{ $photo->src }}">
                             </div>
                             @endforeach
-                            {{-- <div class="swiper-slide">
-                                <img src="/img/articles/3.webp">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/img/articles/4.webp">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/img/articles/4.webp">
-                            </div> --}}
                         </div>
                     </div>
                 </div>
 
                 <section class="swiper__mobile">
-                    <div class="swiper2" style="padding-left: 40px;padding-right: 40px;">
+                    <div class="swiper2 hidden" id="delayed-block2" style="padding-left: 40px;padding-right: 40px;">
                         <div class="swiper-wrapper gallery">
                             <div class="swiper-slide">
                                 <img src="{{ $project->img }}">
                             </div>
-                            
                             @foreach($project->photos() as $photo)
                             <div class="swiper-slide">
                                 <img src="{{ $photo->src }}">
@@ -82,11 +72,12 @@
             </section>
 
             <section class="swiper__mobile-hidden" style="padding: 0;padding-top:40px;padding-bottom:35px;overflow:hidden">
-                <div class="swiper2" style="padding-left: 40px;padding-right: 40px;">
+                <div class="swiper3 hidden" id="delayed-block" style="padding-left: 40px;padding-right: 40px;">
                     <div class="swiper-wrapper gallery">
                         <div class="swiper-slide">
                             <img src="{{ $project->img }}">
                         </div>
+
                         @foreach($project->photos() as $photo)
                         <div class="swiper-slide">
                             <img src="{{ $photo->src }}">
@@ -113,7 +104,7 @@
 @endsection
 
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="/js/swiper.js"></script>
 <script src="/js/slider.js"></script>
 <script>
     $(".gallery .swiper-slide").hover(function() {

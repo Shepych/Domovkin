@@ -18,6 +18,10 @@ $('#application__call').on('click', function() {
         '</form>',
     showConfirmButton: false,
   });
+
+  $(document).ready(function() {
+    $('#swal-input-phone').inputmask("+7 (999) 999-99-99");
+  });
 })
 
 $('.ajax__wrap').on('submit', '.ajax__form', function (event) {
@@ -77,6 +81,3 @@ function clearAllTimers() {
   });
 }
 
-$(document).ready(function() {
-    $('#swal-input-phone').inputmask("+7 (999) 999-99-99");
-});
