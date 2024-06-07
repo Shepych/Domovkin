@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Question;
+use App\Models\ServiceCategory;
 use FFMpeg\Format\Video\X264;
 use Illuminate\Http\Request;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
@@ -31,7 +32,8 @@ class MainController extends Controller
     
 
     public function services() {
-        return view('services');
+        $categories = ServiceCategory::all();
+        return view('services', compact('categories'));
     }
 
     public function reviews() {

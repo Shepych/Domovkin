@@ -39,10 +39,13 @@
         @endforeach
     </section>
 
+    <p class="projects__paragraph">В базе сайта представлено немного домов, но мы можем реализовать почти любой ваш проект, задумку или желание по чертежам или просто по фотографии понравившегося домика (чертежи составим сами).</p>
+
     <section class="delimiter">
         @include('blocks.footer')
     </section>
 @endsection
 
 @section('js')
+{{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
 @endsection

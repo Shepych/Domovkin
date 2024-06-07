@@ -857,13 +857,18 @@ video {
     max-height: 1000px;
 }
 
+.payment__methods-header {
+    margin-top: 30px !important;
+}
+
 .project-info__section {
     flex-direction: column
 }
 
 .project__price-gray-wrapper {
     max-height:50%;
-    background: #f2f3f5;
+    /* background: #f2f3f5; */
+    background: #dcfff9;
 }
 
 .swiper__mobile {
@@ -1042,6 +1047,15 @@ video {
 }
 
 @media screen and (max-width: 1300px) {
+    .price__list {
+        margin-top: 30px !important;
+    }
+    .services__list {
+        margin-bottom: 0 !important
+    }
+    .table__wrapper {
+        margin: 0 !important;
+    }
     .service__header-page {
         margin-top: 30px !important;
     }
@@ -1072,7 +1086,7 @@ video {
     }
 
     .price__list {
-        margin-top: 0 !important;
+        margin-top: 30px !important;
     }
 }
 
@@ -1281,63 +1295,20 @@ video {
     margin-left: -30px;
     border-radius: 100%;
 }
-@media screen and (max-width:490px) {
-    .price__list tbody tr td:last-child {
-        border-right: none !important;
-    }
 
-    .price__list tbody tr td:first-child {
-        border-left: none !important;
-    }
-
-    .table__wrapper {
-        border-right: 2px solid #022d5a;
-        border-left: 2px solid #022d5a;
-        border-bottom: 1px solid #022d5a;
-    }
-
-    .price__list th, td {
-        border-color: #022d5a !important;
-    }
+.price__list tr:last-child td {
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
 }
-@media screen and (max-width:500px) {
-    .service__page-block span {
-        text-align: center;
-    }
 
-    .service__page-block span::before {
-        top: -30px;
-        margin-left: 0;
-        left: calc(50% - 5px);
-        height: 10px;
-    }
-
-    .phone {
-        display: none !important;
-    }
-    
-    .phone__icon-wrapper {
-        display: block !important;
-        width: 40px;
-    }
-
-    .main__header__row {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-
-    .lozung {
-        font-size: 18px;
-        margin-top: 15px !important;
-    }
-
-    .main__menu-item-img {
-        display: none;
-    }
-
-    
+.price__list tbody tr td:last-child {
+    border-right: 2px solid rgba(0, 0, 0, .1);
 }
+
+.price__list tbody tr td:first-child {
+    border-left: 2px solid rgba(0, 0, 0, .1);
+}
+
+
 
 .article__date__adaptive {
     display: none;
@@ -1516,9 +1487,7 @@ video {
 }
 
 .table__wrapper {
-    overflow-x: auto;
     margin: 10px;
-    margin-bottom: 40px;
 }
 
 .price__list {
@@ -1535,7 +1504,7 @@ video {
     margin-right: auto;
     /* max-width: 2600px; */
     max-width: 1400px;
-    width: calc(100% - 80px);
+    width: calc(100% - 60px);
 }
 
 .price__list th, td {
@@ -1769,7 +1738,49 @@ video {
     }
 }
 
+.projects__paragraph {
+    font-size: 22px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 900px;
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
+    .adaptive__price {
+        display: inline !important;
+    }
+
+    .table__wrapper {
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+    }
+    .price__list {
+        width: 100%;
+    }
+    .price__list tr td:not(:first-child) {
+        display: none !important;
+    }
+
+    .price__list tr td:first-child {
+        border-right: 2px solid rgba(0, 0, 0, .1);
+    }
+    .service__page-block span {
+        text-align: center;
+    }
+
+    .service__page-block span::before {
+        top: -30px;
+        margin-left: 0;
+        left: calc(50% - 5px);
+        height: 10px;
+    }
+    
+    .payment__methods-header {
+        /* margin-top: 0 !important; */
+    }
     .payment__methods {
         flex-direction: column;
     }
@@ -1783,5 +1794,40 @@ video {
 
     .guarantees ul li {
         width: 100%;
+    }
+}
+
+.adaptive__price {
+    display: none;
+}
+.adaptive__price-color {
+    color: rgba(0, 0, 0, .4);
+}
+
+@media screen and (max-width:500px) {
+    
+
+    .phone {
+        display: none !important;
+    }
+    
+    .phone__icon-wrapper {
+        display: block !important;
+        width: 40px;
+    }
+
+    .main__header__row {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .lozung {
+        font-size: 18px;
+        margin-top: 15px !important;
+    }
+
+    .main__menu-item-img {
+        display: none;
     }
 }

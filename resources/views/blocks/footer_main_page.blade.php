@@ -4,6 +4,6 @@
         <div class="flex footer-description" style="max-width: 600px;flex-direction: column;text-align: center;font-size: 18px">
             <p>Все материалы, опубликованные на сайте в любом виде, являются объектами авторского и имущественного права. Любое их использование должно быть согласовано с автором. Материалы сайта не являются публичной офертой.</p>
         </div>
-        <span> <img src="/img/socials/telegram.svg" width="90px" height="90px"></span>
+        <span><a href="https://t.me/domovkin" target="_blank"><img src="/img/socials/telegram.svg" width="90px" height="90px"></a></span>
     </div>
 </div>

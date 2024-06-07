@@ -50,6 +50,10 @@ Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
 
         Route::post('/upload', [AdminController::class, 'upload']);
         Route::post('/upload/{id}', [AdminController::class, 'uploadEdit']);
+
+        # УСЛУГИ
+        Route::get('/services', [AdminController::class, 'services'])->name('services.list');
+        Route::post('/services/create', [AdminController::class, 'serviceCreate'])->name('services.create');
     });
 });
 

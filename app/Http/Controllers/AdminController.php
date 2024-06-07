@@ -6,8 +6,11 @@ use App\Models\Article;
 use App\Models\Project;
 use App\Models\Photos;
 use App\Models\Material;
+use App\Models\Services;
 use App\Models\Roof;
 use App\Models\Attachment;
+use App\Models\ServiceCategory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -299,5 +302,26 @@ class AdminController extends Controller
     public function deleteProject(Request $request, $id) {
         Project::find($id)->delete();
         return redirect(route('admin.projects.page'));
+    }
+
+    public function services() {
+        $categories = ServiceCategory::all();
+        $types = DB::table('services_types')->get();
+
+        return view('admin.services.list', compact('categories', 'types'));
+    }
+
+    public function serviceCreate(Request $request) {
+        Services::create([
+            'name' => $request->title,
+            'category_id' => $request->category_id,
+            'type_id' => $request->type_id,
+            'price' => $request->price ? $request->price : 0,
+        ]);
+        return redirect()->back();
+    }
+
+    public function serviceDelete() {
+        return 'Удалить услугу';
     }
 }

@@ -6,6 +6,7 @@
     <ul>
         <li><a href="{{ route('admin.projects.page') }}">Проекты</a></li>
         <li><a href="{{ route('admin.articles.page') }}">Статьи</a></li>
+        <li><a href="{{ route('admin.services.list') }}">Услуги</a></li>
     </ul>
 @endrole
 
