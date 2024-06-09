@@ -17,6 +17,11 @@ class Article extends Model
     }
 
     public function poster() {
-        return "/storage/articles/$this->folder/$this->id/$this->img";
+        if(env('DEV') == 'true') {
+            $link = "$this->img";
+        } else {
+            $link = "/storage/articles/$this->folder/$this->id/$this->img";
+        }
+        return $link;
     }
 }
