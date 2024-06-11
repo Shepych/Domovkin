@@ -36,6 +36,10 @@ class MainController extends Controller
         return view('services', compact('categories'));
     }
 
+    public function portfolio() {
+        return view('portfolio.portfolio');
+    }
+
     public function reviews() {
         return view('reviews');
     }

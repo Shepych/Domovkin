@@ -180,6 +180,79 @@ header {
 .logo:hover .logo__ru {
     color: white !important;
 }
+/* 
+
+Портфолио
+
+*/
+.portfolio__list {
+    max-width: 2600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.portfolio__preview {
+    display: block;
+    width: 100%;
+    filter: brightness(80%);
+    box-shadow: 0 0 3px black;
+}
+
+.portfolio__card {
+    width: calc(50% - 20px);
+    position: relative;
+    padding: 5px;
+    background-color: #0e3d6f;
+    border: 1px solid #0e3d6f;
+}
+
+.portfolie__title {
+    border-radius: 10px;
+    border: 1px solid #0d3c6e;
+    box-shadow: 0 0 6px inset black;
+    color: white;
+    background-color: #011d42;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    
+}
+
+.photo__count {
+    color: white;
+    background-color: #011d42;
+    position: absolute;
+    border-radius: 10px;
+    border: 1px solid #0d3c6e;
+    box-shadow: 0 0 6px inset black;
+    top: 30px;
+    right: 30px;
+    width: 90px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+}
+
+.portfolio__paragraph {
+    font-size: 22px;
+}
 
 /*
 
@@ -203,13 +276,13 @@ header {
 }
 
 .project__item {
-    width: calc(33% - 40px);
+    width: calc(33% - 34px);
     background: linear-gradient(180deg,#022d5a,#0e3d6f);
     border: 1px solid #404549;
     color: #919192;
     text-decoration: none;
     font-size: 18px;
-    max-width: 580px;
+    /* max-width: 580px; */
     position: relative;
     z-index: 15;
 }
@@ -1169,6 +1242,7 @@ video {
 
     .main__menu ul li {
         height: 61px;
+        font-size: 18px;
     }
     
     .phone {
@@ -1383,6 +1457,8 @@ video {
 /* СТРАНИЦА УСЛУГ */
 
 .services__list {
+    max-width: 2600px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 140px);
@@ -1767,6 +1843,18 @@ video {
     .contract {
         margin-bottom: 40px;
     }
+
+    .portfolio__list {
+        flex-direction: column;
+    }
+
+    .portfolio__card {
+        width: 100%;
+    }
+
+    .main__menu-item-img {
+        display: none;
+    }
 }
 
 .projects__paragraph {
@@ -1836,8 +1924,6 @@ video {
 }
 
 @media screen and (max-width:500px) {
-    
-
     .phone {
         display: none !important;
     }
@@ -1856,9 +1942,5 @@ video {
     .lozung {
         font-size: 18px;
         margin-top: 15px !important;
-    }
-
-    .main__menu-item-img {
-        display: none;
     }
 }

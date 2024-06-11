@@ -46,6 +46,18 @@
                     <span>Услуги</span>
                 </a>
             </li>
+            <li class="flex {{ request()->is('portfolio') ? 'main__menu__active' : null }}">
+                <a class="flex" href="{{ route('portfolio') }}">
+                    <img class="main__menu-item-img" src="/svg/projects.svg" style="width: 38px;margin-right: 20px">
+                    <span>Портфолио</span>
+                </a>
+            </li>
+            {{-- <li class="flex {{ request()->is('calculators') ? 'main__menu__active' : null }}">
+                <a class="flex" href="{{ route('portfolio') }}">
+                    <img class="main__menu-item-img" src="/img/socials/pig.svg" style="width: 48px;margin-right: 20px">
+                    <span>Калькуляторы</span>
+                </a>
+            </li> --}}
             {{-- <li class="flex {{ request()->is('reviews') ? 'main__menu__active' : null }}">
                 <a class="flex" href="{{ route('reviews') }}">
                     <img src="/img/socials/reviews2.svg" style="width: 45px;margin-right: 20px">

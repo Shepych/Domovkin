@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\TelegramController;
 
 Route::get('/', [MainController::class, 'index'])->name('index');
@@ -14,6 +15,8 @@ Route::get('/articles', [ArticleController::class, 'list'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'detail'])->name('articles.detail');
 Route::get('/services', [MainController::class, 'services'])->name('services');
 Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
+Route::get('/portfolio', [MainController::class, 'portfolio'])->name('portfolio');
+Route::get('/portfolio/{id}', [PortfolioController::class, 'detail'])->name('portfolio.detail');
 
 Route::get('/login', [ClientController::class, 'login'])->name('login');
 Route::post('/auth', [ClientController::class, 'auth'])->name('client.authorize');
