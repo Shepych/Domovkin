@@ -1,46 +1,57 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="pswp-gallery pswp-gallery--single-column" id="my-gallery">
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
+    {{-- <div style="text-align: center;font-size:20px">
+      <span>Главная > Портфолио</span>
+    </div> --}}
+    <h1 class="our__service-header service__header-page" style="margin-top: 40px">Ремонт #12</h1>
+    <p class="projects__paragraph">27 мая 2021</p>
+    
+    <div class="portfolio__gallery" id="my-gallery">
+        <a class="gallery__main-photo" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
           data-pswp-width="1669" 
           data-pswp-height="2500" 
+          data-cropped="true"
           target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" alt="" />
         </a>
-        <!-- cropped thumbnail: -->
+
         <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
           data-pswp-width="1875" 
           data-pswp-height="2500" 
           data-cropped="true" 
           target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
+          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" alt="" />
         </a>
-        <!-- data-pswp-src with custom URL in href -->
-        <a href="https://unsplash.com" 
-          data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
-          data-pswp-width="2500" 
-          data-pswp-height="1666" 
+        
+        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
+          data-pswp-width="1875" 
+          data-pswp-height="2500" 
+          data-cropped="true" 
           target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" alt="" />
         </a>
-        <!-- Without thumbnail: -->
+        
         <a href="http://example.com" 
           data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
           data-pswp-width="2500" 
           data-pswp-height="1668" 
+          data-cropped="true" 
           target="_blank">
+          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg" alt="" />
         </a>
-        <!-- wrapped with any element: -->
-        <div>
-          <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
-            data-pswp-width="2500" 
-            data-pswp-height="1667" 
-            target="_blank">
-            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
-          </a>
-        </div>
+
+        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+          data-pswp-width="2500" 
+          data-pswp-height="1667" 
+          data-cropped="true" 
+          target="_blank">
+          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg" alt="" />
+        </a>
       </div>
 
-    @include('blocks.footer')
+    
+      <p class="projects__paragraph" style="margin-top: 40px">Описание проекта</p>
+    
+      @include('blocks.footer')
 @endsection
