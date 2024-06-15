@@ -11,7 +11,7 @@
     
     
     <div class="portfolio__gallery" id="my-gallery">
-      @php list($width, $height, $type, $attr) = getimagesize("http://domovkin/" . $portfolio->img); @endphp
+      @php list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $portfolio->img); @endphp
         <a class="gallery__main-photo" href="{{ $portfolio->img }}" 
           data-pswp-width="{{ $width }}" 
           data-pswp-height="{{ $height }}" 
@@ -23,7 +23,7 @@
         @foreach($portfolio->photos() as $photo)
           @if($loop->iteration > 4) @break @endif
           @php
-            list($width, $height, $type, $attr) = getimagesize("http://domovkin/" . $photo->src);
+            list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $photo->src);
           @endphp
 
           <a href="{{ $photo->src }}" 
