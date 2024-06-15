@@ -42,30 +42,32 @@
       @php
         $math = intval(round(($portfolio->photos()->count() - 4) / 3));
         $gridTemplateRows = '';
-        for ($i = 0; $i <= $math; $i++) { 
+        for ($i = 0; $i < $math; $i++) { 
           $gridTemplateRows.= '400px ';
         }
         $gridTemplateRows .= ';';
       @endphp
 
-      <div class="portfolio__gallery" style="grid-template-columns: calc(33% - 22px) calc(33% - 22px) calc(33% - 22px);grid-template-rows: {{ $gridTemplateRows }};margin-bottom:40px" id="my-gallery-two">
-        @foreach($portfolio->photos() as $photo)
-          @if($loop->iteration <= 1)
-            @continue
-          @endif
-            @php
-              list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $photo->src);
-            @endphp
+      @if($portfolio->photos()->count() > 4)
+        <div class="portfolio__gallery" style="grid-template-columns: calc(33% - 22px) calc(33% - 22px) calc(33% - 22px);grid-template-rows: {{ $gridTemplateRows }};margin-bottom:40px" id="my-gallery-two">
+          @foreach($portfolio->photos() as $photo)
+            @if($loop->iteration <= 4)
+              @continue
+            @endif
+              @php
+                list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $photo->src);
+              @endphp
 
-          <a href="{{ $photo->src }}" 
-            data-pswp-width="{{ $width }}" 
-            data-pswp-height="{{ $height }}" 
-            data-cropped="true" 
-            target="_blank">
-            <img src="{{ $photo->src }}" alt="" />
-          </a>
-        @endforeach
-      </div>
+            <a href="{{ $photo->src }}" 
+              data-pswp-width="{{ $width }}" 
+              data-pswp-height="{{ $height }}" 
+              data-cropped="true" 
+              target="_blank">
+              <img src="{{ $photo->src }}" alt="" />
+            </a>
+          @endforeach
+        </div>
+      @endif
     
       @include('blocks.footer')
 @endsection

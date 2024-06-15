@@ -15,7 +15,7 @@
             </a>
 
             <div class="gallery__card-section">
-                <div class="photo__count">{{ $project->photos()->count() }} <img src="/svg/photo.svg" width="36px">
+                <div class="photo__count">{{ $project->photos()->count() + 1}} <img src="/svg/photo.svg" width="36px">
                 </div>
                 <div class="gallery__card-description">
                     <h2>{{ $project->type() }}</h2>
@@ -30,7 +30,7 @@
                 <div class="gallery__card-footer">
                     <span
                         class="gallery__card-date">{{ Carbon\Carbon::parse($project->completed)->diffForHumans() }}</span>
-                    <div class="photo__count photo__count-adaptive">{{ $project->photos()->count() }} <img
+                    <div class="photo__count photo__count-adaptive">{{ $project->photos()->count() + 1 }} <img
                             src="/svg/photo.svg" width="36px"></div>
                     <a href="{{ route('portfolio.detail', $project->id) }}" class="more-details">Подробнее</a>
                 </div>
