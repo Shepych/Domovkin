@@ -54,7 +54,7 @@
             @continue
           @endif
             @php
-              list($width, $height, $type, $attr) = getimagesize("http://domovkin/" . $photo->src);
+              list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $photo->src);
             @endphp
 
           <a href="{{ $photo->src }}" 
