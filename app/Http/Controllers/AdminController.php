@@ -343,17 +343,20 @@ class AdminController extends Controller
                 'title' => 'required',
                 'img' => 'required|file',
                 'completed' => 'required',
+                'description' => 'required',
                 'type' => 'required',
             ], [
                 'title.required' => 'Название отсутствует отсутсвует',
                 'img.file' => 'Должен быть файлом',
                 'img.required' => 'Облажка отсутствует',
                 'completed.required' => 'Дата не указана',
+                'completed.required' => 'Описание отсутствует',
             ]);
 
             $portfolio = Portfolio::create([
                 'name' => $request->title,
                 'img' => 'test',
+                'description' => $request->description,
                 'completed' => $request->completed,
                 'type_id' => $request->type
             ]);
