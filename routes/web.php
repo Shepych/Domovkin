@@ -57,6 +57,11 @@ Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
         # УСЛУГИ
         Route::get('/services', [AdminController::class, 'services'])->name('services.list');
         Route::post('/services/create', [AdminController::class, 'serviceCreate'])->name('services.create');
+
+        # УСЛУГИ
+        Route::get('/portfolio', [AdminController::class, 'portfolio'])->name('portfolio.list');
+        Route::get('/portfolio/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.page.create');
+        Route::post('/portfolio/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.method.create');
     });
 });
 

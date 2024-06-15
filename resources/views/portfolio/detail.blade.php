@@ -1,57 +1,71 @@
 @extends('layouts.main')
 
 @section('content')
-    {{-- <div style="text-align: center;font-size:20px">
-      <span>Главная > Портфолио</span>
-    </div> --}}
-    <h1 class="our__service-header service__header-page" style="margin-top: 40px">Ремонт #12</h1>
-    <p class="projects__paragraph">27 мая 2021</p>
+    <div style="position: relative">
+      <a href="{{ $isFromPortfolioList ? url()->previous() : route('portfolio') }}" class="portfolio__back-button"></a>
+      <h1 class="our__service-header service__header-page" style="margin-top: 40px">
+        Ремонт
+      </h1>
+      <p class="projects__paragraph-date" style="color: #919192">{{ Carbon\Carbon::parse($portfolio->completed)->diffForHumans() }}</p>
+    </div>
+    
     
     <div class="portfolio__gallery" id="my-gallery">
-        <a class="gallery__main-photo" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-          data-pswp-width="1669" 
-          data-pswp-height="2500" 
+      @php list($width, $height, $type, $attr) = getimagesize("http://domovkin/" . $portfolio->img); @endphp
+        <a class="gallery__main-photo" href="{{ $portfolio->img }}" 
+          data-pswp-width="{{ $width }}" 
+          data-pswp-height="{{ $height }}" 
           data-cropped="true"
           target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" alt="" />
+          <img src="{{ $portfolio->img }}" alt="" />
         </a>
 
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
-          data-pswp-width="1875" 
-          data-pswp-height="2500" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" alt="" />
-        </a>
-        
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
-          data-pswp-width="1875" 
-          data-pswp-height="2500" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" alt="" />
-        </a>
-        
-        <a href="http://example.com" 
-          data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
-          data-pswp-width="2500" 
-          data-pswp-height="1668" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg" alt="" />
-        </a>
+        @foreach($portfolio->photos() as $photo)
+          @if($loop->iteration > 4) @break @endif
+          @php
+            list($width, $height, $type, $attr) = getimagesize("http://domovkin/" . $photo->src);
+          @endphp
 
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
-          data-pswp-width="2500" 
-          data-pswp-height="1667" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg" alt="" />
-        </a>
+          <a href="{{ $photo->src }}" 
+            data-pswp-width="{{ $width }}" 
+            data-pswp-height="{{ $height }}" 
+            data-cropped="true" 
+            target="_blank">
+            <img src="{{ $photo->src }}" alt="" />
+          </a>
+        @endforeach
       </div>
 
     
-      <p class="projects__paragraph" style="margin-top: 40px">Описание проекта</p>
+      <p class="projects__paragraph" style="margin-top: 40px">{{ $portfolio->description }}</p>
+
+      @php
+        $math = intval(round(($portfolio->photos()->count() - 4) / 3));
+        $gridTemplateRows = '';
+        for ($i = 0; $i <= $math; $i++) { 
+          $gridTemplateRows.= '400px ';
+        }
+        $gridTemplateRows .= ';';
+      @endphp
+
+      <div class="portfolio__gallery" style="grid-template-columns: calc(33% - 22px) calc(33% - 22px) calc(33% - 22px);grid-template-rows: {{ $gridTemplateRows }};margin-bottom:40px" id="my-gallery-two">
+        @foreach($portfolio->photos() as $photo)
+          @if($loop->iteration <= 1)
+            @continue
+          @endif
+            @php
+              list($width, $height, $type, $attr) = getimagesize("http://domovkin/" . $photo->src);
+            @endphp
+
+          <a href="{{ $photo->src }}" 
+            data-pswp-width="{{ $width }}" 
+            data-pswp-height="{{ $height }}" 
+            data-cropped="true" 
+            target="_blank">
+            <img src="{{ $photo->src }}" alt="" />
+          </a>
+        @endforeach
+      </div>
     
       @include('blocks.footer')
 @endsection

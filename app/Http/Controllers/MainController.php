@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
 use App\Models\Project;
 use App\Models\Question;
 use App\Models\ServiceCategory;
@@ -37,7 +38,8 @@ class MainController extends Controller
     }
 
     public function portfolio() {
-        return view('portfolio.portfolio');
+        $portfolio = Portfolio::all();
+        return view('portfolio.portfolio', compact('portfolio'));
     }
 
     public function reviews() {

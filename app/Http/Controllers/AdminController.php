@@ -9,6 +9,7 @@ use App\Models\Material;
 use App\Models\Services;
 use App\Models\Roof;
 use App\Models\Attachment;
+use App\Models\Portfolio;
 use App\Models\ServiceCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -21,6 +22,7 @@ class AdminController extends Controller
     public $maxFolders = 3;
     public $dir = 'articles/';
     public $projectsDir = 'projects/';
+    public $portfolioDir = 'portfolio/';
 
     public function articles() {
         $articles = Article::all();
@@ -323,5 +325,61 @@ class AdminController extends Controller
 
     public function serviceDelete() {
         return 'Удалить услугу';
+    }
+
+    public function portfolio() {
+        $portfolio = Portfolio::all();
+
+        return view('admin.portfolio.list', compact('portfolio'));
+    }
+
+    public function portfolioCreate(Request $request) {
+        $portfolio = Portfolio::all();
+
+        // title img photos completed type
+        if($request->post()) {
+            // dd($request->photos);
+            $request->validate([ # Валидация данных
+                'title' => 'required',
+                'img' => 'required|file',
+                'completed' => 'required',
+                'type' => 'required',
+            ], [
+                'title.required' => 'Название отсутствует отсутсвует',
+                'img.file' => 'Должен быть файлом',
+                'img.required' => 'Облажка отсутствует',
+                'completed.required' => 'Дата не указана',
+            ]);
+
+            $portfolio = Portfolio::create([
+                'name' => $request->title,
+                'img' => 'test',
+                'completed' => $request->completed,
+                'type_id' => $request->type
+            ]);
+
+            if($request->file('img')) { # Меняем обложку
+                $path = "$this->portfolioDir" . "$portfolio->id";
+                $portfolio->img = '/storage/' . $request->file('img')->store($path);
+            }
+
+            if($request->file('photos')) { # Сохраняем картинки
+                $path = "$this->portfolioDir" . "$portfolio->id";
+                $photos = [];
+                foreach($request->file('photos') as $key => $photo) {
+                    $photos[$key]['portfolio_id'] = $portfolio->id;
+                    $photos[$key]['src'] = '/storage/' . $photo->store($path);
+                }
+                DB::table('portfolio_photos')->where('portfolio_id', $portfolio->id)->delete();
+                DB::table('portfolio_photos')->insert($photos);
+            }
+
+            $portfolio->update();
+
+            return redirect()->back();
+        } else {
+            $types = DB::table('portfolio_types')->get();
+            return view('admin.portfolio.create', compact('types'));
+        }
     }
 }
