@@ -4,7 +4,7 @@
     <div style="position: relative">
       <a href="{{ $isFromPortfolioList ? url()->previous() : route('portfolio') }}" class="portfolio__back-button"></a>
       <h1 class="our__service-header service__header-page" style="margin-top: 40px">
-        Ремонт
+        {{ $portfolio->type() }}
       </h1>
       <p class="projects__paragraph-date" style="color: #919192">{{ Carbon\Carbon::parse($portfolio->completed)->diffForHumans() }}</p>
     </div>
