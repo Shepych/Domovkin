@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique()->nullable();
             $table->text('description')->nullable();
             $table->text('content')->nullable();
-            $table->string('seo')->nullable();
+            $table->text('seo')->nullable();
             $table->integer('folder')->nullable();
             $table->string('img')->nullable();
             $table->integer('views')->default(0);

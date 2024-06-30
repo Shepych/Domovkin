@@ -385,4 +385,63 @@ class AdminController extends Controller
             return view('admin.portfolio.create', compact('types'));
         }
     }
+    
+    public function telegramArticlesList() {
+        $articles = DB::table('telegram_articles')->get();
+        return view('admin.telegram.articles', compact('articles'));
+    }
+
+    public function telegramArticlesCreate(Request $request) {
+        if($request->post()) {
+            $token = env('BOOK_BOT_TOKEN');
+
+            # Замените на ваш идентификатор канала
+            $channel_id = env('TELEGRAM_CHANNEL_ID');
+
+            # Сообщение, которое вы хотите отправить
+            $message = str_replace('<br>', "\n", str_replace('&nbsp;', "",str_replace('&ndash;', '-', strip_tags($request->content, '<strong></strong><b></b><i></i><em></em><a></a><pre></pre><u></u>'))));
+            // dump($request->content);
+            // dd($message);
+
+            # URL для отправки запроса
+            $url = "https://api.telegram.org/bot$token/sendMessage";
+            $keyboard = [
+                'inline_keyboard' => [
+                    [
+                        ['text' => 'Domovkin.ru - ремонт и строительство', 'url' => env('SITE_URL')],
+                    ]
+                ],
+            ];
+            $encodedKeyboard = json_encode($keyboard);
+
+            # Данные, которые будут отправлены в POST-запросе
+            $data = [
+                'chat_id' => $channel_id,
+                'text' => $message,
+                'parse_mode' => 'HTML',
+                'reply_markup' => $encodedKeyboard,
+            ];
+
+            # Использование cURL для отправки POST-запроса
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            DB::table('telegram_articles')->insert([
+                'message_id' => json_decode($response)->result->message_id,
+                'content_tinymce' => $request->content,
+                'content_telegram' => $message,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            return dd($response);
+        }
+
+        return view('admin.telegram.create');
+    }
 }

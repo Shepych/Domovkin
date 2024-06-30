@@ -58,11 +58,15 @@ Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
         Route::get('/services', [AdminController::class, 'services'])->name('services.list');
         Route::post('/services/create', [AdminController::class, 'serviceCreate'])->name('services.create');
 
-        # УСЛУГИ
+        # ПОРТФОЛИО
         Route::get('/portfolio', [AdminController::class, 'portfolio'])->name('portfolio.list');
         Route::get('/portfolio/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.page.create');
         Route::post('/portfolio/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.method.create');
+
+        # ТЕЛЕГРАМ
+        Route::get('/telegram/articles', [AdminController::class, 'telegramArticlesList'])->name('telegram.articles');
+        Route::match(['get', 'post'], '/telegram/articles/create', [AdminController::class, 'telegramArticlesCreate'])->name('telegram.articles.create');
     });
 });
 
-Route::get('/bot', [TelegramController::class, 'bot'])->name('bot');
+// Route::get('/bot', [TelegramController::class, 'bot'])->name('bot');

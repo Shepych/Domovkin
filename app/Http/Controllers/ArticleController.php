@@ -10,7 +10,7 @@ class ArticleController extends Controller
 {
     # СПИСОК СТАТЕЙ
     public function list() {
-        $articles = Article::all();
+        $articles = Article::orderBy('created_at', 'DESC')->get();
         return view('articles.list', compact('articles'));
     }
 

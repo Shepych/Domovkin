@@ -13,8 +13,8 @@
         {{-- <a style="display: inline-block;" href="{{ route('admin.portfolio.page.update', $project->id) }}">
             <button>Изменить</button>
         </a> --}}
-        <a style="display: inline-block;" onclick="return confirm('Are you sure?')" href="{{ route('admin.articles.method.delete', ['id' => $article->id]) }}">
+        {{-- <a style="display: inline-block;" onclick="return confirm('Are you sure?')" href="{{ route('admin.articles.method.delete', ['id' => $article->id]) }}">
             <button>Удалить</button>
-        </a>
+        </a> --}}
     </div>
 @endforeach

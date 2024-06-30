@@ -5,7 +5,7 @@
         <div class="article__page__wrapper">
             <section class="article__header">
                 <h1 class="article__page__title">{{ $article->title }}</h1>
-
+                <img class="article__page__poster" src="{{ $article->poster() }}" alt="">
                 <ul class="article__sub">
                     <li class="flex"><img src="/img/socials/date.svg" style="width:26px;margin-right:8px" alt="">{{ $article->created_at->diffForHumans() }}</li>
                     <li class="flex"><img src="/img/socials/eye.svg" style="width:29px;margin-right:8px" alt=""> Просмотров {{ $article->views }}</li>

@@ -8,6 +8,7 @@
         <li><a href="{{ route('admin.articles.page') }}">Статьи</a></li>
         <li><a href="{{ route('admin.services.list') }}">Услуги</a></li>
         <li><a href="{{ route('admin.portfolio.list') }}">Портфолио</a></li>
+        <li><a href="{{ route('admin.telegram.articles') }}">Телеграм</a></li>
     </ul>
 @endrole
 

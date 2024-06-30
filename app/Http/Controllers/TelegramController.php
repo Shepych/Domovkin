@@ -17,12 +17,13 @@ class TelegramController extends Controller
 
     public function bot() {
         # Хук
-        // $webhookUrl = 'https://domovkin.ru/bot';
-        // $apiUrl = "https://api.telegram.org/bot{$this->token}/";
-        // $setWebhookUrl = $apiUrl . 'setWebhook?url=' . urlencode($webhookUrl);
-        // $response = file_get_contents($setWebhookUrl);
-        // $response = json_decode($response, true);
+        $webhookUrl = 'https://domovkin.ru/bot/article/send';
+        $apiUrl = "https://api.telegram.org/bot{$this->token}/";
+        $setWebhookUrl = $apiUrl . 'setWebhook?url=' . urlencode($webhookUrl);
+        $response = file_get_contents($setWebhookUrl);
+        $response = json_decode($response, true);
 
+        dd($response);
         // if ($response['ok']) {
         //     echo 'Вебхук успешно установлен!';
         // } else {
@@ -224,7 +225,7 @@ class TelegramController extends Controller
                         ['text' => 'Black Button 4', 'callback_data' => 'black_button_2'],
                     ],
                 ],
-            ];
+        ];
         
             $encodedKeyboard = json_encode($keyboard);
         
