@@ -27,6 +27,7 @@ strong {
     max-width: 1200px;
     border-radius: 20px;
     box-shadow: 0 0 1px black;
+    height: auto !important;
 }
 
 .article__page img {
