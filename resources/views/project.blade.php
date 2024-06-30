@@ -1,8 +1,9 @@
 @extends('layouts.main')
 
 @section('css')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"> --}}
 <link rel="stylesheet" href="/css/slider.css">
+<link rel="stylesheet" href="/css/swiper.css">
 @endsection
 
 @section('content')
