@@ -105,12 +105,24 @@ header {
 
 .phone {
     margin-left: 24px;
-    /* color: white; */
     color: #7992ad !important;
-    /* margin-left: auto !important; */
     display: flex !important;
     justify-content: center;
     align-items: center;
+}
+
+a[href^="tel"] {
+    color: inherit; /* Использование текущего цвета текста */
+    text-decoration: none; /* Удаление подчеркивания */
+}
+
+/* Также можно использовать универсальный селектор */
+a[href^="tel"]:link,
+a[href^="tel"]:visited,
+a[href^="tel"]:hover,
+a[href^="tel"]:active {
+    color: inherit; /* Использование текущего цвета текста */
+    text-decoration: none; /* Удаление подчеркивания */
 }
 
 .request__call {

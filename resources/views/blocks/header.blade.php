@@ -4,11 +4,13 @@
             <img class="icon__brick" src="/img/brick.svg" width="50px" height="90px" style="margin-right: 24px">
             <a class="logo"  href="/">DOMOVKIN<span class="logo__ru" style="color: #126eff">.RU</span></a>
            
-            <svg class="phone__icon-wrapper" viewBox="0 0 24 24">
-                <use href="/img/svg/phone.svg#phone">
-            </svg>
+            <a href="tel:+79955551961">
+                <svg class="phone__icon-wrapper" viewBox="0 0 24 24">
+                    <use href="/img/svg/phone.svg#phone">
+                </svg>
+            </a>
 
-            <span style="color: white;display: block;width: 176px;text-align: center" class="phone">8 (812) 900 08 40</span>
+            <a style="color: white;display: block;width: 176px;text-align: center" href="tel:+79955551961" class="phone">8 (812) 900 08 40</a>
             
             <button class="button" id="application__call" style="height: 50px;margin-left: 22px;">Заказать звонок</button>
             <a class="user__icon" style="margin-left: 24px;margin-top: 6px;" href="{{ route('login') }}">
