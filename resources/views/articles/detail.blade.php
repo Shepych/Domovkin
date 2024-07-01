@@ -10,7 +10,7 @@
                     <li class="flex"><img src="/img/socials/eye.svg" style="width:29px;margin-right:8px" alt=""> Просмотров {{ $article->views }}</li>
                 </ul>
 {{--                <img style="display: block;margin: 0 auto;max-width: 800px;height: auto;border-radius: 20px;box-shadow: 0 0 5px black" src="{{ $article->poster() }}">--}}
-                <div class="article__content" style="padding-top: 20px;">
+                <div class="article__content">
                     {!! Str::markdown($article->content) !!}
                 </div>
 

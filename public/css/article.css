@@ -56,6 +56,14 @@ strong {
     padding: 40px;
 }
 
+.article__content > :first-child {
+    margin-top: 0; /* Убираем отступ сверху у первого элемента */
+}
+
+.article__content > :last-child {
+    margin-bottom: 10px; /* Добавляем отступ снизу у последнего элемента */
+}
+
 .article__header {
     width: 100%;
     padding: 40px;
