@@ -26,6 +26,7 @@ strong {
     margin-top: 40px;
     display: block;
     max-width: 1200px;
+    width: 100%;
     border-radius: 20px;
     box-shadow: 0 0 1px black;
     height: auto !important;

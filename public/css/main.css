@@ -1276,7 +1276,9 @@ video {
 }
 
 @media screen and (max-width: 900px) {
-
+    .article__page__poster {
+        margin-top: 20px !important
+    }
     .portfolio__card-left {
         gap: 20px;
     }
