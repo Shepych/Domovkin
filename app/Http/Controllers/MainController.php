@@ -15,34 +15,40 @@ class MainController extends Controller
     public $rtsp = 'rtsp://admin:Huskar00@192.168.1.9:554';
 
     public function index() {
+        $title = "Строительство домов и ремонт квартир в Москве";
         $questions = Question::all();
         $projects = Project::take(12)->get();
-        return view('index', compact('questions', 'projects'));
+        return view('index', compact('questions', 'projects', 'title'));
     }
 
     public function projects() {
+        $title = "Проекты загородных домов и коттеджей";
         $projects = Project::all();
-        return view('projects', compact('projects'));
+        return view('projects', compact('projects', 'title'));
     }
 
     public function project($id) {
+        
         $project = Project::find($id);
+        $title = "Проект №" . $project->id;
         if(!$project) abort(404);
-        return view('project', compact('project'));
+        return view('project', compact('project', 'title'));
     }
     
 
     public function services() {
+        $title = "Построить дом, сделать ремонт квартиры - цена (стоимость) услуги";
         $categories = ServiceCategory::all();
-        return view('services', compact('categories'));
+        return view('services', compact('categories', 'title'));
     }
 
     public function portfolio() {
+        $title = "Примеры работ";
         $portfolio = Portfolio::all();
-        return view('portfolio.portfolio', compact('portfolio'));
+        return view('portfolio.portfolio', compact('portfolio', 'title'));
     }
 
-    public function reviews() {
-        return view('reviews');
-    }
+    // public function reviews() {
+    //     return view('reviews');
+    // }
 }

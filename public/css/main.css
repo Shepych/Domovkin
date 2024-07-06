@@ -818,6 +818,7 @@ video {
     border: 1px solid rgba(0,0,0,.07);
     background-color: #f2f3f5;
     width: calc(33.33% - 27px);
+    padding-top: 60px;
     /*border: 1px solid #404549;*/
     /*background-color: #232425;*/
     /* box-shadow: 0 4px 80px rgba(0,0,0,.07),0 .893452px 17.869px rgba(0,0,0,.042),0 .266004px 5.32008px rgba(0,0,0,.028); */
@@ -897,6 +898,7 @@ video {
 
 .article__description {
     padding: 40px;
+    padding-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;

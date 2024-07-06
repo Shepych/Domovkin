@@ -7,7 +7,6 @@ let timers = [];
 $('#application__call').on('click', function () {
     Swal.fire({
         html: '<h2 class="swal2-title" id="swal2-title" style="display: block;margin-bottom:20px;margin-top:10px;font-family: Euclid;">Обратный звонок</h2>' +
-            // '<h2 style="font-family: Euclid;margin-bottom:20px;margin-top:10px">Обратный звонок</h2>' +
             '<form class="flex ajax__form" style="flex-direction:column;padding-bottom:16px" action="' + backCallRoute + '" method="post">' +
             csrf +
             '<input name="name" placeholder="Как к вам обращаться" style="font-family: Euclid;width:calc(100% - 10px);margin-top:10px;margin-bottom:26px;background-color:#F8F8F8" id="swal-input1" type="text" class="animate__animated swal2-input">' +

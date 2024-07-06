@@ -10,13 +10,16 @@ class ArticleController extends Controller
 {
     # СПИСОК СТАТЕЙ
     public function list() {
+        $title = "Статьи по строительству и ремонту";
         $articles = Article::orderBy('created_at', 'DESC')->get();
-        return view('articles.list', compact('articles'));
+        return view('articles.list', compact('articles', 'title'));
     }
 
     # СТРАНИЦА СТАТЬИ
     public function detail($slug) {
+        
         $article = Article::where('slug', $slug)->first();
+        $title = $article->title;
         $minutes = 15;
         $cookieName = 'article_' . $article->id . '_viewed';
 
@@ -25,6 +28,6 @@ class ArticleController extends Controller
             $article->update();
         }
 
-        return response()->view('articles.detail', compact('article'))->withCookie(cookie($cookieName, true, $minutes));
+        return response()->view('articles.detail', compact('article', 'title'))->withCookie(cookie($cookieName, true, $minutes));
     }
 }

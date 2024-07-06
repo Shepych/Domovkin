@@ -271,8 +271,6 @@
       margin: 40px !important;
     }
 
-    
-
     #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
       /* margin-top: 20px; */
       height: 30px;
@@ -303,5 +301,9 @@
   @media screen and (max-width: 500px) {
     #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
       margin-right: 0;
+    }
+
+    .article__page__title {
+      font-size: 28px !important;
     }
   }

@@ -16,9 +16,6 @@ strong {
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
-    /* margin-bottom: 40px; */
-    /*margin-bottom: 40px;*/
-    /*margin-top: 40px;*/
 }
 
 .article__page__poster {
@@ -27,7 +24,6 @@ strong {
     display: block;
     max-width: 1200px;
     width: 100%;
-    border-radius: 20px;
     box-shadow: 0 0 1px black;
     height: auto !important;
 }
@@ -37,7 +33,6 @@ strong {
 }
 
 .article__content {
-    /*padding: 40px;*/
     padding-top: 40px;
     font-size: 22px;
     color: #262626;
@@ -58,11 +53,11 @@ strong {
 }
 
 .article__content > :first-child {
-    margin-top: 0; /* Убираем отступ сверху у первого элемента */
+    margin-top: 0;
 }
 
 .article__content > :last-child {
-    margin-bottom: 10px; /* Добавляем отступ снизу у последнего элемента */
+    margin-bottom: 10px;
 }
 
 .article__header {
