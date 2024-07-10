@@ -17,7 +17,7 @@
         </div>
 
         <div class="video__home-wrapper">
-            <video class="video__home" autoplay muted>
+            <video class="video__home" autoplay muted playsinline>
                 <source src="/animations/123.mp4" type="video/mp4">
             </video>
         </div>
