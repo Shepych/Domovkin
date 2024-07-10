@@ -7,6 +7,21 @@
 
 
 @section('content')
+    <section class="main__header">
+        <div class="main__header-left">
+            <h1 class="main__header-h1">
+                Строительство домов и ремонт квартир
+            </h1>
+    
+            <p class="main__header-p">Профессионально строим дома и выполняем ремонтные работы любой сложности. Наши услуги предоставляются без накрутки цен — вы оплачиваете исключительно себестоимость материалов и зарплату исполняющей бригады. Надежность, качество и честность — наши главные принципы.</p>
+        </div>
+
+        <div>
+            <video style="width:700px;display:block" autoplay muted>
+                <source src="/animations/123.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
     <section class="projects__list">
         @foreach($projects as $project)
             <a href="{{ route('project.detail', $project->id) }}" class="project__item">

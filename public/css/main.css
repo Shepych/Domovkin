@@ -104,7 +104,7 @@ header {
 }
 
 .phone {
-    margin-left: 24px;
+    /* margin-left: 24px; */
     color: #7992ad !important;
     display: flex !important;
     justify-content: center;
@@ -895,6 +895,25 @@ video {
     align-items: center;
 }
 
+.main__header-h1 {
+    font-family: Grotesk;
+}
+
+.main__header-p {
+    margin-top: 20px;
+}
+
+.main__header-left {
+    width: 700px;
+}
+
+.main__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: 40px;
+}
 
 .article__description {
     padding: 40px;

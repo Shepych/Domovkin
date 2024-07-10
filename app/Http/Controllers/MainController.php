@@ -26,7 +26,7 @@ class MainController extends Controller
     public function projects() {
         $title = "Проекты загородных домов и коттеджей";
         $projects = Project::orderByRaw('ISNULL(position), position ASC')
-        ->get();
+            ->get();
         return view('projects', compact('projects', 'title'));
     }
 
