@@ -2330,4 +2330,8 @@ video {
         width: 100%;
         max-width: 700px;
     }
+
+    .video__home-wrapper {
+        margin-right: 30px;
+    }
 }
