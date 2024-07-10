@@ -913,6 +913,8 @@ video {
     align-items: center;
     font-size: 22px;
     margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .article__description {
@@ -2300,5 +2302,32 @@ video {
     .lozung {
         font-size: 18px;
         margin-top: 15px !important;
+    }
+}
+.video__home {
+    width:700px;
+    display:block
+}
+@media screen and (max-width:1200px) {
+    .main__header {
+        flex-direction: column;
+    }   
+
+    .main__header-left {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .main__header-h1 {
+        text-align: center;
+    }
+
+    .main__header-p {
+        text-align: center;
+    }
+
+    .video__home {
+        width: 100%;
+        max-width: 700px;
     }
 }
