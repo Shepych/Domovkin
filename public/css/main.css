@@ -915,6 +915,7 @@ video {
     margin-top: 40px;
     padding-left: 40px;
     padding-right: 40px;
+    min-height: 560px;
 }
 
 .article__description {
@@ -2192,6 +2193,7 @@ video {
 
     .main__header-left {
         margin-bottom: 20px;
+        min-height: auto;
     }
 
     .portfolio__list {
