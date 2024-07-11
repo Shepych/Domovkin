@@ -17,9 +17,12 @@
         </div>
 
         <div class="video__home-wrapper">
-            <video class="video__home" autoplay muted playsinline>
+            <section class="home__animation">
+                <lottie-player src="/animations/blue_house.json" background="Transparent" speed="0.5"  direction="1" mode="normal" loop autoplay></lottie-player>
+            </section>
+            {{-- <video class="video__home" autoplay muted playsinline>
                 <source src="/animations/123.mp4" type="video/mp4">
-            </video>
+            </video> --}}
         </div>
     </section>
     <section class="projects__list">
@@ -195,6 +198,7 @@
 @endsection
 
 @section('js')
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <script src="./js/popup.js"></script>

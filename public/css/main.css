@@ -2181,7 +2181,19 @@ video {
     display: none;
 }
 
+.video__home-wrapper {
+    overflow: hidden;
+}
+
 @media screen and (max-width: 600px) {
+    /* .video__home-wrapper {
+        display: none;
+    } */
+
+    .main__header-left {
+        margin-bottom: 20px;
+    }
+
     .portfolio__list {
         padding-left: 20px;
         padding-right: 20px;
@@ -2329,9 +2341,5 @@ video {
     .video__home {
         width: 100%;
         max-width: 700px;
-    }
-
-    .video__home-wrapper {
-        margin-right: 30px;
     }
 }
