@@ -1272,7 +1272,6 @@ video {
     }
 
     .home__animation {
-        max-width: 400px;
         margin-top: -55px;
         margin-bottom: -80px;
     }
@@ -2185,15 +2184,25 @@ video {
 .video__home-wrapper {
     overflow: hidden;
 }
+@media screen and (max-width: 450px) {
+    .video__home-wrapper {
+        overflow: inherit;
+    }
+}
 
 @media screen and (max-width: 600px) {
-    /* .video__home-wrapper {
-        display: none;
-    } */
-
     .main__header-left {
         margin-bottom: 20px;
         min-height: auto;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .home__animation {
+        width: calc(100% + 100px);
+        margin-left: -50px;
     }
 
     .portfolio__list {
