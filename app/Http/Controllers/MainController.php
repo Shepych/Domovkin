@@ -15,12 +15,13 @@ class MainController extends Controller
     public $rtsp = 'rtsp://admin:Huskar00@192.168.1.9:554';
 
     public function index() {
+        $seoDescription = "Услуги строительства и ремонта домов и квартир от профессионалов. Опытные специалисты предлагают качественные работы: от ремонта интерьеров до полного строительства. Запишитесь на бесплатную консультацию!";
         $title = "Строительство домов и ремонт квартир в Москве";
         $questions = Question::all();
         $projects = Project::orderByRaw('ISNULL(position), position ASC')
             ->take(12)
             ->get();
-        return view('index', compact('questions', 'projects', 'title'));
+        return view('index', compact('questions', 'projects', 'title', 'seoDescription'));
     }
 
     public function projects() {
