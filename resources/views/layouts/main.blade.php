@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/hamburger.css">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
     @if(isset($seoDescription))
     <meta name="description" content="{{ $seoDescription }}">
     @endif
