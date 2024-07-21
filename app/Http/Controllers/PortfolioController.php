@@ -19,6 +19,9 @@ class PortfolioController extends Controller
             $isFromPortfolioList = $previousRoute === 'portfolio.list';
         }
 
-        return view('portfolio.detail', compact('portfolio', 'isFromPortfolioList'));
+        $title = 'Портфолио проект #'. $portfolio->id . ' - ' . $portfolio->type();
+        $seoDescription = $portfolio->description;
+
+        return view('portfolio.detail', compact('portfolio', 'isFromPortfolioList', 'title', 'seoDescription'));
     }
 }

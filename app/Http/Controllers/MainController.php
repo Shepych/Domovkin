@@ -46,8 +46,9 @@ class MainController extends Controller
 
     public function portfolio() {
         $title = "Примеры работ";
+        $seoDescription = "В этом разделе мы коллекционируем все наши выполненные работы, чтобы клиенты могли наглядно увидеть результаты и ознакомиться со всеми объектами которые были реализованы нами.";
         $portfolio = Portfolio::all();
-        return view('portfolio.portfolio', compact('portfolio', 'title'));
+        return view('portfolio.portfolio', compact('portfolio', 'title', 'seoDescription'));
     }
 
     // public function reviews() {

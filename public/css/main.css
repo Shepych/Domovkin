@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: 'Fira Sans';
+    src: url('/fonts/FiraSans/FiraSans-Bold.ttf');
+}
+
+@font-face {
     font-family: 'Grotesk';
     src: url('/fonts/Grotesk/akzidenzgroteskpro_bold.ttf');
 }
