@@ -65,6 +65,15 @@
                 webvisor:true
             });
         </script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MTRFTCRV4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4MTRFTCRV4');
+        </script>
     @endif
 </body>
 </html>
