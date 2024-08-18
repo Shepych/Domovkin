@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('css')
+    <link rel="stylesheet" href="/css/pagination.css">
+@endsection
+
 @section('content')
     <section class="articles__list">
         @foreach($articles as $article)
@@ -22,7 +26,10 @@
                 </div>
             </a>
         @endforeach
+
     </section>
+
+    {{ $articles->links('pagination.classic') }}
 
     @include('blocks.footer')
 @endsection

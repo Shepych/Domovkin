@@ -8,11 +8,13 @@ use Illuminate\Http\Response;
 
 class ArticleController extends Controller
 {
+
+    public $articlesPerPage = 3;
     # СПИСОК СТАТЕЙ
     public function list() {
         $title = "Статьи по строительству и ремонту";
         $seoDescription = "Изучайте полезные статьи по строительству и ремонту. Узнавайте о лучших методах ремонта, советах по выбору материалов и технике безопасности. Полезные руководства для успешного ремонта вашего дома!";
-        $articles = Article::orderBy('created_at', 'DESC')->get();
+        $articles = Article::orderBy('created_at', 'DESC')->paginate($this->articlesPerPage);
         return view('articles.list', compact('articles', 'title', 'seoDescription'));
     }
 

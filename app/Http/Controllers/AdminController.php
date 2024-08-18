@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-    public $maxFolders = 3;
+    public $maxFolders = 20;
     public $dir = 'articles/';
     public $projectsDir = 'projects/';
     public $portfolioDir = 'portfolio/';
