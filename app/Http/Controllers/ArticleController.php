@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 class ArticleController extends Controller
 {
 
-    public $articlesPerPage = 3;
+    public $articlesPerPage = 12;
     # СПИСОК СТАТЕЙ
     public function list() {
         $title = "Статьи по строительству и ремонту";
