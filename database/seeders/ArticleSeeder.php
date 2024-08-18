@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -22,7 +23,8 @@ class ArticleSeeder extends Seeder
                 'slug' => Str::slug('Article ' . $i),
                 'description' => fake()->text(400),
                 'img' => '/img/articles/' . $i . '.webp',
-                'content' => fake()->text(5000)
+                'content' => fake()->text(5000),
+                'create_at' => Carbon::now(),
             ]);
         }
     }

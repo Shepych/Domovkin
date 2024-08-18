@@ -8,7 +8,7 @@
 
 @foreach($articles as $article)
     <div>
-        Статья 
+        {{ $article->title }} 
         {{-- <img src="{{ $article->poster() }}" alt=""> --}}
         <a style="display: inline-block;" href="{{ route('admin.articles.page.update', ['id' => $article->id]) }}">
             <button>Изменить</button>

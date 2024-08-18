@@ -10,7 +10,10 @@
                 </svg>
             </a>
 
-            <a style="color: white;display: block;width: 176px;text-align: center" href="tel:+79955551961" class="phone">8 (995) 555 19 61</a>
+            <div>
+                <a style="color: white;display: block;width: 176px;text-align: center" href="tel:+79998347787" class="phone">8 (999) 834 77 87</a>    
+                <a style="color: white;display: block;width: 176px;text-align: center" href="tel:+79955551961" class="phone">8 (995) 555 19 61</a>
+            </div>
             
             <button class="button" id="application__call" style="height: 50px;margin-left: 22px;">Заказать звонок</button>
             <a class="user__icon" style="margin-left: 24px;margin-top: 6px;" href="{{ route('login') }}">
