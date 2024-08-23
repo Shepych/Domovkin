@@ -2238,7 +2238,7 @@ video {
         display: none;
         justify-content: start;
     }
-    
+
     .photo__count-adaptive {
         display: flex !important;
     }
@@ -2323,6 +2323,20 @@ video {
 }
 .adaptive__price-color {
     color: rgba(0, 0, 0, .4);
+}
+
+@media screen and (max-width:600px) {
+    .article__footer .article__date:nth-child(1) {
+        font-size: 16px !important;
+    }
+
+    .article__description {
+        font-size: 16px;
+    }
+
+    .article__row h2 {
+        font-size: 26px;
+    }
 }
 
 @media screen and (max-width:500px) {

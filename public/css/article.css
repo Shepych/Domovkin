@@ -50,6 +50,8 @@ strong {
 
 .article__content ul, .article__content ol {
     padding: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .article__content > :first-child {
@@ -100,5 +102,9 @@ strong {
 @media screen and (max-width:800px) {
     .article__page__title {
         font-size: 40px;
+    }
+
+    .article__content {
+        font-size: 18px !important;
     }
 }
