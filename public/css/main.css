@@ -1029,6 +1029,10 @@ video {
     height: 100%;
 }
 
+.article__header img {
+    height: auto !important;
+}
+
 .hidden {
     height: 0 !important;
 }
@@ -1084,7 +1088,13 @@ video {
     text-align-last: justify;
     max-width: 800px;
     font-size: 22px;
-    
+}
+
+.header__phones-list a {
+    color: white;
+    display: block;
+    width: 176px;
+    text-align: center;
 }
 
 .main__slider__wrapper {
@@ -2228,18 +2238,22 @@ video {
         display: none;
         justify-content: start;
     }
+    
     .photo__count-adaptive {
         display: flex !important;
     }
     .gallery__card-date-adaptive {
         margin-bottom: 20px;
     }
+
     .portfolio__card-left {
         flex-direction: column;
     }
+
     .gallery__card-description-adaptive-two {
         display: none;
     }
+
     .portfolio__card-two {
         flex-direction: column;
     }
@@ -2253,6 +2267,7 @@ video {
     .gallery__card-description-adaptive {
         display: inline !important;
     }
+
     .adaptive__price {
         display: inline !important;
     }
@@ -2261,9 +2276,11 @@ video {
         margin-left: 30px !important;
         margin-right: 30px !important;
     }
+
     .price__list {
         width: 100%;
     }
+
     .price__list tr td:not(:first-child) {
         display: none !important;
     }
@@ -2271,6 +2288,7 @@ video {
     .price__list tr td:first-child {
         border-right: 2px solid rgba(0, 0, 0, .1);
     }
+
     .service__page-block span {
         text-align: center;
     }
@@ -2282,15 +2300,14 @@ video {
         height: 10px;
     }
     
-    .payment__methods-header {
-        /* margin-top: 0 !important; */
-    }
     .payment__methods {
         flex-direction: column;
     }
+
     .price__list {
         font-size: 18px;
     }
+
     .contract__list-secondary {
         flex-direction: column;
         row-gap: 15px;
@@ -2312,10 +2329,12 @@ video {
     .gallery__card-description-adaptive {
         padding: 0 !important;
     }
+    .header__phones-list {
+        display: none;
+    }
     .phone {
         display: none !important;
     }
-    
     .phone__icon-wrapper {
         display: block !important;
         width: 40px;
