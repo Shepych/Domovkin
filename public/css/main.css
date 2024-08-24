@@ -2197,12 +2197,14 @@ video {
 }
 
 .video__home-wrapper {
-    /* overflow: hidden;
-    min-width: 500px; */
+    overflow: hidden;
+    min-width: 864px;
+    /* max-width: 500px; */
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1300px) {
     .video__home-wrapper {
-        overflow: hidden;
+        /* overflow: auto; */
+        min-width: auto;
     }
 }
 
