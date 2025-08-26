@@ -350,7 +350,7 @@ class AdminController extends Controller
                 'img.file' => 'Должен быть файлом',
                 'img.required' => 'Облажка отсутствует',
                 'completed.required' => 'Дата не указана',
-                'completed.required' => 'Описание отсутствует',
+                'description.required' => 'Описание отсутствует',
             ]);
 
             $portfolio = Portfolio::create([
