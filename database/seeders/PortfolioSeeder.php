@@ -20,5 +20,8 @@ class PortfolioSeeder extends Seeder
         DB::table('portfolio_types')->insert([
             'name' => 'Ремонт'
         ]);
+        DB::table('portfolio_types')->insert([
+            'name' => 'Реставрация'
+        ]);
     }
 }

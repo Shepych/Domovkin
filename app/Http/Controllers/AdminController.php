@@ -91,7 +91,7 @@ class AdminController extends Controller
                 $newFileName = substr($item, strrpos($item, '/') + 1);
                 $newPath = "/storage/articles/$folder/$article->id/$newFileName";
                 $article->content = str_replace($item, $newPath, $article->content);
-                
+
                 Attachment::where('link', '/storage/' . $item)->update([
                     'link' => $newPath,
                     'article_id' => $article->id
@@ -385,7 +385,58 @@ class AdminController extends Controller
             return view('admin.portfolio.create', compact('types'));
         }
     }
-    
+
+    public function portfolioEdit(Request $request, $item_id) {
+        $item = Portfolio::find($item_id);
+
+        if($request->post()) {
+//            $request->validate([ // Валидация данных
+//                'title' => 'required',
+//                'img' => 'required|file',
+//                'completed' => 'required',
+//                'description' => 'required',
+//                'type' => 'required',
+//            ], [
+//                'title.required' => 'Название отсутствует отсутсвует',
+//                'img.file' => 'Должен быть файлом',
+//                'img.required' => 'Облажка отсутствует',
+//                'completed.required' => 'Дата не указана',
+//                'completed.required' => 'Описание отсутствует',
+//            ]);
+//
+//            $portfolio = Portfolio::create([
+//                'name' => $request->title,
+//                'img' => 'test',
+//                'description' => $request->description,
+//                'completed' => $request->completed,
+//                'type_id' => $request->type
+//            ]);
+//
+            if($request->file('img')) { # Меняем обложку
+                $path = "$this->portfolioDir" . "$item->id";
+                $item->img = '/storage/' . $request->file('img')->store($path);
+            }
+//
+//            if($request->file('photos')) { # Сохраняем картинки
+//                $path = "$this->portfolioDir" . "$portfolio->id";
+//                $photos = [];
+//                foreach($request->file('photos') as $key => $photo) {
+//                    $photos[$key]['portfolio_id'] = $portfolio->id;
+//                    $photos[$key]['src'] = '/storage/' . $photo->store($path);
+//                }
+//                DB::table('portfolio_photos')->where('portfolio_id', $portfolio->id)->delete();
+//                DB::table('portfolio_photos')->insert($photos);
+//            }
+//
+            $item->update();
+
+            return redirect()->back();
+        } else {
+            $types = DB::table('portfolio_types')->get();
+            return view('admin.portfolio.edit', compact('item', 'types'));
+        }
+    }
+
     public function telegramArticlesList() {
         $articles = DB::table('telegram_articles')->get();
         return view('admin.telegram.articles', compact('articles'));

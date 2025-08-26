@@ -10,9 +10,9 @@
     <div>
         {{ $project->name }}
         {{-- <img src="{{ $article->poster() }}" alt=""> --}}
-        {{-- <a style="display: inline-block;" href="{{ route('admin.portfolio.page.update', $project->id) }}">
+        <a style="display: inline-block;" href="{{ route('admin.portfolio.page.edit', $project->id) }}">
             <button>Изменить</button>
-        </a> --}}
+        </a>
         {{-- <a style="display: inline-block;" onclick="return confirm('Are you sure?')" href="{{ route('admin.articles.method.delete', ['id' => $article->id]) }}">
             <button>Удалить</button>
         </a> --}}
