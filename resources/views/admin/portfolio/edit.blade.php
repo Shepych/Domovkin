@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('admin.portfolio.method.create') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('admin.portfolio.method.edit') }}" enctype="multipart/form-data">
         @csrf
         <input type="text" name="title" placeholder="Заголовок" value="{{ $item->name }}"><br>
         <label>

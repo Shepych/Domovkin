@@ -61,8 +61,9 @@ Route::middleware(['role:admin', 'auth'])->name('admin.')->group(function() {
         # ПОРТФОЛИО
         Route::get('/portfolio', [AdminController::class, 'portfolio'])->name('portfolio.list');
         Route::get('/portfolio/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.page.create');
-        Route::get('/portfolio/edit/{id}', [AdminController::class, 'portfolioEdit'])->name('portfolio.page.edit');
         Route::post('/portfolio/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.method.create');
+        Route::get('/portfolio/edit/{id}', [AdminController::class, 'portfolioEdit'])->name('portfolio.page.edit');
+        Route::post('/portfolio/edit/{id}', [AdminController::class, 'portfolioCreate'])->name('portfolio.method.edit');
 
         # ТЕЛЕГРАМ
         Route::get('/telegram/articles', [AdminController::class, 'telegramArticlesList'])->name('telegram.articles');
