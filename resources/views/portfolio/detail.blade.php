@@ -8,14 +8,14 @@
       </h1>
       <p class="projects__paragraph-date" style="color: #919192">{{ Carbon\Carbon::parse($portfolio->completed)->diffForHumans() }}</p>
     </div>
-    
-    
+
+
     <div id="my-gallery">
     <div class="portfolio__gallery">
       @php list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $portfolio->img); @endphp
-        <a class="gallery__main-photo" href="{{ $portfolio->img }}" 
-          data-pswp-width="{{ $width }}" 
-          data-pswp-height="{{ $height }}" 
+        <a class="gallery__main-photo" href="{{ $portfolio->img }}"
+          data-pswp-width="{{ $width }}"
+          data-pswp-height="{{ $height }}"
           data-cropped="true"
           target="_blank">
           <img src="{{ $portfolio->img }}" alt="" />
@@ -27,16 +27,16 @@
             list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $photo->src);
           @endphp
 
-          <a href="{{ $photo->src }}" 
-            data-pswp-width="{{ $width }}" 
-            data-pswp-height="{{ $height }}" 
-            data-cropped="true" 
+          <a href="{{ $photo->src }}"
+            data-pswp-width="{{ $width }}"
+            data-pswp-height="{{ $height }}"
+            data-cropped="true"
             target="_blank">
             <img src="{{ $photo->src }}" alt="" />
           </a>
         @endforeach
 
-        
+
       </div>
 
       <p class="projects__paragraph" style="margin-top: 40px">{{ $portfolio->description }}</p>
@@ -44,7 +44,7 @@
       @php
         $math = intval(round(($portfolio->photos()->count() - 4) / 3));
         $gridTemplateRows = '';
-        for ($i = 0; $i < $math; $i++) { 
+        for ($i = 0; $i < $math; $i++) {
           $gridTemplateRows.= '400px ';
         }
         $gridTemplateRows .= ';';
@@ -60,10 +60,10 @@
                 list($width, $height, $type, $attr) = getimagesize(env('APP_URL') . $item->src);
               @endphp
 
-            <a href="{{ $item->src }}" 
-              data-pswp-width="{{ $width }}" 
-              data-pswp-height="{{ $height }}" 
-              data-cropped="true" 
+            <a href="{{ $item->src }}"
+              data-pswp-width="{{ $width }}"
+              data-pswp-height="{{ $height }}"
+              data-cropped="true"
               target="_blank">
               <img src="{{ $item->src }}" alt="" />
             </a>
@@ -72,7 +72,7 @@
       @endif
     </div>
 
-      
-    
+
+
       @include('blocks.footer')
 @endsection

@@ -3,7 +3,7 @@
         <div class="flex" style="width:100%;gap:30px">
             <img class="icon__brick" src="/img/brick.svg" width="50px" height="90px" style="margin-right: 24px">
             <a class="logo"  href="/">DOMOVKIN<span class="logo__ru" style="color: #126eff">.RU</span></a>
-           
+
             <a href="tel:+79955551961">
                 <svg class="phone__icon-wrapper" viewBox="0 0 24 24">
                     <use href="/img/svg/phone.svg#phone">
@@ -11,10 +11,10 @@
             </a>
 
             <div class="header__phones-list">
-                <a href="tel:+79998347787" class="phone">8 (999) 834 77 87</a>    
+                <a href="tel:+79998347787" class="phone">8 (999) 834 77 87</a>
                 <a href="tel:+79955551961" class="phone">8 (995) 555 19 61</a>
             </div>
-            
+
             <button class="button" id="application__call" style="height: 50px;margin-left: 22px;">Заказать звонок</button>
             <a class="user__icon" style="margin-left: 24px;margin-top: 6px;" href="{{ route('login') }}">
                 <svg width="30" height="40" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,9 +22,9 @@
                 </svg>
             </a>
         </div>
-        <span class="lozung" style="color:white;margin-top:22px">Строительство домов, ремонт квартир в Москве и Московской области</span>
+        <span class="lozung" style="color:white;margin-top:22px">Строительство домов, ремонт квартир и реставрация в Москве</span>
     </section>
-    
+
     <!-- <div id="nav-icon1" class="menu__burger">
         <span></span>
         <span></span>

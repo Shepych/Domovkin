@@ -197,7 +197,7 @@ a[href^="tel"]:active {
 .logo:hover .logo__ru {
     color: white !important;
 }
-/* 
+/*
 
 Портфолио
 
@@ -246,7 +246,7 @@ a[href^="tel"]:active {
     align-items: center;
     gap: 10px;
     font-size: 22px;
-    
+
 }
 
 .photo__count {
@@ -1140,7 +1140,7 @@ video {
 }
 
 @media screen and (max-width: 1400px) {
-    
+
 
     .swiper__mobile-hidden {
         display: none;
@@ -1157,7 +1157,7 @@ video {
     .main__slider__wrapper {
         max-height: 100%;
     }
-    
+
     .project__right__column {
         min-width: 0;
         margin-bottom: 40px;
@@ -1166,7 +1166,7 @@ video {
     .project__left__column {
         width: 100%;
     }
-    
+
     .project__characteristics div {
         font-size: 18px;
     }
@@ -1369,7 +1369,7 @@ video {
     }
 
     .article__row {
-        width: 100%;    
+        width: 100%;
     }
 
     .articles__list {
@@ -1510,7 +1510,7 @@ video {
     .main__menu__open {
         height: 61px;
     }
-    
+
     .phone {
         margin-left: 0;
     }
@@ -1571,7 +1571,7 @@ video {
     .footer-description {
         display: none;
     }
-    
+
     .footer__main__page {
         border-top: none !important;
     }
@@ -1691,13 +1691,13 @@ video {
     background-color: #f2f3f5;
     border: 1px solid rgba(0, 0, 0, .07);
     margin-top: 12px;
-    left: calc(50% - 200px);
+    left: calc(50% - 220px);
     z-index: 2;
     transition: 0.2s;
 }
 
 .portfolio__back-button:hover {
-    scale: 1.5;
+    scale: 1.3;
     cursor: pointer;
 }
 
@@ -1721,7 +1721,7 @@ video {
     .portfolio__back-button {
         left: 40px;
     }
-    
+
     .main__menu ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1928,7 +1928,7 @@ video {
     box-sizing: border-box;
     border-collapse: collapse;
     font-size: 22px;
-    
+
 
     margin: 40px;
     margin-bottom: 0;
@@ -2033,7 +2033,7 @@ video {
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
-    
+
     /* max-width: 1100px; */
     margin-bottom: 40px;
     /* margin-top: 40px; */
@@ -2302,7 +2302,7 @@ video {
         left: calc(50% - 5px);
         height: 10px;
     }
-    
+
     .payment__methods {
         flex-direction: column;
     }
@@ -2375,7 +2375,7 @@ video {
 @media screen and (max-width:1200px) {
     .main__header {
         flex-direction: column;
-    }   
+    }
 
     .main__header-left {
         width: 100%;

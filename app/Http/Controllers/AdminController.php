@@ -412,22 +412,25 @@ class AdminController extends Controller
 //                'type_id' => $request->type
 //            ]);
 //
-            if($request->file('img')) { # Меняем обложку
+            if($request->file('img')) { // Меняем обложку
                 $path = "$this->portfolioDir" . "$item->id";
                 $item->img = '/storage/' . $request->file('img')->store($path);
             }
 //
-//            if($request->file('photos')) { # Сохраняем картинки
-//                $path = "$this->portfolioDir" . "$portfolio->id";
-//                $photos = [];
-//                foreach($request->file('photos') as $key => $photo) {
-//                    $photos[$key]['portfolio_id'] = $portfolio->id;
-//                    $photos[$key]['src'] = '/storage/' . $photo->store($path);
-//                }
-//                DB::table('portfolio_photos')->where('portfolio_id', $portfolio->id)->delete();
-//                DB::table('portfolio_photos')->insert($photos);
-//            }
-//
+            if($request->file('photos')) { // Сохраняем картинки
+                $path = "$this->portfolioDir" . "$item->id";
+                $photos = [];
+                foreach($request->file('photos') as $key => $photo) {
+                    $photos[$key]['portfolio_id'] = $item->id;
+                    $photos[$key]['src'] = '/storage/' . $photo->store($path);
+                }
+                DB::table('portfolio_photos')
+                    ->where('portfolio_id', $item->id)
+                    ->delete();
+                DB::table('portfolio_photos')
+                    ->insert($photos);
+            }
+
             $item->update();
 
             return redirect()->back();
